@@ -1,0 +1,27 @@
+<article class="tile" itemscope itemtype="http://schema.org/Article">
+  <a href="{{ site.baseurl }}{{ event.url }}" title="{{ event.title }}" class="post-teaser">
+  {% if event.image.teaser %}
+  	<img src="{{ site.baseurl }}/images/{{ event.image.teaser }}" alt="teaser" itemprop="image">
+  {% else %}
+    <img src="{{ site.baseurl }}/images/{{ site.teaser }}" alt="teaser" itemprop="image">
+  {% endif %}
+  </a>
+  {% if event.when %}
+  <p class="entry-date date published">
+  	<!--time datetime="{{ event.date | date: "%Y-%m-%d" }}" itemprop="datePublished">
+  	  {{ event.date | date: "%B %d, %Y" }}
+    </time-->
+    {{ event.when }}
+  </p>
+  {% endif %}
+  <h3 class="event-title" itemprop="name">
+  	<a href="{{ site.baseurl }}{{ event.url }}">
+      {{ event.title }}
+    </a>
+  </h3>
+  <p class="event-excerpt" itemprop="description">
+    Where: {{ event.location }}<br>
+    Description: {{ event.description }}<br>
+    <!--{{ event.excerpt | strip_html | truncate: 160 }}-->
+  </p>
+</article><!-- /.tile -->

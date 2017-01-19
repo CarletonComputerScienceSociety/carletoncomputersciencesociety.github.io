@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Breadcrumb navigation
+   ========================================================================== */
+
+.breadcrumbs {
+  @include row;
+  margin-top: 5em;/*$gutter;*/
+  @include font-size(10,no);
+  a {
+  	font-size: 0.7rem;
+    display: inline-block;
+    font-family: $alt-font;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,65 @@
+# Site navigation links
+- title: About
+  url: /about
+  excerpt:
+  image:
+  sublinks:
+    - title: The Team
+      url: /about/team/
+      image: /images/collaborate_2.jpg
+    - title: Lounge & Services
+      url: /about/lounge/
+      image: /images/library_1.jpg
+    - title: Government
+      url: /about/government/
+      image: /images/collaborate.jpg
+
+- title: Community
+  url: /community
+  excerpt:
+  image:
+  sublinks:
+    - title: Events
+      url: /community/events/
+      image: /images/travel.jpg
+    - title: News
+      url: /community/news/
+      image: /images/teaser.png
+
+- title: Opportunities
+  url: /opportunities
+  excerpt:
+  image:
+  sublinks:
+    - title: Volunteer
+      url: /opportunities/volunteer/
+      image: /images/collaborate_4.jpg
+    - title: Job Postings
+      url: /opportunities/jobs/
+      image: /images/jobs.jpg
+
+- title: Resources
+  url: /resources
+  excerpt:
+  image:
+  sublinks:
+    - title: Free Stuff
+      url: /resources/textbooks/
+      image: /images/study_3.jpg
+    - title: Student Handbook
+      url: http://ccss.carleton.ca/docs/
+      image: /images/study_1.jpg
+    - title: Useful Links
+      url: /resources/links/
+      image: /images/teaser.png
+
+- title: Contact
+  url: /contact/email/
+  excerpt:
+  image:
+  sublinks:
+- title: Election
+  url: /election
+  excerpt:
+  image:
+  sublinks:

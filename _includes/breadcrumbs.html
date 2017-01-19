@@ -1,0 +1,23 @@
+{% if page.categories and page.categories != empty %}
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="{{ site.baseurl }}" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    </span>
+    {% if page.categories[0] %}
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="{{ site.baseurl }}/{{ page.categories[0] }}/" itemprop="url">
+        <span itemprop="title">{{ page.categories[0] | replace: '-',' ' | capitalize }}</span>
+      </a> >
+    </span>
+    {% endif %}  
+    {% if page.categories[1] %}
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="{{ site.baseurl }}/{{ page.categories[0]/{{ page.categories[1] }}/" itemprop="url">
+        <span itemprop="title">{{ page.categories[1] | replace: '-',' ' | capitalize }}</span>
+      </a>
+    </span>
+    {% endif %}
+  </nav><!-- /.breadcrumbs -->
+{% endif %}

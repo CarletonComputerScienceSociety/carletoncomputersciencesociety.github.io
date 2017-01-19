@@ -1,0 +1,29 @@
+<ul>
+	<!--li class="home current-menu-item"><a href="/website">Home</a></li-->
+	{% for link in site.data.navigation %}
+    	{% if link.url contains 'http' %}
+        	{% assign domain = '' %}
+       		{% else %}
+        	{% assign domain = site.baseurl %}
+    	{% endif %}
+    	<li>
+          <a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a>
+          {% if link.sublinks %}
+          <ul> <!-- class='sub-menu'-->
+          {% for sublink in link.sublinks %}
+          	<li>
+              {% if sublink.url contains 'http' %}
+        	    {% assign subdomain = '' %}
+       		    {% else %}
+        	    {% assign subdomain = site.baseurl %}
+    	      {% endif %}
+            	<a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>				 	
+                	{{ sublink.title }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+  		</li>
+  	{% endfor %}
+</ul>
