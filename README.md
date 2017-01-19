@@ -1,2 +1,2 @@
 # carletoncomputersciencesociety.github.io
-New repo for the website to be built directly form github
+New repo for the website to be built directly from github
