@@ -15,7 +15,7 @@ by: Brittny Lapierre
   <li>quick announcements, thank sponsors</li> 
   <li>back to chatting</li>
   <li>head home, exhilarated from great conversations!</li>
-<ul>
+</ul>
 
 <p>HackerNest Tech Socials are Entry by Donation - any amount appreciated, but $5 suggested. No amount is too little! If a cash donation is too restrictive, please join us anyway – just let us know at the door.</p>
 
