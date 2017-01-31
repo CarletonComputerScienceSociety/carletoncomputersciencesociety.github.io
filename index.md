@@ -18,7 +18,7 @@ subjectstyle: null
 		</div>
     </div>
     <div class='side-content' style="text-align:center;">
-        <a href="https://carletoncss.slack.com/messages/announcements/" target="_blank">
+        <a href="https://carletoncss.slack.com/signup" target="_blank">
     		<img src="./images/Slack-528.png" alt="Slack" height="150" width="150">
         </a>
         <h4>Join our caretoncss team on slack!</h4>
