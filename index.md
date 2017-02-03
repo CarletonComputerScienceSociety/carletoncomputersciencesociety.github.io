@@ -21,6 +21,6 @@ subjectstyle: null
         <a href="https://carletoncss.slack.com/signup" target="_blank">
     		<img src="./images/Slack-528.png" alt="Slack" height="150" width="150">
         </a>
-        <h4>Join our team, 'caretoncss' on slack!</h4>
+        <h4>Join the 'caretoncss' team on slack!</h4>
     </div>
 </div>
