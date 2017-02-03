@@ -3,7 +3,7 @@ layout: main
 permalink: /
 title: Home
 published: true
-pimage: ./images/mac_coffee.jpg
+pimage: ./images/cusec.jpg
 subjectstyle: null
 ---
 <div class="content-wrap">
