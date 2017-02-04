@@ -33,4 +33,4 @@ by: Brittny Lapierre
   <li>You have post-secondary education in software engineering, computer engineering, computer science, math, electrical engineering or related field.</li>
 </ul>
 
-<a href="https://www.magnetforensics.com/job-positions/software-developer-2/" target="_blank">Apply Here</a>
+<h3><a href="https://www.magnetforensics.com/job-positions/software-developer-2/" target="_blank">Apply Here</a></h3>
