@@ -23,3 +23,5 @@ published: true
     </ul>
     <h4><a href='https://support.google.com/calendar/answer/37100?co=GENIE.Platform%3DDesktop&hl=en' target="_blank">More info and support...</a></h4>
 </div>
+<script src="{{ site.baseurl }}/js/format-google-calendar.min.js"></script>
+<script src="{{ site.baseurl }}/js/calendar.js"></script>
