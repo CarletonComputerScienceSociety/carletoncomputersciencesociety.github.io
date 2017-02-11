@@ -181,7 +181,9 @@ top-menu {
     padding: 0;
     background-color: white;
     padding-bottom: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
+
+    border-bottom: 3px solid #C40729;
 	/*@include size(100% 100%);
 	//-webkit-overflow-scrolling: touch;
 	z-index: 2;
@@ -545,8 +547,7 @@ top-menu {
 
 #bottom-logo {
 	width: 100vw;
-    padding-top: 40px;
-    border-top: 2px solid #101010;
+    padding-top: 20px;
     margin-top: 15px;
 }
 
