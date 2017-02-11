@@ -10,7 +10,7 @@
 	position: absolute;
     width: 100vw;
 	//padding: $gutter;
-    background-color: black;
+    background-color: #161717;
 	z-index: 17;
 	@include transform(translate(0,0));
 	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
@@ -18,10 +18,12 @@
 		@include transform(translate(-1600px,0));
 	}
 	.inner-wrap {
+
 		//@include outer-container;
 	}
     min-height: 63px;
 }
+
 
 .site-title {
 	@include row;
@@ -124,7 +126,7 @@ top-menu {
 			@include font-size(18,no);
 			line-height: .5 * $masthead-height; // half the height to center vertically
 			color: white;
-			text-transform: uppercase;
+		//	text-transform: uppercase;
             margin-bottom: (.25 * $masthead-height);
 		}
         a:hover {
@@ -133,6 +135,12 @@ top-menu {
             //color: #B20000;
 		}
 	}
+}
+
+.top-header :hover a{
+	background: blue;
+	color: green;
+
 }
 
 /*@media only screen and (min-width : 320px) {
@@ -362,8 +370,11 @@ top-menu {
 
 .main-page-image-wrapper {
 	@extend .page-image-wrapper;
-    padding-top: 10vh;
+    padding-top: -10vh;
     padding-bottom: 8vh;
+
+
+
 }
 
 @media only screen and (min-width : 768px) {
@@ -425,6 +436,7 @@ top-menu {
 
 .main-front-page-subject {
 	@extend .front-page-subject;
+	margin-top: 100px;
 }
 
 @media only screen and (min-width : 320px) {
@@ -459,7 +471,7 @@ top-menu {
 }
 /*
    Page footer
-   ========================================================================== 
+   ==========================================================================
 */
 
 .page-footer {
@@ -499,6 +511,7 @@ top-menu {
     font-weight: lighter;
     padding-top: 35px;
     padding-bottom: 25px;
+
 }
 
 .footer a {
@@ -515,6 +528,7 @@ top-menu {
 }
 
 .social-media-box{
+
     display:inline-block;
     z-index: 9;
     ul {
@@ -564,6 +578,33 @@ top-menu {
     //text-align: center;
 }
 
+.slack-icon{
+		position: absolute;
+    top: 20%;
+    left: 10%;
+  //  width: 120px;
+  //  height: 120px;
+  //  margin:-60px 0 0 -60px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+
+}
+
+#social-media{
+
+	-webkit-filter: drop-shadow(0px 3px 3px #222);
+	    filter:    drop-shadow(0px 3px 3px #222);
+			color:white;
+	float: left;
+	padding-left:20px;
+	padding-top:10px;
+}
+
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(180deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(180deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 //TODO: optimize for mobile
 
@@ -595,7 +636,7 @@ top-menu {
         li {
             font-size: 1.5rem;
 			margin-right: 30px;
-		} 
+		}
     }
     .social-media-links{
     	width: 344px;
@@ -606,10 +647,12 @@ top-menu {
     }
 }
 
+
+
 .sub-menu {
 	display: none;
 	li {
-        
+
 		a {
             max-width: 186px;
 			//font-weight: 200;
@@ -651,8 +694,8 @@ top-menu {
 	margin-top: 4vh;
 }
 
-.page-image-wrapper video { 
-	display: none; 
+.page-image-wrapper video {
+	display: none;
 }
 
 @media only screen and (min-width : 768px) {
@@ -661,11 +704,12 @@ top-menu {
 
 
 .front-page-subject {
-    color: white; 
-    text-align: center; 
+	text-shadow: 2px 2px black;
+    color: white;
+    text-align: center;
     z-index: 10;
     a {
-      color: white; 
+      color: white;
       text-decoration: none;
     }
     a:hover{
@@ -673,6 +717,8 @@ top-menu {
     }
     display: inline-block;
 }
+
+
 
 .basic-form {
 	h1 {
@@ -711,7 +757,7 @@ top-menu {
 	text-align: center;
 }
 
-@media only screen and (min-width : 320px) { 
+@media only screen and (min-width : 320px) {
 	.big-page-title{
 		font-size: 3.5rem;
 	}
@@ -802,8 +848,15 @@ top-menu {
 }
 
 .skinny-underline {
-	text-decoration: none; 
+	text-decoration: none;
     border-bottom: 1px solid;
+		color:darkred;
+		text-transform: uppercase;
+}
+
+.skinny-underline:hover{
+	color:red;
+
 }
 
 .subpage-list {
@@ -848,7 +901,7 @@ top-menu {
 .side-subpage-list{
     list-style: none;
     float: left;
-    border-right: solid 2px red; 
+    border-right: solid 2px red;
     padding-right: 25px;
 	li {
         a {
@@ -875,12 +928,18 @@ top-menu {
     background-repeat: no-repeat;
 }
 
+
+
 #primary_nav_wrap {
     width: 92vw;
-	padding-top: 15px;
-    padding-bottom: 15px;
+			padding-top: 15px;
+    padding-bottom: 2px;
     color: white;
-    background-color: black;
+		// height: 70px;
+		  background: #161717;
+			text-transform: uppercase;
+
+
 }
 
 @media only screen and (max-width : 1280px) {
@@ -892,40 +951,74 @@ top-menu {
 #primary_nav_wrap ul {
 	list-style:none;
 	position:relative;
+
 	float:left;
 	margin:0;;
 	padding:0;
     color: white;
-    background-color: black;
+
+//    background-color: black;
 }
 
+#red-space{
+	height: 1.5px;
+		background: #C40729;
+		margin-top: 45px;
+}
+
+.cu-logo{
+	height:100px;
+	width: 350px;
+	display: block;
+	margin-top: -70px;
+	margin-left: 40%;
+
+
+}
 
 #primary_nav_wrap ul a {
 	display:block;
 	text-decoration:none;
-	font-size: 1.3rem;
-    font-weight: lighter;
+	font-size: 15px;
 	line-height:32px;
 	padding:0 15px;
-	font-family: $alt-font;
-    color: white;
-    background-color: black;
+	font-family: 'Franklin Gothic Medium''sans-serif';
+    color: #E5E5E5;
+//    background-color: black;
+		  background: #161717;
+
+
+
+}
+#primary_nav_wrap ul a:hover{
+		background: #C40729;
+		color: white;
 }
 
+
+#primary_nav_wrap ul li.active-page{
+
+	background-color: blue;
+}
 #primary_nav_wrap ul li {
 	position:relative;
 	float:left;
 	margin:0;
-	padding:0;
-    background-color: black;
+
+	  padding: 0 px;
+    //background-color: black;
+		//background: white;
 }
 
 #primary_nav_wrap ul li.current-menu-item {
 	background:#2D2D2D;
+
 }
 
 #primary_nav_wrap ul li:hover {
-	background:#373737;
+	 //background:#373337;
+
+
 }
 
 #primary_nav_wrap ul ul {
@@ -933,31 +1026,52 @@ top-menu {
 	position:absolute;
 	top:100%;
     padding:0;
-    padding-top:20px;
+
+ padding-top:15px;
 	left:0;
-	background-color: black;
+//	background-color: black;
 }
 
 #primary_nav_wrap ul ul li {
 	float:none;
 	width:200px;
-    background-color: black;
+
+
+
+    //background-color: black;
 }
 
 #primary_nav_wrap ul ul a {
 	line-height:120%;
-	padding:10px 15px;
+	padding:15px 15px;
     font-size: 1rem;
+		background:#DADADA;
+		color: black;
+
+}
+
+#primary_nav_wrap ul ul a:hover{
+	background: white;
+	color: black;
+
 }
 
 #primary_nav_wrap ul ul ul {
 	top:0;
 	left:100%;
-    background-color: black;
+
+
+  //  background-color: black;
 }
 
 #primary_nav_wrap ul li:hover > ul {
 	display:block;
+
+	//background: darkred;
+}
+#primary_nav_wrap ul li:hover > ul li {
+	display:block;
+	//background: darkblue;
 }
 
 .coming-soon {
@@ -1012,5 +1126,5 @@ h1,h2,h3,h4,h5,h6,li,a,p{
 }
 
 ul li {
-	
+
 }

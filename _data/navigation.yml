@@ -13,6 +13,7 @@
     - title: Government
       url: /about/government/
       image: /images/collaborate.jpg
+      
 
 - title: Community
   url: /community
@@ -58,8 +59,8 @@
   excerpt:
   image:
   sublinks:
-- title: Election
-  url: /election
-  excerpt:
-  image:
-  sublinks:
+#- title: Election
+#  url: /election
+#  excerpt:
+#  image:
+#  sublinks:
