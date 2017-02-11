@@ -2,7 +2,17 @@
 layout: base
 published: true
 ---
-      <div class="main-page-image-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ page.pimage }}'); font-size:{{ page.subjectsize }};">
+
+
+<div style="padding-left:20px;display:inline-block;float:left;">
+{% include social-media.html %}
+</div>
+
+
+      <div class="main-page-image-wrapper" style=" height:700px;background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ page.pimage }}'); font-size:{{ page.subjectsize }};">
+<div class="front-logo">  
+  <img style="display:block;"class="cu-logo" src= "/images/cu-logo.png"> </img>
+</div>
         <div class='main-front-page-subject' style="{{ page.subjectstyle }}">CARLETON COMPUTER<br>SCIENCE SOCIETY
             <h3 style="margin-bottom:50px;">Check out our <a href="https://ccss.carleton.ca/community/events/" target="_blank" class="skinny-underline">events</a> and <a href="https://ccss.carleton.ca/opportunities/volunteer/" target="_blank" class="skinny-underline">sign up</a> to be a volunteer!</h3>
    		</div>
