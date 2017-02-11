@@ -28,7 +28,7 @@
   top: 0.25rem;
   right: $gutter;
   display: block;
-  background: $primary-color;
+	background: #C40729;
   outline: 0;
   padding: $button-size*0.40;
   padding-top: $button-size*0.45;
@@ -42,7 +42,7 @@
   }
   transition: $sliding-menu-animation;
   &.slide {
-    background: $danger-color;
+    	background: #C40729;
     transform: translateX(0); /* don't slide close button on small screens only */
     @include media($medium) {
       transform: translateX(em(-300)); /* reset slide position */
@@ -57,7 +57,7 @@
    Sliding content
    ========================================================================== */
 
-.sliding-menu-content::-webkit-scrollbar { 
+.sliding-menu-content::-webkit-scrollbar {
     display: none;  // Safari and Chrome
 }
 
