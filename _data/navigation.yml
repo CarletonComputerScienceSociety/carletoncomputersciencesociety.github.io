@@ -59,8 +59,8 @@
   excerpt:
   image:
   sublinks:
-- title: Election
-  url: /election
-  excerpt:
-  image:
-  sublinks:
+#- title: Election
+#  url: /election
+#  excerpt:
+#  image:
+#  sublinks:
