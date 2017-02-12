@@ -5,10 +5,12 @@ title: Events
 published: true
 ---
 <!-- Calendar Styles -->
-<link src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.css"></link>
-<link src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css"></link>
+<link src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.css"/>
+<link src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css"/>
 
 <!--Calendar View-->
+
+<!--Old iframe method-->
 <div class='content-wrap'>
     <h1>Our Google Calendar</h1>
     <p>Click on an event in the calendar to get more details!</p>
