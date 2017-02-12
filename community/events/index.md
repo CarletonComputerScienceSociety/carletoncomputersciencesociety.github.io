@@ -6,6 +6,7 @@ published: true
 ---
 <!-- Calendar Styles -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css"></script>
 
 <!--Calendar View-->
 <div class='content-wrap'>
@@ -29,6 +30,8 @@ published: true
 </div>
 
 <!--Calendar JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
 <script src="{{ site.baseurl }}/js/format-google-calendar.min.js"></script>
 <script src="{{ site.baseurl }}/js/calendar.js"></script>
