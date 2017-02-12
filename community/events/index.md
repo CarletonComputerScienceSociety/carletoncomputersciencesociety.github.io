@@ -5,8 +5,8 @@ title: Events
 published: true
 ---
 <!-- Calendar Styles -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css"></script>
+<link src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.css"></link>
+<link src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css"></link>
 
 <!--Calendar View-->
 <div class='content-wrap'>
