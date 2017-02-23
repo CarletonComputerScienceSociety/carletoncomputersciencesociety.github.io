@@ -32,7 +32,7 @@ published: true
 
   <div class="team-title">
   <h5>Elisa Kazan</h5>
-  <span>president <span> <a href= "mailto:elisa.kazan@ccss.carleton.ca" target="_top">  elisa.kazan@ccss.carleton.ca</a> </span> </span>
+  <span>President <span> <a href= "mailto:elisa.kazan@ccss.carleton.ca" target="_top">  elisa.kazan@ccss.carleton.ca</a> </span> </span>
       </div>
 </div>
 </li>
@@ -77,7 +77,7 @@ published: true
 
   <div class="team-title">
   <h5>Forest Anderson</h5>
-  <span>Developer <span> <a href ="mailto:forest.anderson@ccss.carleton.ca" target ="_top">forest.anderson@ccss.carleton.ca </a></span> </span>
+  <span>VP Social <span> <a href ="mailto:forest.anderson@ccss.carleton.ca" target ="_top">forest.anderson@ccss.carleton.ca </a></span> </span>
       </div>
 </div>
 </li>
@@ -100,7 +100,7 @@ published: true
 
   <div class="team-title">
   <h5>Matt Diener</h5>
-  <span>Developer <span><a href="mailto:matt.diener@ccss.carleton.ca" target ="_top">matt.diener@ccss.carleton.ca</a></span> </span>
+  <span>VP Academics <span><a href="mailto:matt.diener@ccss.carleton.ca" target ="_top">matt.diener@ccss.carleton.ca</a></span> </span>
       </div>
 </div>
 </li>
@@ -123,7 +123,7 @@ published: true
 
   <div class="team-title">
   <h5>Andrew Morris</h5>
-  <span>Developer<span><a href ="mailto:andrew.morris@ccss.carleton.ca" target="_top"> andrew.morris@ccss.carleton.ca </a></span> </span>
+  <span>Treasurer<span><a href ="mailto:andrew.morris@ccss.carleton.ca" target="_top"> andrew.morris@ccss.carleton.ca </a></span> </span>
       </div>
 </div>
 </li>
