@@ -13,7 +13,7 @@
     - title: Government
       url: /about/government/
       image: /images/collaborate.jpg
-      
+
 
 - title: Community
   url: /community
@@ -25,6 +25,9 @@
       image: /images/travel.jpg
     - title: News
       url: /community/news/
+      image: /images/teaser.png
+    - title: Gallery
+      url: /community/gallery/
       image: /images/teaser.png
 
 - title: Opportunities
