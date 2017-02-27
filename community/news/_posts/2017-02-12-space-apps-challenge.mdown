@@ -1,0 +1,14 @@
+---
+layout: article
+title: Space Apps Challenge
+category: blog
+by: Brittny Lapierre
+---
+
+<h3>Ottawa, prepare for liftoff!</h3> 
+
+<p>The NASA International Space Apps Challenge is an intense 48-hour global weekend hackathon for developers, designers, engineers, entrepreneurs, astronomers and enthusiasts. Along with nearly 200 cities around the world, Ottawa teams will form and build products and prototypes against NASA-designed challenges that leverage spacecraft, celestial and science data.</p>
+
+<p>This <b>FREE</b> event will run from Friday evening, April 28 to Sunday, April 30. If you are interested and likely to go, please register so we can determine how much space we need. That also helps us organize snacks and other logistics to ensure you have a great time.</p>
+
+<p>Find out more, including how to register, at <a href="http://www.spaceappsottawa.com">Space Apps Ottawa</a>.</p>

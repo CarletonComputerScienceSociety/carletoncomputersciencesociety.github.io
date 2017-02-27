@@ -8,7 +8,7 @@
 html {
     margin: 0;
     padding: 0;
-    overflow: auto;
+    //overflow: auto;
     height: 100vh;
     background-color: black;
 }
@@ -21,6 +21,7 @@ body {
     padding: 0;
     height: 100vh;
     background-color: black;
+    overflow-x: hidden;
 }
 
 p {

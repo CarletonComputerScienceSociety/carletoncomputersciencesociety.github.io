@@ -4,6 +4,13 @@ permalink: /community/events/
 title: Events
 published: true
 ---
+<!-- Calendar Styles -->
+<link src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.css"/>
+<link src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css"/>
+
+<!--Calendar View-->
+
+<!--Old iframe method-->
 <div class='content-wrap'>
     <h1>Our Google Calendar</h1>
     <p>Click on an event in the calendar to get more details!</p>
@@ -23,3 +30,10 @@ published: true
     </ul>
     <h4><a href='https://support.google.com/calendar/answer/37100?co=GENIE.Platform%3DDesktop&hl=en' target="_blank">More info and support...</a></h4>
 </div>
+
+<!--Calendar JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
+<script src="{{ site.baseurl }}/js/format-google-calendar.min.js"></script>
+<script src="{{ site.baseurl }}/js/calendar.js"></script>

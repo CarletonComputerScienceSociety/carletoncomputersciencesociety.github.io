@@ -1,0 +1,61 @@
+---
+layout: article
+title: General Dynamics Software Developer (Full Time)
+category: blog
+by: Brittny Lapierre
+---
+
+<p>At General Dynamics Mission Systems-Canada (GDMS-C), Canada’s premiere defence company, innovation happens on a daily basis.  We develop and deliver highly-complex leading edge technology, products and systems that make important contributions to our customer’s success in land, airborne and maritime applications.  The challenges and opportunities are endless.  The results – incredible!</p>
+
+<p>Our employees are exceptional!  We are proud to employ over 1,400 talented individuals across Canada.  Working in a collaborative environment, our employees are encouraged daily to contribute their technical knowledge and expertise. Our people are passionate, dedicated, and conscientious about the work they do which results in our ability to deliver the highest value, customized solutions in order to meet the most demanding requirements.</p>
+
+<h3>Job Description</h3>
+
+<p>General Dynamics Mission Systems - Canada currently has a requirement for junior and intermediate software engineers within our Air & Naval Systems Business Area.  The incumbents will be part of a team developing the Data Management System (DMS) software.  The DMS forms the core data management component of the CP140 Aurora aircraft for the Canadian DND. The DMS provides an integrated tactical picture for the air crew, allowing them to interact with the aircraft sensors through a common OMI. This position involves high-level software development for a Linux environment.</p>
+
+<h3>Typical Duties</h3>
+The responsibilities and range of activities will vary, but in general will include:
+	<li>Participating in an interdisciplinary Agile Scrum team environment under the supervision of more senior engineers</li>
+	<li>Performing software requirements analysis</li>
+	<li>Performing software design and/or analysis functions based on requirements</li>
+	<li>Preparing and reviewing software design documents</li>
+	<li>Developing software code and participating in code reviews</li>
+	<li>Preparing and reviewing test plans and test procedures</li>
+	<li>Identifying defects, resolving issues and verifying solutions</li>
+	<li>Documenting the analysis, design and test in accordance with development standards</li>
+	<li>Presenting (verbal and written) to GDMS-C management and customers</li>
+<ul>
+
+<h3>Required Skills & Experience</h3>
+<ul>
+	<li>Disciplined approach to software engineering</li>
+	<li>Proficiency in one or more modern programming languages; knowledge of Ada is desirable</li>
+	<li>Experience with object oriented design tools and UML</li>
+	<li>Experience using Linux as a host environment</li>
+	<li>Relevant experience with software engineering processes and tools</li>
+	<li>Relevant experience working in an Agile software development program is an asset</li>
+	<li>Relevant experience with software version control systems</li>
+	<li>Strong communication skills, both written and verbal</li>
+	<li>Strong problem solving and analysis skills</li>
+	<li>Enthusiastic contributor, willing to learn new skills and takes on ownership of work</li>
+	<li>Ability to work effectively both independently and in a team environment, with minimum supervision</li>
+</ul>
+
+<h3>Education</h3>
+<p>Bachelor's degree in Engineering/Computer Science or related technical/scientific degree.</p>
+
+<h3>Other</h3>
+
+<p>Minimum 10 year consecutive residence in Canada – for Canadian Secret Security Clearance
+Applicants will be required to obtain/hold a valid and current Canadian security clearance to gain access to the classified spaces, information and equipment in order to perform the work associated with this position.</p>
+
+
+<h3>External Applicants:</h3>
+
+<a href="www.gd-ms.ca/careers/careeropportunities">Apply Here!</a>
+
+<h3>Internal Applicants:</h3>
+
+<p>Apply through Quicklinks on Crosspoint - Jobs at GDMS-Canada. Please do not share the internal job link with external candidates. Your resume must be submitted through Human Resources; it is not acceptable to submit your application to the hiring manager.</p>
+
+

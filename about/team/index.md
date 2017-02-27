@@ -14,83 +14,54 @@ published: true
 <ul>
 
 <!-- ----Person 1 -->
-<li>
-<div class="team-member">
-  <div class="team-img" >
-
-<a href= "{{ site.baseurl }}/about/team/current/">
-<img src="http://www.bkforex.com/wp-content/uploads/2015/03/team.jpg" class="img-responsive">
-
-</a>
-  </div>
-
-  <!-- <div class="team-hover">
-<div class="desk">
-<h4>Hi There !</h4>
-<p>I am a 3rd year student in the mobile stream and an LTE software developer intern at Ericsson. I’m energetic, outgoing and love to get involved with events and CS outreach. Tea > Coffee.</p>
-  </div>
-      </div> -->
+  <li>
+    <div class="team-member">
+      <div class="team-img" >
+        <a href= "{{ site.baseurl }}/about/team/current/">
+          <img src="{{ site.baseurl }}/images/people.png" class="img-responsive">
+        </a>
+      </div>
 
 
-<div class="team-title">
-<h5>CURRENT EXECS</h5>
-  </div>
+      <div class="team-title">
+        <h5>CURRENT EXECS</h5>
+      </div>
 
-</div>  
-</li>
-
-
-<li>
-<div class="team-member">
-  <div class="team-img" >
-
-<a href= "{{ site.baseurl }}/about/team/current/">
-<img src="http://www.bkforex.com/wp-content/uploads/2015/03/team.jpg" class="img-responsive">
-
-</a>
-  </div>
-
-  <!-- <div class="team-hover">
-<div class="desk">
-<h4>Hi There !</h4>
-<p>I am a 3rd year student in the mobile stream and an LTE software developer intern at Ericsson. I’m energetic, outgoing and love to get involved with events and CS outreach. Tea > Coffee.</p>
-  </div>
-      </div> -->
+    </div>  
+  </li>
 
 
-<div class="team-title">
-<h5>PREVIOUS EXECS</h5>
-  </div>
+  <li>
+    <div class="team-member">
 
-</div>  
-</li>
+      <div class="team-img" >
+        <a href= "{{ site.baseurl }}/about/team/current/">
+          <img src="{{ site.baseurl }}/images/people.png">
+        </a>
+      </div>
 
-<li>
-<div class="team-member">
-  <div class="team-img" >
+      <div class="team-title">
+        <h5>PREVIOUS EXECS</h5>  
+      </div>
 
-<a href= "{{ site.baseurl }}/about/team/current/">
-<img src="http://www.bkforex.com/wp-content/uploads/2015/03/team.jpg" class="img-responsive">
+    </div>
+  </li>
 
-</a>
-  </div>
+  <li>
+    <div class="team-member">
 
-  <!-- <div class="team-hover">
-<div class="desk">
-<h4>Hi There !</h4>
-<p>I am a 3rd year student in the mobile stream and an LTE software developer intern at Ericsson. I’m energetic, outgoing and love to get involved with events and CS outreach. Tea > Coffee.</p>
-  </div>
-      </div> -->
+      <div class="team-img" >
+        <a href= "{{ site.baseurl }}/about/team/previous/">
+          <img src="{{ site.baseurl }}/images/people.png">
+        </a>
+      </div>
 
+      <div class="team-title">
+        <h5>VOLUNTEERS</h5>
+      </div>
 
-<div class="team-title">
-<h5>VOLUNTEERS</h5>
-  </div>
-
-</div>  
-</li>
-
-
+    </div>
+  </li>
 </ul>
 
 </div>
