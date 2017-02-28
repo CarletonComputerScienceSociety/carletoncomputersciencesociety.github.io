@@ -10,20 +10,21 @@ published: true
     Go Back </button>
 
 
-<div class='content-wrap'>
+  <div class='content-wrap'>
 
-<div class="gEvents">
-      <h1> CRACKING THE CODE WORKSHOP 2017 </h1>
+    <div class="gEvents">
+          <h1> CRACKING THE CODE WORKSHOP 2017 </h1>
 
-      <div class="gallery cf">
-        <div>
-          <img src="/images/cover/cover1.jpg" />
-        </div>
-        <div>
-          <img src="/images/cover/cover2.jpg" />
-        </div>
-        <div>
-          <img src="/images/cover/cover3.jpg" />
-        </div>
-      </div>
-</div>
+          <div class="gallery cf">
+
+                {% for image in site.static_files %}
+             {% if image.path contains 'images/yearbook/crack' %} <div><img src="{{ site.baseurl }}{{ image.path }}" alt="image" />  </div>
+             {% endif %}
+          {% endfor %}
+            </div>
+
+
+          </div>
+
+
+    </div>

@@ -100,7 +100,7 @@
 
 
 .gallery {
-  width: 940px;
+  width: 1060px;
   margin: 0 auto;
   padding: 5px;
   background: #fff;
@@ -108,7 +108,7 @@
 }
 
 .gallery img  {
-  height: 200px;
+  height: 150px;
 }
 
 
@@ -120,7 +120,7 @@
 
 .gallery > div > img {
   display: block;
-  width:  300px;
+  width:  200px;
   transition: .1s transform;
   transform: translateZ(0); /* hack */
 }
@@ -131,7 +131,7 @@
 
 .gallery > div:hover > img {
   padding: 10px;
-  transform: scale(2.5,2.5);
+  transform: scale(3.0,3.0);
   transition: .3s transform;
 }
 
