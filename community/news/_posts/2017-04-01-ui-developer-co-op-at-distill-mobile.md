@@ -20,14 +20,14 @@ by: Brittny Lapierre
 
 <b>QUALIFICATIONS:</b>
 <ul>
-  </li>Enrolled in 3rd or 4th year of a Bachelor’s degree or graduate degree in Computer Science or related discipline</li>
-  </li>Minimum 1 to 2 years of experience in developing web applications</li>
-  </li>Experience in developing cross-browser UIs for web applications using modern frameworks</li>
-  </li>Strong communication skills</li>
-  </li>Experience with Ruby On Rails or Node.js is a bonus</li>
-  </li>Experience with PostgreSQL or MySQL is a bonus</li>
-  </li>Experience with Android or iOS development is a bonus</li>
-  </li>Ability to finish projects on time, within budget and with high quality</li>
+  <li>Enrolled in 3rd or 4th year of a Bachelor’s degree or graduate degree in Computer Science or related discipline</li>
+  <li>Minimum 1 to 2 years of experience in developing web applications</li>
+  <li>Experience in developing cross-browser UIs for web applications using modern frameworks</li>
+  <li>Strong communication skills</li>
+  <li>Experience with Ruby On Rails or Node.js is a bonus</li>
+  <li>Experience with PostgreSQL or MySQL is a bonus</li>
+  <li>Experience with Android or iOS development is a bonus</li>
+  <li>Ability to finish projects on time, within budget and with high quality</li>
 </ul>
  
 <p>Please reply <a href="mailto:info@distillmobile.com" target="_blank">Tom Murphy</a> with your cover letter and resume to be considered for this role.</p> 
