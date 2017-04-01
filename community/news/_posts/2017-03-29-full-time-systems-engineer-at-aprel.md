@@ -34,7 +34,7 @@ by: Brittny Lapierre
   </li>
   <li>Work with team members to improve and maintain existing install packages</li>
   <li>
-      <b>Software Testing</b>
+      <b>Software Testing</b><br/>
       - Able to design application based test plans to validate builds<br/>
       - Ability to complete test plans<br/>
       - Utilize automated testing software (Test Complete) to aid in development cycles<br/>
