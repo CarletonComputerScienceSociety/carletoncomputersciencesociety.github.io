@@ -15,8 +15,8 @@ by: Brittny Lapierre
 
 <p>The candidate will be required to offer ideas, program and review existing code along with develop new and unique applications for use in our automated system solutions.</p>
 
+<b>Experience Considered</b>
 <ul>
-  <b>Experience Considered</b>
   <li>Develop and maintain existing software applications
   <li>Evaluate complex mathematical problems and provide solutions for integration
   <li>Program in C#, C++ or Java
@@ -41,8 +41,8 @@ by: Brittny Lapierre
   </li>
 </ul>
 
+<b>Experience and Knowledge Required</b>
 <ul>
-  <b>Experience and Knowledge Required</b>
   <li>Under-graduate degree in computing science or systems engineering</li>
   <li>Ability to create communication programs with test equipment through GPIB or TCPIP</li>
   <li>Object oriented programming (Java / C#)</li>
@@ -51,8 +51,9 @@ by: Brittny Lapierre
   <li>Mathematical software skills applied to modeling, ability to analyze or calculate numeric, symbolic or geometric data</li>
 </ul>
 
+
+<b>Desirable Experience</b>
 <ul>
-  <b>Desirable Experience<b>
   <li>Knowledge of 3D graphics and visual development, robotics, artificial intelligence Strong understanding of usability principles</li>
   <li>Strong sense of style and look-feel</li>
   <li>Hardware interfacing PC hardware knowledge</li>
