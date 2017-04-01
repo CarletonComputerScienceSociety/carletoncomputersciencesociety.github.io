@@ -4,8 +4,7 @@ title: Full Time Systems Engineer at Aprel
 category: blog
 by: Brittny Lapierre
 ---
-
-<h3>Systems / Development Engineer</h3> 
+ 
 <h4>APREL Inc</h4>
 
 <a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/System-c83294ba9caa9ac4?q=aprel">Apply Here!</a>
