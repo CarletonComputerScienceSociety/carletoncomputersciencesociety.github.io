@@ -5,7 +5,6 @@ category: blog
 by: Brittny Lapierre
 ---
 
-<h3>Lockheed Martin is Hiring</h3>
 <h4>They have tons of entry level positions available in Ottawa and other Canadian Cities!</h4>
 
 <b>Company Profile</b>
