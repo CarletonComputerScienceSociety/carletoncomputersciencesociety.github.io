@@ -5,7 +5,6 @@ category: blog
 by: Brittny Lapierre
 ---
 
-<h3>GCTools Hackathon</h3> 
 <h4>You can participate virtually!</h4>
 
 <a href="http://consultations.tbs-sct.gc.ca/s/gctools-reg-ins-outilsgc/?l=en">Register Here!</a><br/>
