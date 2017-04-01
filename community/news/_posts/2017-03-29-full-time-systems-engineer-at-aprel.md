@@ -23,12 +23,14 @@ by: Brittny Lapierre
   <li>Evaluate existing code and improve/implement changes
   <li>Program hardware such as spectrum analysers, signal generators or other types of test equipment for use in automated systems
   <li>GUI (graphical user interface) design and programming within 3D environment
-  <li>VRML programming with Cortona SDK in a C# application with the following properties:
+  <li>VRML programming with Cortona SDK in a C# application with the following properties:<br/>
       - Based on existing APREL libraries and 3D models<br/>
       - Work with team members to design graphical user interfaces for large scale applications<br/>
-          1st stage is to develop use cases based on existing systems;<br/>
-          2nd stage is to implement;<br/>
-          3rd stage is to apply developed look/feel to different internal applications;<br/>
+      <ul>
+         <li>1st stage is to develop use cases based on existing systems;</li>
+         <li>2nd stage is to implement;</li>
+         <li>3rd stage is to apply developed look/feel to different internal applications;</li>
+      </ul>
   </li>
   <li>Work with team members to improve and maintain existing install packages</li>
   <li>
