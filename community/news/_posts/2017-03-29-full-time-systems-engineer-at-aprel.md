@@ -17,12 +17,12 @@ by: Brittny Lapierre
 
 <b>Experience Considered</b>
 <ul>
-  <li>Develop and maintain existing software applications
-  <li>Evaluate complex mathematical problems and provide solutions for integration
-  <li>Program in C#, C++ or Java
-  <li>Evaluate existing code and improve/implement changes
-  <li>Program hardware such as spectrum analysers, signal generators or other types of test equipment for use in automated systems
-  <li>GUI (graphical user interface) design and programming within 3D environment
+  <li>Develop and maintain existing software applications</li>
+  <li>Evaluate complex mathematical problems and provide solutions for integration</li>
+  <li>Program in C#, C++ or Java</li>
+  <li>Evaluate existing code and improve/implement changes</li>
+  <li>Program hardware such as spectrum analysers, signal generators or other types of test equipment for use in automated systems</li>
+  <li>GUI (graphical user interface) design and programming within 3D environment</li>
   <li>VRML programming with Cortona SDK in a C# application with the following properties:<br/>
       - Based on existing APREL libraries and 3D models<br/>
       - Work with team members to design graphical user interfaces for large scale applications<br/>
