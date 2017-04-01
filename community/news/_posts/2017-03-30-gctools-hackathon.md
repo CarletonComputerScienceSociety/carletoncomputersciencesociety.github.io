@@ -8,7 +8,7 @@ by: Brittny Lapierre
 <h3>GCTools Hackathon</h3> 
 <h4>You can participate virtually!</h4>
 
-<a href="http://consultations.tbs-sct.gc.ca/s/gctools-reg-ins-outilsgc/?l=en">Register Here!</a>
+<a href="http://consultations.tbs-sct.gc.ca/s/gctools-reg-ins-outilsgc/?l=en">Register Here!</a><br/>
 <a href="https://www.canada.ca/en/treasury-board-secretariat/campaigns/gctools-hackathon.html">More Info...</a>
 
 <h3>What is hackathon?</h3>
@@ -48,5 +48,5 @@ Participants located in the National Capital Region can work together in the ISE
   <li>Be creative!</li>
 </ul>
 
-<a href="http://consultations.tbs-sct.gc.ca/s/gctools-reg-ins-outilsgc/?l=en">Register Here!</a>
+<a href="http://consultations.tbs-sct.gc.ca/s/gctools-reg-ins-outilsgc/?l=en">Register Here!</a><br/>
 <a href="https://www.canada.ca/en/treasury-board-secretariat/campaigns/gctools-hackathon.html">More Info...</a>
