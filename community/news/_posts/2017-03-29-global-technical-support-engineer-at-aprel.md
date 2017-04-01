@@ -1,88 +1,75 @@
 ---
 layout: article
-title: Full Time Systems Engineer at Aprel
+title: Global Technical Support Engineer at Aprel
 category: blog
 by: Brittny Lapierre
 ---
 
-<h3>Systems / Development Engineer</h3> 
+<h3>Global Technical Support Engineer/Technologist</h3> 
 <h4>APREL Inc</h4>
 
 <a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/System-c83294ba9caa9ac4?q=aprel">Apply Here!</a>
 
-<b>Company Profile</b>
+<b>Job Description</b>
+
 <p>APREL Inc, the Near-Field Systems specialist, offers leading measurement solutions, intelligent software and a comprehensive services practice. Our portfolio of measurement systems offers customers the ability to change the way they compete. Our solutions form the foundation of many of the largest, most reliable and sophisticated manufacturers, design, government, and research and education organisations across the globe.</p>
 
-<p>The candidate will be required to offer ideas, program and review existing code along with develop new and unique applications for use in our automated system solutions.</p>
+<p>The candidate will provide APREL post-sales support to our customers for APREL’s current system portfolio as well as next generation solutions. This support includes commissioning, installation, diagnosing, testing and troubleshooting of complex issues including analysis of the logical configuration and operation of the users system and measurement applications.</p>
 
-<b>Experience Considered</b>
+<b>Global Technical Support Engineer/Technologist will:</b>
 <ul>
-  <li>Develop and maintain existing software applications
-  <li>Evaluate complex mathematical problems and provide solutions for integration
-  <li>Program in C#, C++ or Java
-  <li>Evaluate existing code and improve/implement changes
-  <li>Program hardware such as spectrum analysers, signal generators or other types of test equipment for use in automated systems
-  <li>GUI (graphical user interface) design and programming within 3D environment
-  <li>VRML programming with Cortona SDK in a C# application with the following properties:<br/>
-      - Based on existing APREL libraries and 3D models<br/>
-      - Work with team members to design graphical user interfaces for large scale applications<br/>
-      <ul>
-         <li>1st stage is to develop use cases based on existing systems;</li>
-         <li>2nd stage is to implement;</li>
-         <li>3rd stage is to apply developed look/feel to different internal applications;</li>
-      </ul>
-  </li>
-  <li>Work with team members to improve and maintain existing install packages</li>
-  <li>
-      <b>Software Testing</b><br/>
-      - Able to design application based test plans to validate builds<br/>
-      - Ability to complete test plans<br/>
-      - Utilize automated testing software (Test Complete) to aid in development cycles<br/>
-  </li>
+  <li>Troubleshoot APREL product problems and escalate to the proper level</li>
+  <li>Subject to the limitations of customers installed software and hardware, work to resolve APREL product issues/problems</li>
+  <li>Provide remote and telephone technical support for APREL’s system portfolio</li>
+  <li>Availability for after-hour phone support, and or pre-arranged after hours maintenance window support</li>
+  <li>Provide training and knowledge transfer to internal teams and customers on an as needed basis</li>
+  <li>Availability to travel, sometimes on short notice</li>
+  <li><b>Travel approximately 40%</b></li>
 </ul>
 
-<b>Experience and Knowledge Required</b>
+<b>Required Skills</b>
 <ul>
-  <li>Under-graduate degree in computing science or systems engineering</li>
-  <li>Ability to create communication programs with test equipment through GPIB or TCPIP</li>
-  <li>Object oriented programming (Java / C#)</li>
-  <li>Software design process from concept to deployment</li>
-  <li>Strong communication skills in English both written and orally</li>
-  <li>Mathematical software skills applied to modeling, ability to analyze or calculate numeric, symbolic or geometric data</li>
+  <li>Ability at defining and analyzing complex problems and being able to explain the details to others</li>
+  <li>Ability to diagnose, troubleshoot and debug complex system issues</li>
+  <li>Excellent customer service</li>
+  <li>Excellent organizational, interpersonal skills and problem solving skills</li>
+  <li>Team player. Must be able to work well in a collaborative team environment that promotes sharing of knowledge and experiences</li>
+  <li>Excellent English communication skills, both written and verbal</li>
+  <li>Knowledge of integrated systems</li>
+  <li>Knowledge of electronic and radio frequency test equipment (spectrum analysers, oscilloscopes etc)</li>
+  <li>Knowledge and understanding of robotic concepts</li>
 </ul>
 
-
-<b>Desirable Experience</b>
+<b>Required Experience</b>
 <ul>
-  <li>Knowledge of 3D graphics and visual development, robotics, artificial intelligence Strong understanding of usability principles</li>
-  <li>Strong sense of style and look-feel</li>
-  <li>Hardware interfacing PC hardware knowledge</li>
-  <li>Software testing</li>
-  <li>Knowledge of DENSO robotics systems</li>
-  <li>Understanding of test equipment and communications protocols such as Agilent/Keysight, Anritsu or R&S</li>
-  <li>National Instrument driver development and protocols such as IVI</li>
-  <li>Repository maintenance, etc</li>
-  <li>Ability to program robotics systems such as 5/6 axis articulated systems, knowledge of DENSO robotics systems is a significant advantage</li>
+  <li>Extensive experience administering systems based on windows platforms</li>
+  <li>Software programming skills</li>
+  <li>Experience in providing technical support</li>
+  <li>Experience of operating test equipment</li>
+  <li>Scripting, JAVA , basic code understanding</li>
+  <li>Bachelor's Degree in Engineering or Computer Science</li>
+  <li>Desired a minimum 1-2 years’ experience in supporting/deploying/systems</li>
+  <li>APREL will consider a graduate who can demonstrate knowledge and understanding of the above requirements.</li>
 </ul>
-
-<b>Additional Information</b>
-<p>Preference will be given to those who can demonstrate knowledge, provide examples of work and show quantifiable evidence of achievements within the described role.</p>
-<p><b>New graduates will be considered.</b></p>
-<p>Applicants must include a cover letter with brief details of their applicability to the job and a current resume.</p>
 
 <p><b>Job Type:</b> Full-time</p>
 
-<b>Required education:</b>
+<p><b>Job Location:</b> Kanata, ON</p>
+
+<b>Required education:<b>
 <ul>
   <li>Bachelor's</li>
 </ul>
 
-
 <b>Required experience:</b>
 <ul>
-  <li>Mathematics: 3 years</li>
-  <li>Systems Engineer: 2 years</li>
-  <li>Computer Science: 2 years</li>
+  <li>Customer Service: 1 year</li>
+  <li>Technical Support: 1 year</li>
+</ul>
+
+<b>Required license or certification:</b>
+<ul>
+  <li>Drivers License</li>
 </ul>
 
 <a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/System-c83294ba9caa9ac4?q=aprel">Apply Here!</a>
