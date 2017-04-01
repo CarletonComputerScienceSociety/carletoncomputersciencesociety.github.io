@@ -24,18 +24,18 @@ by: Brittny Lapierre
   <li>Program hardware such as spectrum analysers, signal generators or other types of test equipment for use in automated systems
   <li>GUI (graphical user interface) design and programming within 3D environment
   <li>VRML programming with Cortona SDK in a C# application with the following properties:
-      - Based on existing APREL libraries and 3D models<br>
-      - Work with team members to design graphical user interfaces for large scale applications<br>
-          1st stage is to develop use cases based on existing systems;<br>
-          2nd stage is to implement;<br>
-          3rd stage is to apply developed look/feel to different internal applications;<br>
+      - Based on existing APREL libraries and 3D models<br/>
+      - Work with team members to design graphical user interfaces for large scale applications<br/>
+          1st stage is to develop use cases based on existing systems;<br/>
+          2nd stage is to implement;<br/>
+          3rd stage is to apply developed look/feel to different internal applications;<br/>
   </li>
   <li>Work with team members to improve and maintain existing install packages</li>
   <li>
       <b>Software Testing</b>
-      - Able to design application based test plans to validate builds
-      - Ability to complete test plans
-      - Utilize automated testing software (Test Complete) to aid in development cycles
+      - Able to design application based test plans to validate builds<br/>
+      - Ability to complete test plans<br/>
+      - Utilize automated testing software (Test Complete) to aid in development cycles<br/>
   </li>
 </ul>
 
