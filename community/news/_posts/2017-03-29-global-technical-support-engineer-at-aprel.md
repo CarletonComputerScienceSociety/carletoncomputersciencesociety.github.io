@@ -8,7 +8,7 @@ by: Brittny Lapierre
 <h3>Global Technical Support Engineer/Technologist</h3> 
 <h4>APREL Inc</h4>
 
-<a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/System-c83294ba9caa9ac4?q=aprel">Apply Here!</a>
+<a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/Global-Technical-Support-Engineer-Technologist-d41b3930ec01ff01?q=aprel">Apply Here!</a>
 
 <b>Job Description</b>
 
@@ -72,4 +72,4 @@ by: Brittny Lapierre
   <li>Drivers License</li>
 </ul>
 
-<a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/System-c83294ba9caa9ac4?q=aprel">Apply Here!</a>
+<a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/Global-Technical-Support-Engineer-Technologist-d41b3930ec01ff01?q=aprel">Apply Here!</a>
