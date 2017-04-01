@@ -8,7 +8,7 @@ by: Brittny Lapierre
 <h3>UI Developer Co-op at Distill Mobile</h3>
 <h4>Distill Mobile is seeking an Intermediate Web UI Developer (co-op) to work on client applications.</h4>
  
-<b>RESPONSIBILITIES:<b>
+<b>RESPONSIBILITIES:</b>
 <ul>
   <li>Contributing to existing mobile and web e-commerce applications developed for clients</li>
   <li>Implementing web user interfaces using various technologies including but not limited to JavaScript, Ember, HTML5, JQuery and CSS3</li>
