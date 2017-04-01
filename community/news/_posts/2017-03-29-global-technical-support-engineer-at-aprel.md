@@ -5,7 +5,6 @@ category: blog
 by: Brittny Lapierre
 ---
 
-<h3>Global Technical Support Engineer/Technologist</h3> 
 <h4>APREL Inc</h4>
 
 <a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/Global-Technical-Support-Engineer-Technologist-d41b3930ec01ff01?q=aprel">Apply Here!</a>
