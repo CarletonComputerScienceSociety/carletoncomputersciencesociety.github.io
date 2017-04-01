@@ -4,10 +4,11 @@ title: Full Time Systems Engineer at Aprel
 category: blog
 by: Brittny Lapierre
 ---
-<a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/System-c83294ba9caa9ac4?q=aprel">Apply Here!</a>
 
 <h3>Systems / Development Engineer</h3> 
 <h4>APREL Inc</h4>
+
+<a href="https://ca.indeed.com/cmp/APREL-Inc./jobs/System-c83294ba9caa9ac4?q=aprel">Apply Here!</a>
 
 <b>Company Profile</b>
 <p>APREL Inc, the Near-Field Systems specialist, offers leading measurement solutions, intelligent software and a comprehensive services practice. Our portfolio of measurement systems offers customers the ability to change the way they compete. Our solutions form the foundation of many of the largest, most reliable and sophisticated manufacturers, design, government, and research and education organisations across the globe.</p>
@@ -22,28 +23,19 @@ by: Brittny Lapierre
   <li>Evaluate existing code and improve/implement changes
   <li>Program hardware such as spectrum analysers, signal generators or other types of test equipment for use in automated systems
   <li>GUI (graphical user interface) design and programming within 3D environment
-  <li>
-    <ul>
-      VRML programming with Cortona SDK in a C# application with the following properties:
-      <li>Based on existing APREL libraries and 3D models
-      <li>
-        <ul>
-          Work with team members to design graphical user interfaces for large scale applications
-          <li>1st stage is to develop use cases based on existing systems</li>
-          <li>2nd stage is to implement</li>
-          <li>3rd stage is to apply developed look/feel to different internal applications</li>
-        </ul>
-      </li>
-    </ul>
+  <li>VRML programming with Cortona SDK in a C# application with the following properties:
+      - Based on existing APREL libraries and 3D models<br>
+      - Work with team members to design graphical user interfaces for large scale applications<br>
+          1st stage is to develop use cases based on existing systems;<br>
+          2nd stage is to implement;<br>
+          3rd stage is to apply developed look/feel to different internal applications;<br>
   </li>
   <li>Work with team members to improve and maintain existing install packages</li>
   <li>
-    <ul>
       <b>Software Testing</b>
-      <li>Able to design application based test plans to validate builds</li>
-      <li>Ability to complete test plans</li>
-      <li>Utilize automated testing software (Test Complete) to aid in development cycles</li>
-    </ul>
+      - Able to design application based test plans to validate builds
+      - Ability to complete test plans
+      - Utilize automated testing software (Test Complete) to aid in development cycles
   </li>
 </ul>
 
@@ -75,17 +67,16 @@ by: Brittny Lapierre
 <p><b>New graduates will be considered.</b></p>
 <p>Applicants must include a cover letter with brief details of their applicability to the job and a current resume.</p>
 
-<p>
-  <b>Job Type:</b> Full-time
-</p>
+<p><b>Job Type:</b> Full-time</p>
 
-<ul>
 <b>Required education:</b>
+<ul>
   <li>Bachelor's</li>
 </ul>
 
-<ul>
+
 <b>Required experience:</b>
+<ul>
   <li>Mathematics: 3 years</li>
   <li>Systems Engineer: 2 years</li>
   <li>Computer Science: 2 years</li>
