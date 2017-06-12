@@ -19,7 +19,7 @@ published: true
 <li >
 <div class="team-member">
     <div class="team-img" >
-  <img src="./images/about-pics/elisa_kazan.jpg" class="img-responsive">
+  <img src="/images/about-pics/elisa_kazan.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
@@ -41,7 +41,7 @@ published: true
 <li>
 <div class="team-member">
     <div class="team-img">
-  <img img src="./images/about-pics/tyler_fleming.jpg" class="img-responsive">
+  <img img src="/images/about-pics/tyler_fleming.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
@@ -64,7 +64,7 @@ published: true
 <li>
 <div class="team-member">
     <div class="team-img">
-  <img img src="./images/about-pics/richard_ositashvili.jpg" class="img-responsive">
+  <img img src="/images/about-pics/richard_ositashvili.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
@@ -87,7 +87,7 @@ published: true
 <li>
 <div class="team-member">
     <div class="team-img">
-  <img img src="./images/about-pics/bernard_laveaux.jpg" class="img-responsive">
+  <img img src="/images/about-pics/bernard_laveaux.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
@@ -110,13 +110,13 @@ published: true
 <li>
 <div class="team-member">
     <div class="team-img">
-  <img img src="./images/about-pics/forest_anderson.jpg" class="img-responsive">
+  <img img src="/images/about-pics/forest_anderson.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
   <div class="desk">
   <h4>Hi There!</h4>
-  <p>-Forest bio-</p>
+  <p>I’m a 3nd year student the game development stream. I like things such as video games and poutine. I have worked with in the GIGL lab with Dr. David Mould. I also do photography and VFX</p>
     </div>
         </div>
 

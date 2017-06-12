@@ -19,7 +19,7 @@ published: true
 <li >
 <div class="team-member">
     <div class="team-img" >
-  <img src="./images/about-pics/elisa_kazan.jpg" class="img-responsive">
+  <img src="/images/about-pics/elisa_kazan.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
@@ -41,7 +41,7 @@ published: true
 <li>
 <div class="team-member">
     <div class="team-img">
-  <img img src="./images/about-pics/jack_mccraken.jpg" class="img-responsive">
+  <img img src="/images/about-pics/jack_mccraken.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
@@ -64,7 +64,7 @@ published: true
 <li>
 <div class="team-member">
     <div class="team-img">
-  <img img src="./images/about-pics/forest_anderson.jpg" class="img-responsive">
+  <img img src="/images/about-pics/forest_anderson.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
@@ -77,7 +77,7 @@ published: true
 
   <div class="team-title">
   <h5>Forest Anderson</h5>
-  <span>Developer <span> forest.anderson@ccss.carleton.ca </span> </span>
+  <span>VP Social <span> forest.anderson@ccss.carleton.ca </span> </span>
       </div>
 </div>
 </li>
@@ -87,7 +87,7 @@ published: true
 <li>
 <div class="team-member">
     <div class="team-img">
-  <img img src="./images/about-pics/matt_diener.jpg" class="img-responsive">
+  <img img src="/images/about-pics/matt_diener.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
@@ -100,7 +100,7 @@ published: true
 
   <div class="team-title">
   <h5>Matt Diener</h5>
-  <span>Developer <span>matt.diener@ccss.carleton.ca</span> </span>
+  <span>VP Academics <span>matt.diener@ccss.carleton.ca</span> </span>
       </div>
 </div>
 </li>
@@ -110,7 +110,7 @@ published: true
 <li>
 <div class="team-member">
     <div class="team-img">
-  <img img src="http://www.aspirehire.co.uk/aspirehire-co-uk/_img/profile.svg" class="img-responsive">
+  <img img src="/images/about-pics/unknown_id.jpg" class="img-responsive">
     </div>
 
     <div class="team-hover">
@@ -123,7 +123,7 @@ published: true
 
   <div class="team-title">
   <h5>Andrew Morris</h5>
-  <span>Developer<span> andrew.morris@ccss.carleton.ca </span> </span>
+  <span>Treasurer<span> andrew.morris@ccss.carleton.ca </span> </span>
       </div>
 </div>
 </li>
