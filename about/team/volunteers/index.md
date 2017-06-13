@@ -19,7 +19,7 @@ published: true
   <li>
     <div class="team-member">
       <div class="team-img">
-        <img src="/images/avatars/10541019.jpg" class="img-responsive">
+        <img src="/images/about-pics/brittny.jpg" class="img-responsive">
       </div>
 
       <div class="team-hover">
