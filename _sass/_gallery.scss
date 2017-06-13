@@ -50,7 +50,6 @@
 
 .galleryHome img:hover{
   opacity: 0.7;
-  border: solid 1px grey;
 
 
 }
@@ -101,7 +100,7 @@
 
 
 .gallery {
-  width: 1060px;
+  width: 940px;
   margin: 0 auto;
   padding: 5px;
   background: #fff;
@@ -109,8 +108,7 @@
 }
 
 .gallery img  {
-  height: 150px;
-
+  height: 200px;
 }
 
 
@@ -122,9 +120,8 @@
 
 .gallery > div > img {
   display: block;
-  width:  200px;
+  width:  300px;
   transition: .1s transform;
-  object-fit: cover;
   transform: translateZ(0); /* hack */
 }
 
@@ -134,9 +131,8 @@
 
 .gallery > div:hover > img {
   padding: 10px;
-  transform: scale(3.0,3.0);
+  transform: scale(2.5,2.5);
   transition: .3s transform;
-  object-fit: contain;
 }
 
 .cf:before, .cf:after {
