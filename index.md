@@ -8,8 +8,8 @@ subjectstyle: null
 ---
 
 <div class="content-wrap">
-  <a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank" style="margin-right:15px">
-    <img src="./images/Slack-528.png" alt="Slack" height="48" width="48">
+  <a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank">
+    <img src="./images/Slack-528.png" alt="Slack" height="48" width="48" style="margin-right:15px;">
     Join the 'carletoncss' team on slack!
   </a>
 	<div class='feed'>
