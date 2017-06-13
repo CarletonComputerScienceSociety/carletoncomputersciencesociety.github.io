@@ -9,7 +9,7 @@ subjectstyle: null
 
 <div class="content-wrap">
   <a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank" style="text-decoration:none;">
-    <img src="./images/Slack-528.png" alt="Slack" height="48" width="48" style="margin-right:15px;">
+    <img src="./images/Slack-528.png" alt="Slack" height="32" width="32" style="margin-right:10px;">
     Join the us on slack to keep up to date with events and clubs, and to meet new people! :D
   </a>
 	<div class='feed'>
