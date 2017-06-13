@@ -1,0 +1,48 @@
+.postList{
+  -moz-column-count: 4;
+      -moz-column-gap: 25px;
+      -webkit-column-count: 4;
+      -webkit-column-gap: 25px;
+      column-count: 4;
+      column-gap: 25px;
+      overflow: hidden;
+      width: 200%;
+      list-style-type: none;
+}
+
+.item-post{
+    background-color: #E5E5E5;
+    height: 85px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.slack img {
+
+
+  margin-right: -45%;
+  margin-top: 10%;
+
+}
+
+.slack h4{
+  margin-right: -45%;
+  font-size: 20px;
+
+}
+
+.item-post a{
+    color :#C40729;
+}
+
+.item-post a:hover {
+    color :red;
+}
+.item-post span{
+    display: block;
+    padding: 5px;
+    font-size: 15px;
+    color: grey;
+
+
+}
