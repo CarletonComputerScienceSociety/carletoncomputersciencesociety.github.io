@@ -5,7 +5,7 @@ category: blog
 by: Brittny Lapierre
 ---
 
-Alex Benay, Chief Information Officer (CIO) of the Government of Canada is inviting you to apply to participate in the 2017 CIO Summit Hackathon. This hackathon will be a two-day brainstorming marathon where interdisciplinary teams will work together to solve problems or explore opportunities that the CIO’s have identified!
+Alex Benay, Chief Information Officer (CIO) of the Government of Canada, is inviting you to apply to participate in the 2017 CIO Summit Hackathon. This hackathon will be a two-day brainstorming marathon where interdisciplinary teams will work together to solve problems or explore opportunities that the CIO’s have identified!
  
 It will be a wonderful opportunity for participants to learn and network with the Government of Canada IT leaders, industry professionals and digital enthusiasts. At the end of the second day, teams will get an opportunity to showcase their “hacks” to GC IT leaders in a “Dragons’ Den” fashion.
  
