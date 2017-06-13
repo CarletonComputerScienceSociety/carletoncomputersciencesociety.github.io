@@ -35,7 +35,7 @@ published: true
     <div class="team-member">
 
       <div class="team-img" >
-        <a href= "{{ site.baseurl }}/about/team/current/">
+        <a href= "{{ site.baseurl }}/about/team/previous/">
           <img src="{{ site.baseurl }}/images/people.png">
         </a>
       </div>
@@ -51,7 +51,7 @@ published: true
     <div class="team-member">
 
       <div class="team-img" >
-        <a href= "{{ site.baseurl }}/about/team/previous/">
+        <a href= "{{ site.baseurl }}/about/team/volunteers/">
           <img src="{{ site.baseurl }}/images/people.png">
         </a>
       </div>
