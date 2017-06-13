@@ -10,11 +10,11 @@ subjectstyle: null
 	<div class='feed'>
 		<h1 class='skinny-underline'>News</h1>
 		<div class="tiles">
-		<ul class="dash-list">
+		<!--ul class="dash-list">
 			{% for post in site.categories.news %}
 				{% include post-list.html %}
 			{% endfor %}
-		</ul>
+		</ul-->
     <ul class="dash-list">
 			{% for post in site.categories.news %}
 				{% include post-grid.html %}
