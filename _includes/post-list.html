@@ -1,10 +1,1 @@
-<li class="item-post">
-<a href="{{ site.baseurl }}{{ post.url }}">
-  {{ post.title }}
-</a>
-{% if post.date %}<span>
-  {{ post.date | date: "%B %d, %Y" }}
-</span> {% endif %}
-
-<!-- <img src="  /images/{{ post.image.feature }}"> -->
-</li>
+<li>{% if post.date %}<span>{{ post.date | date: "%B %d, %Y" }}</span> &raquo; {% endif %}<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>

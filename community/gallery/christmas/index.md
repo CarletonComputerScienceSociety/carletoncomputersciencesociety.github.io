@@ -15,15 +15,14 @@ published: true
       <h1> CCSS CHRISTMAS PARTY 2016</h1>
 
       <div class="gallery cf">
-
-            {% for image in site.static_files %}
-         {% if image.path contains 'images/yearbook/christmas' %} <div><img src="{{ site.baseurl }}{{ image.path }}" alt="image" />  </div>
-         {% endif %}
-      {% endfor %}
+        <div>
+          <img src="/images/cover/cover1.jpg" />
         </div>
-
-
+        <div>
+          <img src="/images/cover/cover2.jpg" />
+        </div>
+        <div>
+          <img src="/images/cover/cover3.jpg" />
+        </div>
       </div>
-
-
 </div>
