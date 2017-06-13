@@ -7,7 +7,7 @@ published: true
 
 
   <div class="heading-title text-center">
-  <h3 class="text-uppercase" style="border-bottom: 1px solid black; padding-bottom:5px">2016-2017</h3>
+  <h3 class="text-uppercase" style="border-bottom: 1px solid black; padding-bottom:5px; padding-left:10px; padding-right:10px;">2016-2017</h3>
 <div class = "content-team">
 <ul >
 
