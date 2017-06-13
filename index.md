@@ -6,7 +6,12 @@ published: true
 pimage: ./images/cusec.jpg
 subjectstyle: null
 ---
+
 <div class="content-wrap">
+  <a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank">
+    <img src="./images/Slack-528.png" alt="Slack" height="48" width="48">
+    Join the 'carletoncss' team on slack!
+  </a>
 	<div class='feed'>
 		<h1 class='skinny-underline'>News</h1>
 		<div class="tiles">
@@ -21,11 +26,5 @@ subjectstyle: null
 			{% endfor %}
 		</ul>
 		</div>
-    </div>
-    <div class='side-content' style="text-align:center;">
-        <a href="https://carletoncss.slack.com/signup" target="_blank">
-    		<img src="./images/Slack-528.png" alt="Slack" height="150" width="150">
-        </a>
-        <h4>Join the 'carletoncss' team on slack!</h4>
     </div>
 </div>
