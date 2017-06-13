@@ -7,7 +7,7 @@ published: true
 
 
   <div class="heading-title text-center">
-  <h3 class="text-uppercase">OUR VOLUNTEERS</h3>
+  <h3 class="text-uppercase" style="border-bottom: 1px solid black; padding-bottom:5px; padding-left:10px; padding-right:10px; width:95%;">OUR VOLUNTEERS</h3>
   <p class="p-top-30 half-txt"></p>
 
 
