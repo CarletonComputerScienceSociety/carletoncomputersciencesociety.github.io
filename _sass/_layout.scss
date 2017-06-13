@@ -8,6 +8,7 @@
 
 #masthead {
 	position: absolute;
+  display: flex;
     width: 100vw;
 	//padding: $gutter;
     background-color: #161717;
@@ -33,17 +34,17 @@
 	//padding: (.25 * $masthead-height) 0; // fourth the height to center vertically
     margin-left: $gutter;
 	//height: $masthead-height;
-	text-decoration: none;
-	color: white;
-	font-family: $alt-font;
-	font-weight: 700;
-	@include font-size(20,no);
-	line-height: .5 * $masthead-height; // half the height to center vertically
-	text-transform: uppercase;
-    max-width: 250PX;
+    text-decoration: none;
+    color: white;
+    font-family: $alt-font;
+    font-weight: 700;
+    @include font-size(20,no);
+    line-height: .5 * $masthead-height; // half the height to center vertically
+    text-transform: uppercase;
+    //max-width: 250PX;
     margin-top: 15px;
 }
-.site-title:hover{
+.site-title a:hover{
     color: #EBEBEB;
 }
 
