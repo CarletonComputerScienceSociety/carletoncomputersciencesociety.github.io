@@ -21,7 +21,7 @@
   image:
   sublinks:
     - title:Slack
-      url: 'carletoncss.slack.com/signup'
+      url: https://carletoncss.slack.com/signup
       image: /images/travel.jpg
     - title: Events
       url: /community/events/
