@@ -17,7 +17,7 @@ subjectstyle: null
 		</ul>
     <ul class="dash-list">
 			{% for post in site.categories.news %}
-				{% include latest-posts-grid.html %}
+				{% include post-grid.html %}
 			{% endfor %}
 		</ul>
 		</div>
