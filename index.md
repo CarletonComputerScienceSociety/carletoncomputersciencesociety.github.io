@@ -15,6 +15,11 @@ subjectstyle: null
 				{% include post-list.html %}
 			{% endfor %}
 		</ul>
+    <ul class="dash-list">
+			{% for post in site.categories.news %}
+				{% include latest-posts-grid.html %}
+			{% endfor %}
+		</ul>
 		</div>
     </div>
     <div class='side-content' style="text-align:center;">
