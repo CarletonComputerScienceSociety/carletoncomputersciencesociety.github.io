@@ -20,6 +20,9 @@
   excerpt:
   image:
   sublinks:
+    - title:Slack
+      url: 'carletoncss.slack.com/signup'
+      image: /images/travel.jpg
     - title: Events
       url: /community/events/
       image: /images/travel.jpg
