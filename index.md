@@ -6,21 +6,25 @@ published: true
 pimage: ./images/cusec.jpg
 subjectstyle: null
 ---
+
 <div class="content-wrap">
+  <!--a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank" style="text-decoration:none;">
+    <img src="./images/Slack-528.png" alt="Slack" height="32" width="32" style="margin-right:10px;">
+    Join the us on slack to keep up to date with events and clubs, and to meet new people! :D
+  </a-->
 	<div class='feed'>
 		<h1 class='skinny-underline'>News</h1>
 		<div class="tiles">
-		<ul class="dash-list">
+		<!--ul class="dash-list">
 			{% for post in site.categories.news %}
 				{% include post-list.html %}
 			{% endfor %}
+		</ul-->
+    <ul class="dash-list">
+			{% for post in site.categories.news %}
+				{% include post-grid.html %}
+			{% endfor %}
 		</ul>
 		</div>
-    </div>
-    <div class='side-content' style="text-align:center;">
-        <a href="https://carletoncss.slack.com/signup" target="_blank">
-    		<img src="./images/Slack-528.png" alt="Slack" height="150" width="150">
-        </a>
-        <h4>Join the 'carletoncss' team on slack!</h4>
     </div>
 </div>

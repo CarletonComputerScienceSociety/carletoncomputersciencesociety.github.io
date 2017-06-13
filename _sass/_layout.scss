@@ -8,10 +8,12 @@
 
 #masthead {
 	position: absolute;
+  display: flex;
     width: 100vw;
 	//padding: $gutter;
     background-color: #161717;
 	z-index: 17;
+      border-bottom: 2px solid #a80925;
 	@include transform(translate(0,0));
 	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
 	&.slide {
@@ -27,23 +29,26 @@
 
 .site-title {
 	@include row;
-	@include media($large) {
+	/*@include media($large) {
 		@include span-columns(4);
-	}
+	}*/
 	//padding: (.25 * $masthead-height) 0; // fourth the height to center vertically
     margin-left: $gutter;
 	//height: $masthead-height;
-	text-decoration: none;
-	color: white;
-	font-family: $alt-font;
-	font-weight: 700;
-	@include font-size(20,no);
-	line-height: .5 * $masthead-height; // half the height to center vertically
-	text-transform: uppercase;
-    max-width: 250PX;
-    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+    font-family: $alt-font;
+    font-weight: 700;
+    @include font-size(20,no);
+    line-height: .5 * $masthead-height; // half the height to center vertically
+    text-transform: uppercase;
+    //max-width: 250PX;
+    //margin-top: 15px;
+    //width: 50%;
+    display:inline-block;
+
 }
-.site-title:hover{
+.site-title a:hover{
     color: #EBEBEB;
 }
 
@@ -438,7 +443,7 @@ top-menu {
 
 .main-front-page-subject {
 	@extend .front-page-subject;
-	margin-top: 100px;
+	//margin-top: 100px;
 }
 
 @media only screen and (min-width : 320px) {
@@ -597,9 +602,10 @@ top-menu {
 	-webkit-filter: drop-shadow(0px 3px 3px #222);
 	    filter:    drop-shadow(0px 3px 3px #222);
 			color:white;
-	float: left;
+	//float: left;
 	padding-left:20px;
 	padding-top:10px;
+  margin-left:15px;
 }
 
 
@@ -705,7 +711,7 @@ top-menu {
 
 
 .front-page-subject {
-	text-shadow: 2px 2px black;
+	//text-shadow: 2px 2px black;
     color: white;
     text-align: center;
     z-index: 10;
@@ -932,14 +938,14 @@ top-menu {
 
 
 #primary_nav_wrap {
-    width: 92vw;
+    width: 52vw;
 			padding-top: 15px;
     padding-bottom: 2px;
     color: white;
 		// height: 70px;
 		  background: #161717;
 			text-transform: uppercase;
-
+    float: right;
 
 }
 
@@ -953,10 +959,12 @@ top-menu {
 	list-style:none;
 	position:relative;
 
-	float:left;
+	//float:right;
 	margin:0;;
 	padding:0;
-    color: white;
+  color: white;
+  float: right;
+  margin-right: 5%;
 
 //    background-color: black;
 }
@@ -1095,7 +1103,7 @@ top-menu {
         padding-bottom: 10px;
     }
     display: inline-block;
-	width: 40%;
+	//width: 40%;
     min-width: 300px;
     margin-right: 50px;
     float: left;
