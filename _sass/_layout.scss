@@ -13,6 +13,7 @@
 	//padding: $gutter;
     background-color: #161717;
 	z-index: 17;
+      border-bottom: 2px solid #a80925;
 	@include transform(translate(0,0));
 	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
 	&.slide {
