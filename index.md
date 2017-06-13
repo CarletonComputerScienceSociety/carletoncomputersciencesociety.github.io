@@ -8,7 +8,7 @@ subjectstyle: null
 ---
 
 <div class="content-wrap">
-  <a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank">
+  <a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank" style="margin-right:15px">
     <img src="./images/Slack-528.png" alt="Slack" height="48" width="48">
     Join the 'carletoncss' team on slack!
   </a>
