@@ -58,5 +58,27 @@ published: true
       </div>
     </div>
   </li>
+
+<!-- ----Person 3 -->
+  <li>
+    <div class="team-member">
+      <div class="team-img">
+        <img src="/images/about-pics/unknown_id.jpg" class="img-responsive">
+      </div>
+
+      <div class="team-hover">
+        <div class="desk">
+          <h4>Hi There!</h4>
+          <p>I'm in the business systems stream. I’ve done a great deal of volunteer work pertaining to the lounge and technical resources. Coffee is what keeps me going.</p>
+        </div>
+      </div>
+
+
+      <div class="team-title">
+        <h5>Andrew Morris</h5>
+        <span>Officer of Tech</span>
+      </div>
+    </div>
+  </li>
 </ul>
 </div>
