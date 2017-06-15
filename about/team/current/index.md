@@ -47,7 +47,7 @@ published: true
     <div class="team-hover">
   <div class="desk">
   <h4>Hi There!</h4>
-  <p>-Tyler bio-</p>
+  <p>I'm a 3rd year student in the Computer and Internet Security stream. I enjoy cooking and video games.</p>
     </div>
         </div>
 
@@ -116,7 +116,7 @@ published: true
     <div class="team-hover">
   <div class="desk">
   <h4>Hi There!</h4>
-  <p>I’m a 3nd year student the game development stream. I like things such as video games and poutine. I have worked with in the GIGL lab with Dr. David Mould. I also do photography and VFX.</p>
+  <p>I’m a 3rd year student the game development stream. I like things such as video games and poutine. I have worked with in the GIGL lab with Dr. David Mould. I also do photography and VFX.</p>
     </div>
         </div>
 
