@@ -25,7 +25,7 @@ published: true
     <div class="team-hover">
   <div class="desk">
   <h4>Hi There!</h4>
-  <p>-Elisa bio-</p>
+  <p>I am a 3rd year student in the mobile stream, co-lead for CUHacking and head delegate for CUSEC. I’m energetic, outgoing and love to get involved with events and CS outreach.</p>
     </div>
         </div>
 
@@ -47,7 +47,7 @@ published: true
     <div class="team-hover">
   <div class="desk">
   <h4>Hi There!</h4>
-  <p>-Tyler bio-</p>
+  <p>I'm a 3rd year student in the Computer and Internet Security stream. I enjoy cooking and video games.</p>
     </div>
         </div>
 
@@ -70,7 +70,7 @@ published: true
     <div class="team-hover">
   <div class="desk">
   <h4>Hi There!</h4>
-  <p>-Richard bio-</p>
+  <p>I'm a second year comp sci student. I love going to hackathons and meeting wonderful people. I like programming and may occasionally engage in political discourse. TLDR; I'm just here for a good time.</p>
     </div>
         </div>
 
@@ -93,7 +93,7 @@ published: true
     <div class="team-hover">
   <div class="desk">
   <h4>Hi There!</h4>
-  <p>-Bernard bio-</p>
+  <p>I’m a 3rd year student in the computer and internet security stream. I’m a former Wealthsimple and Shopify intern interested in designing unique and useful software libraries and services, like Ruby gems and small projects.</p>
     </div>
         </div>
 
@@ -116,7 +116,7 @@ published: true
     <div class="team-hover">
   <div class="desk">
   <h4>Hi There!</h4>
-  <p>I’m a 3nd year student the game development stream. I like things such as video games and poutine. I have worked with in the GIGL lab with Dr. David Mould. I also do photography and VFX</p>
+  <p>I’m a 3rd year student the game development stream. I like things such as video games and poutine. I have worked with in the GIGL lab with Dr. David Mould. I also do photography and VFX.</p>
     </div>
         </div>
 
