@@ -7,24 +7,20 @@ pimage: ./images/cusec.jpg
 subjectstyle: null
 ---
 
+
 <div class="content-wrap">
-  <!--a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank" style="text-decoration:none;">
-    <img src="./images/Slack-528.png" alt="Slack" height="32" width="32" style="margin-right:10px;">
-    Join the us on slack to keep up to date with events and clubs, and to meet new people! :D
-  </a-->
-	<div class='feed'>
-		<h1 class='skinny-underline'>News</h1>
-		<div class="tiles">
-		<!--ul class="dash-list">
-			{% for post in site.categories.news %}
-				{% include post-list.html %}
-			{% endfor %}
-		</ul-->
-    <ul class="dash-list">
-			{% for post in site.categories.news %}
-				{% include post-grid.html %}
-			{% endfor %}
-		</ul>
-		</div>
-    </div>
+	<!--a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank" style="text-decoration:none;">
+	<img src="./images/Slack-528.png" alt="Slack" height="32" width="32" style="margin-right:10px;">
+	Join the us on slack to keep up to date with events and clubs, and to meet new people! :D
+	</a
+      <div style="padding-left:20px;display:inline-block;">
+      {% include social-media.html %}
+      </div>
+	-->
+	<div class="half-feed">
+		{% include pretty-event-grid.html %}
+	</div>
+	<div class="half-feed">
+		{% include latest-news-list.html %}
+	</div>
 </div>

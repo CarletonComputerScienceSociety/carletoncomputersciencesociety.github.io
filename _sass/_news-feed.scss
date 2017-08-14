@@ -1,0 +1,12 @@
+.half-feed {
+	display: inline-block;
+	width:45%;
+	margin-left: 50px;
+    vertical-align: top;
+}
+
+@media only screen and (max-width : 768px) {
+	.half-feed {
+		width:100%;
+	}
+}
