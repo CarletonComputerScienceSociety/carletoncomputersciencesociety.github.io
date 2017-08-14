@@ -3,7 +3,7 @@ layout: main
 permalink: /
 title: Home
 published: true
-pimage: ./images/cusec.jpg
+pimage: ./images/cusec_bw.jpg
 subjectstyle: null
 ---
 
