@@ -199,14 +199,17 @@
 }
 
 
-@media (max-width: 765px){
-  .sliding-menu-content {
-    min-width: 100%;
-  }
-}
-
 @media (min-width:770px){
   .sliding-menu-button {
     display: none !important;
+  }
+}
+
+@media (max-width: 768px){
+  .sliding-menu-content {
+    min-width: 100%;
+  }
+  .sliding-menu-button {
+    display: initial !important;
   }
 }
