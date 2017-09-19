@@ -47,6 +47,8 @@ sitemap: false
 @import "toc"; /* table of contents */
 @import "breadcrumbs";
 @import "syntax";
+@import "pretty-event-grid";
+@import "news-feed";
 
 /*
    Page specific
@@ -55,3 +57,6 @@ sitemap: false
 @import "layout";
 @import "team";
 @import "gallery";
+
+
+@import "general-theming"

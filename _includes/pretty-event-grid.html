@@ -1,0 +1,74 @@
+<h3>UPCOMING EVENTS</h3>
+<ul class="event-list">
+</ul>
+						<!-- EXTRA STUFF CAN GO IN EVENTS <img alt="Duyar Kimya Ziyaret" src="http://scontent.cdninstagram.com/t51.2885-19/s150x150/16229470_1105297716245462_9037530429749460992_n.jpg" />
+						<div class="info">
+							<h2 class="title">Duyar Kimya Ziyaret</h2>
+							<p class="desc">Crm Programı Kurulum</p>
+							<ul>
+								<li style="width:33%;">100  <span class="fa fa-male"></span></li>
+								<li style="width:34%;">80 <span class="fa fa-child"></span></li>
+							</ul>
+						</div>
+						<!--div class="social">
+							<ul>
+								<li class="edit" style="width:33%;"><a href="#"><span class="fa fa-pencil-square-o"></span></a></li>
+								<li class="confirm" style="width:34%;"><a href="#"><span class="fa fa-check"></span></a></li>
+								<li class="delete" style="width:33%;"><a href="#"><span class="fa fa-trash-o"></span></a></li>
+							</ul>
+						</div-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/calendar.js"></script>
+<script>
+	$(document).ready(function(){
+		cal_url += "&timeMin=" + moment().format("YYYY-MM-DDTHH:mm:ssZ");
+		$.ajax({
+          url: cal_url,
+
+          success: function(data){
+                var events = data.hasOwnProperty("items") ? data.items : [];
+                populateEventsGrid(events);
+          }
+        });
+
+	});
+
+	function populateEventsGrid(events){
+		var recentEvents = [];
+
+		if(events.length > 3){
+			recentEvents = events.splice(0, 3);
+		} else {
+			recentEvents = events;
+		}
+
+		console.log(recentEvents);
+		for(var i = 0; i < recentEvents.length; i++){
+			var event = recentEvents[i];
+			var eventStartDate = moment(event.start.dateTime);
+			if(event.start.hasOwnProperty("date")){
+				eventStartDate = moment(event.start.date);
+			}
+			var eventEndDate = moment(event.end.dateTime);
+			if(event.end.hasOwnProperty("date")){
+				eventEndDate = moment(event.end.date);
+			}
+
+			var listItem = `<li>
+				<time datetime=\'${eventStartDate.format('YYYY-MM-DD')}\'>
+					<span class='month'>${eventStartDate.format('MMM')}</span>
+					<span class='day'>${eventStartDate.format('Do')}</span>
+					<span class='year'>${eventStartDate.year()}</span>
+				</time>
+				<div class='info'>
+					<h2 class='title'>${event.summary}</h2>
+					<span class='time'></span>
+				</div>
+			</li>`;
+			//${eventStartDate.format('h:mm:ss a')}
+			$(".event-list").append( listItem );
+		}
+
+	}
+
+</script>
