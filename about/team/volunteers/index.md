@@ -47,7 +47,7 @@ published: true
       <div class="team-hover">
         <div class="desk">
           <h4>Hi There!</h4>
-          <p></p>
+          <p>I'm a third year computer science major who was previously studying engineering. I edge towards mixed hardware and software projects and love working with code in general! PM me your assembly questions.</p>
         </div>
       </div>
 
