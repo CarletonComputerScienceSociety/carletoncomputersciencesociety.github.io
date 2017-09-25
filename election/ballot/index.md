@@ -27,24 +27,24 @@ function getUrlVars() {
 $(function () {
   var params = getUrlVars();
 
-  // if (!params['x']) {
-  //   $("#ballot_display").css("display", "none");
-  //   $("#pre_ballot_error").css("background-color", "red");
-  //   $("#pre_ballot_error").css("display", "");
-  //   $("#pre_ballot_content").text("We couldn't process your ballot. Please make sure you came here through the SCS authentication system!");
-  // }
-  // else {
-  //   $.post(BASE_URL + '/validate?x=' + params['x'],
-  //     function (data) {
-  //       if (!data["ok"]) {
-  //         $("#ballot_display").css("display", "none");
-  //         $("#pre_ballot_content").text(data["error"]);
-  //         $("#pre_ballot_error").css("display", "");
-  //         $("#pre_ballot_error").css("background-color", "red");
-  //       }
-  //     }
-  //   );
-  // }
+  if (!params['x']) {
+    $("#ballot_display").css("display", "none");
+    $("#pre_ballot_error").css("background-color", "red");
+    $("#pre_ballot_error").css("display", "");
+    $("#pre_ballot_content").text("We couldn't process your ballot. Please make sure you came here through the SCS authentication system!");
+  }
+  else {
+    $.post(BASE_URL + '/validate?x=' + params['x'],
+      function (data) {
+        if (!data["ok"]) {
+          $("#ballot_display").css("display", "none");
+          $("#pre_ballot_content").text(data["error"]);
+          $("#pre_ballot_error").css("display", "");
+          $("#pre_ballot_error").css("background-color", "red");
+        }
+      }
+    );
+  }
 
   $("#ballot").submit(function (e) {
       e.preventDefault();
