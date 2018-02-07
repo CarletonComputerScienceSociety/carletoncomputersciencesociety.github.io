@@ -102,8 +102,30 @@ published: true
 </div>
 </li>
 
-
 <!-- ----Person 5 -->
+<li>
+<div class="team-member">
+    <div class="team-img">
+  <img img src="/images/about-pics/bernard_laveaux.jpg" class="img-responsive">
+    </div>
+
+    <div class="team-hover">
+  <div class="desk">
+  <h4>Hi There!</h4>
+  <p>I’m a 3rd year student in the computer and internet security stream. I’m a former Wealthsimple and Shopify intern interested in designing unique and useful software libraries and services, like Ruby gems and small projects.</p>
+    </div>
+        </div>
+
+
+  <div class="team-title">
+  <h5>Bernard Laveaux</h5>
+  <span>VP Academics <span><a href="mailto:bernard.laveaux@ccss.carleton.ca" target ="_top">bernard.laveaux@ccss.carleton.ca</a></span> </span>
+      </div>
+</div>
+</li>
+
+
+<!-- ----Person 6 -->
 <li>
 <div class="team-member">
     <div class="team-img">
