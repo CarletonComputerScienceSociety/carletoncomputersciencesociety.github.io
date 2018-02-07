@@ -129,6 +129,27 @@ published: true
 </li>
 
 
+<!-- ----Person 6 -->
+<li>
+<div class="team-member">
+    <div class="team-img">
+  <img img src="/images/about-pics/liz_davies.jpg" class="img-responsive">
+    </div>
+
+    <div class="team-hover">
+  <div class="desk">
+  <h4>Hi There!</h4>
+  <p>I’m a 2nd/3rd year student in the Software Engineering Stream and a graduate of the BMus program at Mount Allison University. When not in class you’ll often see me trying to level up my skills in communicating, coding, or music.</p>
+    </div>
+        </div>
+
+
+  <div class="team-title">
+  <h5>Liz Davies</h5>
+  <span>VP Academics<span><a href ="mailto:liz.davies@ccss.carleton.ca" target="_top">liz.davies@ccss.carleton.ca </a></span> </span>
+      </div>
+</div>
+</li>
 
 
 
