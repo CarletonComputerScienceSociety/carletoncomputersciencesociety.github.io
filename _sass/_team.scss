@@ -65,6 +65,7 @@ body {
 
 .team-member, .team-member .team-img {
     position: relative;
+    width: 250px
 }
 .team-member {
 
@@ -157,6 +158,7 @@ body {
     display: inline-block;
     letter-spacing: 2px;
     width: 100%;
+    white-space: nowrap;
 }
 .team-title h5 {
     margin-bottom: 0px;
