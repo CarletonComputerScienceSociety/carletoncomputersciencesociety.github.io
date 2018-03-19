@@ -101,6 +101,7 @@
 
 .gallery {
   width: 940px;
+  max-width:100%;
   margin: 0 auto;
   padding: 5px;
   background: #fff;
@@ -116,6 +117,7 @@
   position: relative;
   float: left;
   padding: 5px;
+  margin: auto;
 }
 
 .gallery > div > img {
@@ -127,12 +129,13 @@
 
 .gallery > div:hover {
   z-index: 1;
+  overflow: hidden;
 }
 
-.gallery > div:hover > img {
-  padding: 10px;
-  transform: scale(2.5,2.5);
-  transition: .3s transform;
+
+.gallery > div[data-enlarged="0"]:hover > img {
+  filter: grayscale(100%);
+  transition: 0.4s filter;
 }
 
 .cf:before, .cf:after {
