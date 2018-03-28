@@ -53,10 +53,10 @@ $(function () {
 
       // Verify there are two things in the list of candidates they
       // want to vote for.
-      if (checked.length != 2) {
-        alert("Please select the correct amount of candidates (2)");
-        return;
-      }
+      //if (checked.length != 2) {
+      //  alert("Please select the correct amount of candidates (2)");
+      //  return;
+      //}
 
       ids = checked.map(function (index, checkbox) {
           return checkbox.id;
@@ -87,15 +87,14 @@ $(function () {
 });
 
 </script>
-
-
+<head><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></head>
 <div id="ballot_display">
 <div style="padding:20px; font-size:20px">
-Hello and welcome to the Carleton Computer Science Society first year representative elections!<br>Below you will find the ballot. You may make two (2) choices.<br>The two individuals with the most votes will be your first year representatives for the year!
+Welcome to the 2018 CCSS General Election!<br>Below you will find the ballot. You may place one vote for each position.
 </div>
 
 <div id="message_container" style="display:none;font-weight: bold">
-A fake message you shouldn't see.
+You shouldn't see this message.
 </div>
 
 <style>
@@ -107,22 +106,74 @@ h1 {
     color: maroon;
     margin-left: 40px;
 } 
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
 </style>
 
 <form id="ballot" style="padding-left:50px">
-  <input id="adam" class="votebox" type="checkbox" name="vote[]"/><label for="adam" style="display: inline-block;font-size:20px">Adam Spriggs</label>
-  <div class="candidate-description">Vote Adam Spriggs to be your First Year Rep and I'll be the voice of everyone. I'm here to make sure that you have opinions in decision making and be able to express your interests to me, and I'll do my absolute best to get them accomplished!</div>
-  <input id="william" class="votebox" type="checkbox" name="vote[]"/><label for="william" style="display: inline-block;font-size:20px">William So</label>
-  <div class="candidate-description">Hey, fellow first-years! Here's a little bit about myself: I like pizza, I think about existence a lot, and I want to be YOUR First Year Rep! Vote for me and I will bring you an amazing first-year experience, with a diverse range of fun events to suit everyone's tastes.</div>
-  <input id="omar" class="votebox" type="checkbox" name="vote[]"/><label for="omar" style="display: inline-block;font-size:20px">Omar Garcia Flores</label>
-  <div class="candidate-description">Hello! My name is Omar Garcia Flores and I am a first year CS student just like you. Alongside being your voice within the Carleton Computer Science Society, my goal is for you to have success during your first year and make you feel supported throughout the year.</div>
-  <input id="jacob" class="votebox" type="checkbox" name="vote[]"/><label for="jacob" style="display: inline-block;font-size:20px">Jacob Danovitch</label>
-  <div class="candidate-description">I’m Jacob, and the sole reason I’m running to be your first-year rep is because I like to help out. I don’t care about the title; I’d rather find free/useful stuff for you guys, keep you in the loop without spamming, and bring you any events you want to see.</div>
-  <input id="emad" class="votebox" type="checkbox" name="vote[]"/><label for="emad" style="display: inline-block;font-size:20px">Emad Ryan</label>
-  <div class="candidate-description">Using this community that we already have here, let's collaborate and have students bring their ideas forward to make events and workshops that cater to everyone’s interests. We’re all colleagues here, so let’s work together to make this year an entertaining and memorable one!</div>
+<h2>President</h1>
+  <input id="elisa" class="votebox" type="radio" value="elisa" name="president"/><label for="elisa" style="display: inline-block;font-size:20px">Elisa Kazan</label>
+  <div class="candidate-description">A few goals for the coming year are: to ensure computer science students are aware of all
+the opportunities and events that are happening on and off campus (aka knowing when to
+apply for those awesome hackathons and conferences!), provide a wide range of resources
+for students (study spaces, printing, technical interview prep) that are easily accessible (a
+bigger lounge area would be nice too!), build a stronger community and CS pride through the
+creation and distribution of CCSS merchandise, connect with other groups and societies on
+campus to create bigger and better events, and continue improving the End of Year BBQ,
+reaching out to alumni making it even bigger next year.</div>
+<br><input id="nc1" class="votebox" type="radio" value="nc1" name="president"/><label for="nc1" style="display: inline-block;font-size:20px">No confidence</label>
+  <div class="candidate-description"></div>
+  
+  <h2>Vice President</h1>
+  <input id="aidan" class="votebox" type="radio" value="aidan" name="vicepresident"/><label for="aidan" style="display: inline-block;font-size:20px">Aidan Crowther</label>
+  <div class="candidate-description">If elected, I intend to expand upon the services and opportunities provided to members and
+volunteers of the CCSS, while also striving to improve our outreach and accessibility to
+students. I intend to do so by working in key areas such as: Improving upon, and maintaining
+our rewards system for volunteers and board members, including our offering of CCR credit
+for these positions. I also intend to expand our offered learning opportunities by working
+closely with our VP Academics in order to ensure that we can offer as much high quality and
+valuable material as possible. Improving our outreach and availability to students is also one
+of my goals, with the hopes that we can attract more of our members to events, as well as
+making our doings and information more easily accessible and understood. I intend to do
+this by working closely with the President and other VPs in order to ensure that all tasks and
+responsibilities are met, and dealt with accordingly, while also assisting in any way possible,
+while also keeping the views and opinions of our members in mind.</div>
+<br><input id="nc2" class="votebox" type="radio" value="nc2" name="vicepresident"/><label for="nc2" style="display: inline-block;font-size:20px">No confidence</label>
+  <div class="candidate-description"></div>
+  
+  <h2>Vice President of Social</h1>
+  <input id="william" class="votebox" type="radio" value="william" name="vpsocial"/><label for="william" style="display: inline-block;font-size:20px">William So</label>
+  <div class="candidate-description">As VP Social, I will take on the responsibility of communicating CCSS news, events, and other important information to our members, through social media such as Facebook and
+Slack, and through email newsletter. With these open lines of communication, I will encourage the CCSS members to attend our events. I also plan to organize many social get-togethers, such as regular coffee socials and movie nights, as well as social outings such as
+The Loft.</div>
+<br><input id="nc3" class="votebox" type="radio" value="nc3" name="vpsocial"/><label for="nc3" style="display: inline-block;font-size:20px">No confidence</label>
+  <div class="candidate-description"></div>
+  
+  <h2>Vice President of Academics</h1>
+  <input id="forest" class="votebox" type="radio" value="forest" name="vpacademics"/><label for="forest" style="display: inline-block;font-size:20px">Forest Anderson</label>
+  <div class="candidate-description">I will start off the year with a tech talk during the Week of Awesome. I will run workshops
+about useful technologies and technical skills. I plan on working closely with the Ottawa Game Development Collective, as well as hack.carleton.</div>
+<br><input id="jeremy" class="votebox" type="radio" value="jeremy" name="vpacademics"/><label for="jeremy" style="display: inline-block;font-size:20px">Jeremy Tian</label>
+  <div class="candidate-description">I will ensure the voices of students are heard at university meetings, host spectacular
+extracurricular academic events for CS students, and guarantee effective academic support workshops.</div>
+<br><input id="nc4" class="votebox" type="radio" value="nc4" name="vpacademics"/><label for="nc4" style="display: inline-block;font-size:20px">No confidence</label>
+  <div class="candidate-description"></div>
+  
+  <h2>Treasurer</h1>
+  <input id="benjamin" class="votebox" type="radio" value="benjamin" name="treasurer"/><label for="benjamin" style="display: inline-block;font-size:20px">Benjamin Karstad</label>
+  <div class="candidate-description">As Treasurer, I will strive for improved communication with members and what they want to see funded in the future, transparency of the budget and where funds are allocated, coordination with third parties to sponsor events, and ensuring economical spending of allocated funds and minimizing wastefulness.</div>
+<br><input id="nc5" class="votebox" type="radio" value="nc5" name="treasurer"/><label for="nc5" style="display: inline-block;font-size:20px">No confidence</label>
+  <div class="candidate-description"></div>
+  
   <br>
-  <input type="submit" value="VOTE!"/>
+  <input type="submit" value="Submit votes"/>
 </form>
+</div>
+
+<div style="padding-left:20px; padding-top: 10px; font-size:20px">
+You cannot change your votes after they have been submitted.
 </div>
 
 <div id="pre_ballot_error" style="display: none">
