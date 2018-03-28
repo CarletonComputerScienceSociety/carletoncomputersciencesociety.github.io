@@ -5,7 +5,7 @@ title: Election Ballot
 published: true
 ---
 
-<script src="{{site.url}}/js/jquery.min.js"></script>
+<script src="http://ccss.carleton.ca/js/jquery.min.js"></script>
 
 <script>
 
@@ -105,7 +105,7 @@ You shouldn't see this message.
 h1 {
     color: maroon;
     margin-left: 40px;
-} 
+}
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -125,7 +125,7 @@ campus to create bigger and better events, and continue improving the End of Yea
 reaching out to alumni making it even bigger next year.</div>
 <br><input id="nc1" class="votebox" type="radio" value="nc1" name="president"/><label for="nc1" style="display: inline-block;font-size:20px">No confidence</label>
   <div class="candidate-description"></div>
-  
+
   <h2>Vice President</h1>
   <input id="aidan" class="votebox" type="radio" value="aidan" name="vicepresident"/><label for="aidan" style="display: inline-block;font-size:20px">Aidan Crowther</label>
   <div class="candidate-description">If elected, I intend to expand upon the services and opportunities provided to members and
@@ -142,7 +142,7 @@ responsibilities are met, and dealt with accordingly, while also assisting in an
 while also keeping the views and opinions of our members in mind.</div>
 <br><input id="nc2" class="votebox" type="radio" value="nc2" name="vicepresident"/><label for="nc2" style="display: inline-block;font-size:20px">No confidence</label>
   <div class="candidate-description"></div>
-  
+
   <h2>Vice President of Social</h1>
   <input id="william" class="votebox" type="radio" value="william" name="vpsocial"/><label for="william" style="display: inline-block;font-size:20px">William So</label>
   <div class="candidate-description">As VP Social, I will take on the responsibility of communicating CCSS news, events, and other important information to our members, through social media such as Facebook and
@@ -150,7 +150,7 @@ Slack, and through email newsletter. With these open lines of communication, I w
 The Loft.</div>
 <br><input id="nc3" class="votebox" type="radio" value="nc3" name="vpsocial"/><label for="nc3" style="display: inline-block;font-size:20px">No confidence</label>
   <div class="candidate-description"></div>
-  
+
   <h2>Vice President of Academics</h1>
   <input id="forest" class="votebox" type="radio" value="forest" name="vpacademics"/><label for="forest" style="display: inline-block;font-size:20px">Forest Anderson</label>
   <div class="candidate-description">I will start off the year with a tech talk during the Week of Awesome. I will run workshops
@@ -160,13 +160,13 @@ about useful technologies and technical skills. I plan on working closely with t
 extracurricular academic events for CS students, and guarantee effective academic support workshops.</div>
 <br><input id="nc4" class="votebox" type="radio" value="nc4" name="vpacademics"/><label for="nc4" style="display: inline-block;font-size:20px">No confidence</label>
   <div class="candidate-description"></div>
-  
+
   <h2>Treasurer</h1>
   <input id="benjamin" class="votebox" type="radio" value="benjamin" name="treasurer"/><label for="benjamin" style="display: inline-block;font-size:20px">Benjamin Karstad</label>
   <div class="candidate-description">As Treasurer, I will strive for improved communication with members and what they want to see funded in the future, transparency of the budget and where funds are allocated, coordination with third parties to sponsor events, and ensuring economical spending of allocated funds and minimizing wastefulness.</div>
 <br><input id="nc5" class="votebox" type="radio" value="nc5" name="treasurer"/><label for="nc5" style="display: inline-block;font-size:20px">No confidence</label>
   <div class="candidate-description"></div>
-  
+
   <br>
   <input type="submit" value="Submit votes"/>
 </form>
