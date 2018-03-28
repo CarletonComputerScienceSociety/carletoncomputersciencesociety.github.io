@@ -72,6 +72,7 @@ $(function () {
           {"vote": ids[i]},
           function (data) {
             if (data["ok"]) {
+              $("#ballot_display").css("display", "none");
               $("#message_container").css("background-color", "greenyellow");
               $("#message_container").text(data["ok"]);
               $("#message_container").css("display", "");
