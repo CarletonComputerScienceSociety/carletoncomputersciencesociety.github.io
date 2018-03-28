@@ -89,13 +89,13 @@ $(function () {
 
 </script>
 <head><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></head>
-<div id="ballot_display">
-<div style="padding:20px; font-size:20px">
-Welcome to the 2018 CCSS General Election!<br>Below you will find the ballot. You may place one vote for each position.
-</div>
 
 <div id="message_container" style="display:none;font-weight: bold">
 You shouldn't see this message.
+</div>
+<div id="ballot_display">
+<div style="padding:20px; font-size:20px">
+Welcome to the 2018 CCSS General Election!<br>Below you will find the ballot. You may place one vote for each position.
 </div>
 
 <style>
