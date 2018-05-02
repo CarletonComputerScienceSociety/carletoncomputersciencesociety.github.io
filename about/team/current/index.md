@@ -62,45 +62,6 @@ published: true
           <span>VP Social <span> <a href ="mailto:richard.osita@ccss.carleton.ca" target ="_top">richard.osita@ccss.carleton.ca </a></span> </span>
         </div>
       </div>
-<<<<<<< Updated upstream
-</div>
-</li>
-
-<!-- ----Person 5 -->
-<li>
-<div class="team-member">
-    <div class="team-img">
-  <img img src="/images/about-pics/liz_davies.jpg" class="img-responsive">
-    </div>
-
-    <div class="team-hover">
-  <div class="desk">
-  <h4>Hi There!</h4>
-  <p>I’m a 2nd/3rd year student in the Software Engineering Stream and a graduate of the BMus program at Mount Allison University. When not in class you’ll often see me trying to level up my skills in communicating, coding, or music.</p>
-    </div>
-        </div>
-
-
-  <div class="team-title">
-  <h5>Liz Davies</h5>
-  <span>VP Academics<span><a href ="mailto:liz.davies@ccss.carleton.ca" target="_top">liz.davies@ccss.carleton.ca </a></span> </span>
-      </div>
-</div>
-</li>
-
-<!-- ----Person 4 -->
-<!-- <li>
-<div class="team-member">
-    <div class="team-img">
-  <img img src="/images/about-pics/bernard_laveaux.jpg" class="img-responsive">
-    </div>
-
-    <div class="team-hover">
-  <div class="desk">
-  <h4>Hi There!</h4>
-  <p>I’m a 3rd year student in the computer and internet security stream. I’m a former Wealthsimple and Shopify intern interested in designing unique and useful software libraries and services, like Ruby gems and small projects.</p>
-    </div>
-=======
     </li>
     <!-- ----Person 4 -->
     <li>
@@ -117,29 +78,8 @@ published: true
         <div class="team-title">
           <h5>Bernard Laveaux</h5>
           <span>VP Academics <span><a href="mailto:bernard.laveaux@ccss.carleton.ca" target ="_top">bernard.laveaux@ccss.carleton.ca</a></span> </span>
->>>>>>> Stashed changes
         </div>
       </div>
-<<<<<<< Updated upstream
-</div> -->
-<!-- </li> -->
-
-
-
-
-<!-- ----Person 6 -->
-<li>
-<div class="team-member">
-    <div class="team-img">
-  <img img src="/images/about-pics/forest_anderson.jpg" class="img-responsive">
-    </div>
-
-    <div class="team-hover">
-  <div class="desk">
-  <h4>Hi There!</h4>
-  <p>I’m a 3rd year student the game development stream. I like things such as video games and poutine. I have worked with in the GIGL lab with Dr. David Mould. I also do photography and VFX.</p>
-    </div>
-=======
     </li>
     <!-- ----Person 5 -->
     <li>
@@ -156,7 +96,6 @@ published: true
         <div class="team-title">
           <h5>Forest Anderson</h5>
           <span>Treasurer<span><a href ="mailto:forest.anderson@ccss.carleton.ca" target="_top">forest.anderson@ccss.carleton.ca </a></span> </span>
->>>>>>> Stashed changes
         </div>
       </div>
     </li>

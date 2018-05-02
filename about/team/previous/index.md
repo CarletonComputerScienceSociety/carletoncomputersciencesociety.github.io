@@ -4,6 +4,7 @@ permalink: /about/team/previous/
 title: Team
 published: true
 ---
+<!-- ----2017-2018 -->
 <div class="heading-title text-center">
 <h3 class="text-uppercase" style="border-bottom: 1px solid black; padding-bottom:5px; padding-left:10px; padding-right:10px; width:95%; margin:auto;">2017-2018</h3>
 <div class = "content-team">
@@ -22,7 +23,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Elisa Kazan</h5>
-          <span>President <span> <a href= "mailto:elisa.kazan@ccss.carleton.ca" target="_top">  elisa.kazan@ccss.carleton.ca</a> </span> </span>
+          <span>President</span>
         </div>
       </div>
     </li>
@@ -40,7 +41,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Tyler Fleming</h5>
-          <span>Vice-President <span> <a href ="mailto:tyler.fleming@ccss.carleton.ca" target="_top"> tyler.fleming@ccss.carleton.ca </a></span> </span>
+          <span>Vice-President</span>
         </div>
       </div>
     </li>
@@ -58,7 +59,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Richard Ositashvili</h5>
-          <span>VP Social <span> <a href ="mailto:richard.osita@ccss.carleton.ca" target ="_top">richard.osita@ccss.carleton.ca </a></span> </span>
+          <span>VP Social</span>
         </div>
       </div>
     </li>
@@ -76,57 +77,29 @@ published: true
         </div>
         <div class="team-title">
           <h5>Bernard Laveaux</h5>
-          <span>VP Academics <span><a href="mailto:bernard.laveaux@ccss.carleton.ca" target ="_top">bernard.laveaux@ccss.carleton.ca</a></span> </span>
+          <span>VP Academics Fall</span>
         </div>
       </div>
-<<<<<<< Updated upstream
-</div>
-</li>
-
-<!-- ----Person 5 -->
-<li>
-<div class="team-member">
-    <div class="team-img">
-  <img img src="/images/about-pics/bernard_laveaux.jpg" class="img-responsive">
-    </div>
-
-    <div class="team-hover">
-  <div class="desk">
-  <h4>Hi There!</h4>
-  <p>I’m a 3rd year student in the computer and internet security stream. I’m a former Wealthsimple and Shopify intern interested in designing unique and useful software libraries and services, like Ruby gems and small projects.</p>
-    </div>
-        </div>
-
-
-  <div class="team-title">
-  <h5>Bernard Laveaux</h5>
-  <span>VP Academics <span><a href="mailto:bernard.laveaux@ccss.carleton.ca" target ="_top">bernard.laveaux@ccss.carleton.ca</a></span> </span>
-      </div>
-</div>
-</li>
-
-
-<!-- ----Person 6 -->
-<li>
-<div class="team-member">
-    <div class="team-img">
-  <img img src="/images/about-pics/unknown_id.jpg" class="img-responsive">
-    </div>
-
-    <div class="team-hover">
-  <div class="desk">
-  <h4>Hi There!</h4>
-  <p>I'm in the business systems stream. I’ve done a great deal of volunteer work pertaining to the lounge and technical resources. Coffee is what keeps me going.</p>
-    </div>
-        </div>
-
-
-  <div class="team-title">
-  <h5>Andrew Morris</h5>
-  <span>Treasurer<span> andrew.morris@ccss.carleton.ca </span> </span>
-=======
     </li>
     <!-- ----Person 5 -->
+    <li>
+      <div class="team-member">
+        <div class="team-img">
+          <img img src="/images/about-pics/liz_davies.jpg" class="img-responsive">
+        </div>
+        <div class="team-hover">
+          <div class="desk">
+            <h4>Hi There!</h4>
+            <p>I’m a 2nd/3rd year student in the Software Engineering Stream and a graduate of the BMus program at Mount Allison University. When not in class you’ll often see me trying to level up my skills in communicating, coding, or music.</p>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Liz Davies</h5>
+          <span>VP Academics Winter</span>
+        </div>
+      </div>
+    </li>
+    <!-- ----Person 6 -->
     <li>
       <div class="team-member">
         <div class="team-img">
@@ -140,13 +113,13 @@ published: true
         </div>
         <div class="team-title">
           <h5>Forest Anderson</h5>
-          <span>Treasurer<span><a href ="mailto:forest.anderson@ccss.carleton.ca" target="_top">forest.anderson@ccss.carleton.ca </a></span> </span>
+          <span>Treasurer</span>
         </div>
->>>>>>> Stashed changes
       </div>
     </li>
   </ul>
 </div>
+<!-- ----2016-2017 -->
 <div class="heading-title text-center">
 <h3 class="text-uppercase" style="border-bottom: 1px solid black; padding-bottom:5px; padding-left:10px; padding-right:10px; width:95%; margin:auto;">2016-2017</h3>
 <div class = "content-team">
@@ -165,7 +138,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Elisa Kazan</h5>
-          <span>president <span> elisa.kazan@ccss.carleton.ca </span> </span>
+          <span>President</span>
         </div>
       </div>
     </li>
@@ -183,7 +156,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Jack McCracken</h5>
-          <span>Vice-President <span> jack.mccracken@ccss.carleton.ca </span> </span>
+          <span>Vice-President</span>
         </div>
       </div>
     </li>
@@ -201,7 +174,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Forest Anderson</h5>
-          <span>VP Social <span> forest.anderson@ccss.carleton.ca </span> </span>
+          <span>VP Social</span>
         </div>
       </div>
     </li>
@@ -219,7 +192,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Matt Diener</h5>
-          <span>VP Academics <span>matt.diener@ccss.carleton.ca</span> </span>
+          <span>VP Academics</span>
         </div>
       </div>
     </li>
@@ -237,7 +210,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Andrew Morris</h5>
-          <span>Treasurer<span> andrew.morris@ccss.carleton.ca </span> </span>
+          <span>Treasurer</span>
         </div>
       </div>
     </li>
