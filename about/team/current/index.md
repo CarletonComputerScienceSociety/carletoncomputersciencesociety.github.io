@@ -18,7 +18,7 @@ published: true
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>#TODO</p>
+            <p>I’m a 4th year student in the mobile stream, focusing on iOS development. I’m always interested in chatting about conferences/events, CS education and improving the CS community. :sunflower: is my fav emoji</p>
           </div>
         </div>
         <div class="team-title">
@@ -36,7 +36,7 @@ published: true
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>#todo</p>
+            <p>I'm a fourth year computer science major, with a special focus on web and embedded programming. Feel free to talk to me about how Python isn't the best language.</p>
           </div>
         </div>
         <div class="team-title">
@@ -72,7 +72,7 @@ published: true
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>I’m a 4th year boi in game dev. I like game jams, security CTFs, and running things. If you have any question, I would love to talk!</p>
+            <p>I’m a 4th year boi in game dev. I like game jams, security CTFs, and running things. If you have any question, I would love to talk! :deciduous_tree::deciduous_tree::deciduous_tree:</p>
           </div>
         </div>
         <div class="team-title">
@@ -90,12 +90,12 @@ published: true
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>#todo</p>
+            <p>Second year in the general stream. I enjoy the problem solving and procedural aspects of programming. If you see a 6ft tall 12 year-old, dressed fancier than he ought to, it's probably me.</p>
           </div>
         </div>
         <div class="team-title">
           <h5>Ben Karstad</h5>
-          <span>Treasurer<span><a href ="mailto:ben.karstad@ccss.carleton.ca" target="_top">ben.karstad@ccss.carleton.ca </a></span> </span>
+          <span>Treasurer<span><a href ="mailto:ben.karstad@ccss.carleton.ca" target="_top">ben.karstad@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
