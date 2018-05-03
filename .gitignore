@@ -2,3 +2,5 @@ node_modules
 _site
 .sass-cache
 _config.yml
+.jekyll-metadata
+Gemfile.lock
