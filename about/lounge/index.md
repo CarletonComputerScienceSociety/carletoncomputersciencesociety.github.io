@@ -15,7 +15,7 @@ subjectstyle: 'color: white; border-bottom: 5px solid white; border-top: 5px sol
     <h3>LIBRARY</h3>
     <p>Textbooks are expensive so why not share them? The CCSS now has a library which anyone can borrow from. We have a wide selection of books including discrete structures, Java, calculus and so much more! Please make sure to return the books when you’re done with it. If you have book you would like to donate, email us at <a href="mailto:info@ccss.carleton.ca" target="_blank">info@ccss.carleton.ca</a> with the subject “Textbook Donation”.</p>
     <h3>PRINTER</h3>
-    <p>We have free printing for all CS students. Just email the printer at <a href="mailto:ccssprinter@gmail.com" target="_blank">ccssprinter@gmail.com</a> and get one of the volunteers in the office to print it for you.</p>
+    <p>We have free printing for all CS students. Just email the printer at <a href="mailto:printer-single@ccss.carleton.ca" target="_blank">printer-single@ccss.carleton.ca</a> for single sided printing or <a href="printer-double@ccss.carleton.ca " target="_blank">printer-double@ccss.carleton.ca</a> for double sided printing, and get one of the volunteers in the office to print it for you.</p>
     <h3>COFFEE</h3>
     <p>We have a Keurig machine in the office and coffee is free for all CS students, just bring a mug! Don’t worry we also sell cups at 25 cents each.</p>
     <h3>GAMES</h3>
