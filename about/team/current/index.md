@@ -59,7 +59,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>William So</h5>
-          <span>VP Social <span> <a href ="william.so@ccss.carleton.ca" target ="_top">william.so@ccss.carleton.ca</a></span> </span>
+          <span>VP Social <span> <a href ="mailto:william.so@ccss.carleton.ca" target ="_top">william.so@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
