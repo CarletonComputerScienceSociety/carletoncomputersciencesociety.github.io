@@ -1,7 +1,7 @@
 ---
 layout: default
-permalink: /about/government/
-title: Government
+permalink: /about/governance/
+title: Governance
 published: true
 pimage: /images/code_5.jpg
 subjecttext: GOVERNANCE
