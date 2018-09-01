@@ -6,7 +6,7 @@ published: true
 ---
 
 
-<a href="{{ site.baseurl }}/community/gallery/">Go Back</a>
+<a style="margin-left:50px" href="{{ site.baseurl }}/community/gallery/">Go Back</a>
 
 <script src="{{ site.baseurl }}/js/gallery.js"></script>
 
