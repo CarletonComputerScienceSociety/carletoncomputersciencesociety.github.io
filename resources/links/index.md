@@ -19,7 +19,7 @@ published: true
             <h4>Carleton CS Tips:</h4>
             <ul class="dash-list">
                 <li><a href="http://carleton.ca/registrar/registration/dates-and-deadlines/" target="_blank">Dates and Deadlines</a></li>
-                <li><a href="https://scs.carleton.ca/tech-support/free-software" target="_blank">Free Software</a></li>
+                <li><a href="https://carleton.ca/scs/technical-support/scs-faculty-tech-resources/" target="_blank">Free Software for SCS students</a></li>
             </ul>
         </li>
     <!--Free Tools To Make Life Easier: TODO -->
