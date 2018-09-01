@@ -5,9 +5,7 @@ title: Gallery
 published: true
 ---
 
-<button class="backButton" onclick="location.href='{{ site.baseurl }}/community/gallery/'" type="button">
-    Go Back </button>
-
+<button><a href="{{ site.baseurl }}/community/gallery/">Go Back</a></button>
 
 <div class='content-wrap'>
 
