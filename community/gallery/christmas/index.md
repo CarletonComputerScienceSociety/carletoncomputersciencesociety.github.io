@@ -5,7 +5,7 @@ title: Gallery
 published: true
 ---
 
-<a href="{{ site.baseurl }}/community/gallery/">Go Back</a>
+<a style="margin-left:50px" href="{{ site.baseurl }}/community/gallery/">Go Back</a>
 
 <div class='content-wrap'>
 
