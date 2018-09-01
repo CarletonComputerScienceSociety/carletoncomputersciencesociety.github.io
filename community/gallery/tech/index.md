@@ -27,3 +27,6 @@ published: true
         </div>
       </div>
 </div>
+
+
+<script src="{{ site.baseurl }}/js/custom.js"></script>
