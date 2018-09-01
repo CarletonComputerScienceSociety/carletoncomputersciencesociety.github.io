@@ -33,5 +33,5 @@ Perfect for students who want to know about our events and strengthen their publ
     <p>As a Writer, you will get to help us grow the content on the CCSS website by writing articles on a variety of topics. You could write a recap of a recent event, a list of tips for success in CS, a review of your new laptop, etc. Your article will be posted on our website and featured in our email newsletter, after passing a screening from one of the members of the Board of Directors. Perfect for students who want to use their voice to impact their peers and the society in a positive manner.</p>
     <h4>OTHER?</h4>
     <p>Did we forget something? Do you have an awesome skill you'd like to share with our team? let us know! We'd love to hear from you.</p>
-    <a class='classy-link bottom-page-link' href="https://goo.gl/forms/WcsXBHqFhAQEu8VG3" target="_blank">Volunteer With Us</a>
+    <a class='classy-link bottom-page-link' href="https://goo.gl/forms/WcsXBHqFhAQEu8VG3" target="_blank">Volunteer</a>
 </div>
