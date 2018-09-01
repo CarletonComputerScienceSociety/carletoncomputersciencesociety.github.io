@@ -17,7 +17,6 @@ subjectstyle: null
       {% include social-media.html %}
       </div>
 	-->
-  {% include newsletter_signup.html %}
 	<div class="half-feed">
 		{% include pretty-event-grid.html %}
 	</div>
