@@ -6,9 +6,10 @@ published: true
 ---
 
 
-<button class="backButton" onclick="location.href='{{ site.baseurl }}/community/gallery/'" type="button">
-    Go Back </button>
 
+<a href="{{ site.baseurl }}/community/gallery/">Go Back</a>
+
+<script src="{{ site.baseurl }}/js/gallery.js"></script>
 
 <div class='content-wrap'>
 
@@ -29,4 +30,3 @@ published: true
 </div>
 
 
-<script src="{{ site.baseurl }}/js/custom.js"></script>
