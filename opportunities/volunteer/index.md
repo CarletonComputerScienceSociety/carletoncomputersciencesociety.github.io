@@ -17,12 +17,11 @@ Your job is to inform students about the society and provide us with feedback fr
 Perfect for students who want to know about our events and strengthen their public speaking skills.
     <br><strong>Note: </strong>This position is not to be confused with the First Year Representative position. First Year Representatives are members of the Board of Directors and will be elected in September.</p>
     <h4>LOUNGE VOLUNTEER</h4>
-    <p>As a Lounge Volunteer, you will hold office hours in the lounge (HP 4135) for 1-2 hours a week. Feel free to chill in the lounge and office during this time, while printing the occasional document for students and assisting with our other services. You can also help with lounge maintenance.<br/>Perfect for students who want to volunteer on a scheduled weekly basis.</p>
+    <p>As a Lounge Volunteer, you will hold office hours in the lounge (HP 4135) for 1-2 hours a week. Feel free to chill in the lounge and office during this time, while printing the occasional document for students and assisting with our other services. You can also help with lounge maintenance. Perfect for students who want to volunteer on a scheduled weekly basis.</p>
     <h4>EVENTS VOLUNTEER</h4>
-    <p>As an Events Volunteer, you will get to help us organize, set up, and/or run social or academic events. Social Events include: Coffee Socials, Movie Nights, Laser Tag, Rock Climbing, etc... <br/>Academic Events include: Tech Talks, Workshops, Prof Night, etc... <br/>Perfect for students who want to meet new people and help out in various ways.</p>
+    <p>As an Events Volunteer, you will get to help us organize, set up, and/or run social or academic events.<br/><br/>Social Events include: Coffee Socials, Movie Nights, Laser Tag, Rock Climbing, etc... <br/>Academic Events include: Tech Talks, Workshops, Prof Night, etc... <br/>Perfect for students who want to meet new people and help out in various ways.</p>
     <h4>WEB DESIGNER</h4>
-    <p>As a Web Designer, you will get to contribute to the development of the CCSS website, and collaborate with the rest of the web design team to work on projects throughout the year.<br/>You will be expected to attend regular web design team meetings.<br/>
-Perfect for students who want to practice/learn skills in web development.</p>
+    <p>As a Web Designer, you will get to contribute to the development of the CCSS website, and collaborate with the rest of the web design team to work on projects throughout the year. You will be expected to attend regular web design team meetings. Perfect for students who want to practice/learn skills in web development.</p>
     <h4>PHOTOGRAPHER</h4>
     <p>As a Photographer, you will get to record the activities of the CCSS by capturing photos at our events. The photos you take may be posted on our social media afterwards to document the events. Perfect for students with a passion for photography who want to get involved.</p>
     <h4>WRITER</h4>
