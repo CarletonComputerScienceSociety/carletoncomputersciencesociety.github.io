@@ -19,7 +19,12 @@ Perfect for students who want to know about our events and strengthen their publ
     <h4>LOUNGE VOLUNTEER</h4>
     <p>As a Lounge Volunteer, you will hold office hours in the lounge (HP 4135) for 1-2 hours a week. Feel free to chill in the lounge and office during this time, while printing the occasional document for students and assisting with our other services. You can also help with lounge maintenance. Perfect for students who want to volunteer on a scheduled weekly basis.</p>
     <h4>EVENTS VOLUNTEER</h4>
-    <p>As an Events Volunteer, you will get to help us organize, set up, and/or run social or academic events.<br/><br/>Social Events include: Coffee Socials, Movie Nights, Laser Tag, Rock Climbing, etc... <br/>Academic Events include: Tech Talks, Workshops, Prof Night, etc... <br/>Perfect for students who want to meet new people and help out in various ways.</p>
+    <p>As an Events Volunteer, you will get to help us organize, set up, and/or run social or academic events.
+      <ul>
+        <li>Social Events include: Coffee Socials, Movie Nights, Laser Tag, Rock Climbing, etc...</li>
+        <li>Academic Events include: Tech Talks, Workshops, Prof Night, etc...</li>
+      </ul>
+     Perfect for students who want to meet new people and help out in various ways.</p>
     <h4>WEB DESIGNER</h4>
     <p>As a Web Designer, you will get to contribute to the development of the CCSS website, and collaborate with the rest of the web design team to work on projects throughout the year. You will be expected to attend regular web design team meetings. Perfect for students who want to practice/learn skills in web development.</p>
     <h4>PHOTOGRAPHER</h4>
