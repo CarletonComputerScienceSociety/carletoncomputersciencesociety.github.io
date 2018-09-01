@@ -5,7 +5,7 @@ title: Gallery
 published: true
 ---
 
-<button><a href="{{ site.baseurl }}/community/gallery/">Go Back</a></button>
+<a href="{{ site.baseurl }}/community/gallery/">Go Back</a>
 
 <div class='content-wrap'>
 
@@ -27,4 +27,4 @@ published: true
 
 
 
-<script src="{{ site.baseurl }}/js/custom.js"></script>
+<script src="{{ site.baseurl }}/js/gallery.js"></script>
