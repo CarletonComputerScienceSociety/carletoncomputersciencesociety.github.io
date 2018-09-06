@@ -491,6 +491,7 @@ top-menu {
 /* Author block */
 
 .author-image {
+	display: none;
 	position: absolute;
 	left: 0;
 	img {
@@ -501,7 +502,7 @@ top-menu {
 }
 .author-content {
 	word-wrap: break-word;
-	padding-left: 100px; //avatar width + 20px padding
+	// padding-left: 100px; //avatar width + 20px padding
 	min-height: 80px; //mirrors avatar height
 }
 .author-name {
