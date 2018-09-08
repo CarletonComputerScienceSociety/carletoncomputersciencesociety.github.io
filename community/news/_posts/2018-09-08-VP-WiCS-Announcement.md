@@ -2,7 +2,7 @@
 layout: article
 title: VP WiCS Announcement
 category: blog
-by: William So
+by: Elisa Kazan
 ---
 Over the past few months, the Board of Directors of the CCSS has been discussing the possibility of creating a new position to collaborate with the WiCS (Women in Computer Science) group on campus. We are pleased to announce that we will be welcoming a new position to the CCSS, VP WiCS!
 
