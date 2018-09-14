@@ -2,25 +2,27 @@
   <h1>Carleton Computer Science Society<!--span>{{ site.data.messages.locales[site.locale].toc }}</span--></h1>
   <ul class="menu-item">
     {% for link in site.data.navigation %}
-      <li>
-      <a href="{{ site.baseurl }}{{ link.url }}">
-        {% if link.image %}<img src="{{ site.baseurl }}/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
-        <div class="title">{{ link.title }}</div>
-        {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
-      </a>
-      </li>
-      {% for sublink in link.sublinks %}
-          <li>
-             {% if sublink.url contains 'http' %}
-        	    {% assign subdomain = '' %}
-       		    {% else %}
-        	    {% assign subdomain = site.baseurl %}
-    	     {% endif %}
-            	<a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>				 	
-                	{{ sublink.title }}
-                </a>
-          </li>
-      {% endfor %}
+    {% if link.exclude == false %}
+        <li>
+        <a href="{{ site.baseurl }}{{ link.url }}">
+          {% if link.image %}<img src="{{ site.baseurl }}/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
+          <div class="title">{{ link.title }}</div>
+          {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
+        </a>
+        </li>
+        {% for sublink in link.sublinks %}
+            <li>
+              {% if sublink.url contains 'http' %}
+                {% assign subdomain = '' %}
+                {% else %}
+                {% assign subdomain = site.baseurl %}
+            {% endif %}
+                <a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>				 	
+                    {{ sublink.title }}
+                  </a>
+            </li>
+        {% endfor %}
+      {% endif %}
   {% endfor %}
   </ul>
 </nav>

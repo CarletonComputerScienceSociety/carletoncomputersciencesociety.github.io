@@ -17,11 +17,13 @@ subjectstyle: null
       {% include social-media.html %}
       </div>
 	-->
-	<div class="half-feed">
-		{% include pretty-event-grid.html %}
-	</div>
-	<div class="half-feed">
-		{% include latest-news-list.html %}
+	<div class='feed-wrap'>
+		<div class="half-feed">
+			{% include pretty-event-grid.html %}
+		</div>
+		<div class="half-feed">
+			{% include latest-news-list.html %}
+		</div>
 	</div>
 </div>
 

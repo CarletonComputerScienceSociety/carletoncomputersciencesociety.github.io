@@ -1,3 +1,2 @@
-bundle update
+#!/bin/bash
 bundle exec jekyll serve
-PAUSE

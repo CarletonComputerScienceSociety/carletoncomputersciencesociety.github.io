@@ -1,7 +1,11 @@
+.feed-wrap {
+	display: flex;
+}
+
 .half-feed {
-	display: inline-block;
-	width:45%;
-	margin-left: 50px;
+	box-sizing: border-box;
+	width: 50%;
+	padding: 0 40px;
     vertical-align: top;
 }
 
