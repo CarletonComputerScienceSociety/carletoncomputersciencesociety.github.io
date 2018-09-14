@@ -4,41 +4,43 @@ published: true
 ---
 
 {% for link in site.data.navigation %}
-  {% assign x = link.url | append: '/' %}
-  {% if page.url == x %}
-    {% if link.sublinks %}
-      <div class='content-wrap'>
-        <ul class='small-subpage-list'>
-  		{% for sublink in link.sublinks %}
-            <li>
-              {% if sublink.url contains 'http' %}
-        	      {% assign subdomain = '' %}
-       		    {% else %}
-        	      {% assign subdomain = base.url %}
-    	        {% endif %}
-                <a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>
-                  <h4>{{ sublink.title }}</h4>
-                </a>
-    	        <!--div class="center-cropped-img nav-page-header-image" style="background: url('{{ site.url }}{{ sublink.image }}'); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div-->
-            </li>
-          {% endfor %}
-    	</ul>
-        <!--ul class='side-subpage-list'>
-          {% for sublink in link.sublinks %}
-            <li>
-              {% if sublink.url contains 'http' %}
-        	      {% assign subdomain = '' %}
-       		    {% else %}
-        	      {% assign subdomain = site.url %}
-    	        {% endif %}
-                <a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>
-                  <h4>{{ sublink.title }}</h4>
-                </a>
-    	        <div class="center-cropped-img nav-page-header-image" style="background: url('{{ site.url }}{{ sublink.image }}'); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
-            </li>
-          {% endfor %}
-        </ul-->
-      </div>
+{% if link.exclude == false %}
+    {% assign x = link.url | append: '/' %}
+    {% if page.url == x %}
+      {% if link.sublinks %}
+        <div class='content-wrap'>
+          <ul class='small-subpage-list'>
+        {% for sublink in link.sublinks %}
+              <li>
+                {% if sublink.url contains 'http' %}
+                  {% assign subdomain = '' %}
+                {% else %}
+                  {% assign subdomain = base.url %}
+                {% endif %}
+                  <a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>
+                    <h4>{{ sublink.title }}</h4>
+                  </a>
+                <!--div class="center-cropped-img nav-page-header-image" style="background: url('{{ site.url }}{{ sublink.image }}'); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div-->
+              </li>
+            {% endfor %}
+        </ul>
+          <!--ul class='side-subpage-list'>
+            {% for sublink in link.sublinks %}
+              <li>
+                {% if sublink.url contains 'http' %}
+                  {% assign subdomain = '' %}
+                {% else %}
+                  {% assign subdomain = site.url %}
+                {% endif %}
+                  <a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>
+                    <h4>{{ sublink.title }}</h4>
+                  </a>
+                <div class="center-cropped-img nav-page-header-image" style="background: url('{{ site.url }}{{ sublink.image }}'); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+              </li>
+            {% endfor %}
+          </ul-->
+        </div>
+      {% endif %}
     {% endif %}
   {% endif %}
 {% endfor %}

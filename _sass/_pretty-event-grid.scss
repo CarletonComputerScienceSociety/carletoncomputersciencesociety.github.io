@@ -67,6 +67,8 @@
 		width: 100%;
 		flex-direction: column;
 		justify-content: center;
+		background: #fff;
+		background-color: #fff;
 	}
 	.event-list > li > .info > .title {
 		display: block;
@@ -160,7 +162,6 @@
 			display: inline-block;
 		}
 		.event-list > li > .info {
-			background-color: rgb(245, 245, 245);
 			overflow: hidden;
 		}
 		.event-list > li > time,

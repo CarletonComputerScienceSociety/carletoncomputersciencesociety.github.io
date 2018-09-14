@@ -16,6 +16,7 @@
     - title: Elections
       url: /about/elections/
       image: /images/collaborate.jpg
+  exclude: false
 
 
 - title: Community
@@ -35,6 +36,7 @@
     - title: Gallery
       url: /community/gallery/
       image: /images/teaser.png
+  exclude: false
 
 - title: Opportunities
   url: /opportunities
@@ -47,6 +49,7 @@
     - title: Job Postings
       url: /opportunities/jobs/
       image: /images/jobs.jpg
+  exclude: false
 
 - title: Resources
   url: /resources
@@ -59,12 +62,21 @@
     - title: Useful Links
       url: /resources/links/
       image: /images/teaser.png
+  exclude: false
 
 - title: Contact
   url: /contact/email/
   excerpt:
   image:
   sublinks:
+  exclude: false
+
+- title: Create Article
+  url: /article
+  excerpt:
+  image:
+  sublinks:
+  exclude: true
 #- title: Election
 #  url: /election
 #  excerpt:
