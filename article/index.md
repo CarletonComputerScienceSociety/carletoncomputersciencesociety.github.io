@@ -77,7 +77,7 @@ form input, form textarea {
 <script>
 	var base = 'https://github.com/CarletonComputerScienceSociety/carletoncomputersciencesociety.github.io/new';
 	// var branch = 'add-post';
-	var branch = 'master';
+	var branch = 'add-post';
 	var fileLocation = 'community/news/_posts';
 	var fileName = 'filename=';
 	var bodyValue = 'value=';
