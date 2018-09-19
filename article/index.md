@@ -62,7 +62,7 @@ form input, form textarea {
 		<input id='article_date' type='date' data-name='filename'/>
 		<input id='article_filename' data-name='filename' placeholder='Article Title...'/>
 		<!-- <input class='watch' id='article_author' data-name='author' placeholder='Article Author...'/> -->
-		<textarea id='article_value' placeholder='Article HTML...' data-name='value' rows='4'></textarea>
+		<textarea id='article_value' placeholder='Article HTML...' data-name='value' rows='20'></textarea>
 		<div id='createBtn'>Create Article</div>
 	</form>
 
@@ -107,8 +107,9 @@ form input, form textarea {
 		
 		if(date && title && author && value){
 			var filestring = date.replace(/\s/g, '-') + '-' + title.replace(/\s/g, '-');
-			var filebody = '---%0Dlayout:%20' + layout + "%0Dtitle:%20" + encodeURI(title) + '%0Dcategory:%20blog%0Dby:%20' + encodeURI(author) + '%0D---%0D';
-			filebody += encodeURI(value);
+			var filebody = '---%0Dlayout:%20' + layout + "%0Dtitle:%20" + customEncode(title) + '%0Dcategory:%20blog%0Dby:%20' + customEncode(author) + '%0D---%0D';
+			filebody += customEncode(value);
+			console.log(filebody);
 
 			return base + '/' + branch + '/' + fileLocation + '?' + fileName + filestring + '&value=' + filebody;
 		} else {
@@ -125,21 +126,23 @@ form input, form textarea {
 		var value = document.getElementById('article_value').value;
 	}
 
-	console.log("HERE");
+	function customEncode(text){
+		text = encodeURI(text);
+		text = text.replace(/&/g, '%26');
+		return text;
+	}
+
 	document.getElementById('article_value').addEventListener('input', function(){
 		// document.getElementById('articleDemoHTML').write('test');
-		console.log(this.value);
-		document.getElementById('articleDemoHTML').innerHTML = this.value;
+		console.log(customEncode(this.value));
 
-		// document.write('test');
-		// encodeURI(this.value)
+		document.getElementById('articleDemoHTML').innerHTML = this.value;
 	});
 
 	// console.log(base + '/' + branch + '/' + fileLocation + '?' + fileName + '&' + bodyValue);	
 
 	document.getElementById('createBtn').addEventListener('click', function(){
 		var post = getPostUrl();
-		console.log(post);
 		if(post){
 			window.location.href = post;
 		}
