@@ -52,7 +52,7 @@ form input, form textarea {
 		<!-- {{ site.data.authors }} -->
 		<div class='title'>Create Article</div>
 		<select id='article_layout'>
-			<option>Article</option>
+			<option>article</option>
 		</select>
 		<select id='article_author' data-name='author' placeholder='Select Author'>
 			{% for author in site.data.authors %}
