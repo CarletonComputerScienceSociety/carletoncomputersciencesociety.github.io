@@ -78,7 +78,7 @@ form input, form textarea {
 	var base = 'https://github.com/CarletonComputerScienceSociety/carletoncomputersciencesociety.github.io/new';
 	// var branch = 'add-post';
 	var branch = 'add-post';
-	var fileLocation = 'community/news/_posts';
+	var fileLocation = 'community/news/_posts/newfile';
 	var fileName = 'filename=';
 	var bodyValue = 'value=';
 
@@ -109,9 +109,8 @@ form input, form textarea {
 			var filestring = date.replace(/\s/g, '-') + '-' + title.replace(/\s/g, '-');
 			var filebody = '---%0Dlayout:%20' + layout + "%0Dtitle:%20" + customEncode(title) + '%0Dcategory:%20blog%0Dby:%20' + customEncode(author) + '%0D---%0D';
 			filebody += customEncode(value);
-			console.log(filebody);
 
-			return base + '/' + branch + '/' + fileLocation + '?' + fileName + filestring + '&value=' + filebody;
+			return base + '/' + branch + '/' + fileLocation + '/?' + fileName + filestring + '&value=' + filebody;
 		} else {
 			displayError();
 		}
