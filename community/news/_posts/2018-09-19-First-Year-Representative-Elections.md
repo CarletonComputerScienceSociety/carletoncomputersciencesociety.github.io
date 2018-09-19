@@ -1,6 +1,6 @@
 ---
 layout: Article
-title: test
+title: First Year Representative Elections
 category: blog
 by: Aidan Crowther
 ---
