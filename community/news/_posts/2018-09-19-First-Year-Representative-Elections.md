@@ -1,5 +1,5 @@
 ---
-layout: Article
+layout: article
 title: First Year Representative Elections
 category: blog
 by: Aidan Crowther
