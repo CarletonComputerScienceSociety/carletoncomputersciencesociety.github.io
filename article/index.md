@@ -110,7 +110,7 @@ form input, form textarea {
 			var filebody = '---%0Dlayout:%20' + layout + "%0Dtitle:%20" + customEncode(title) + '%0Dcategory:%20blog%0Dby:%20' + customEncode(author) + '%0D---%0D';
 			filebody += customEncode(value);
 
-			return base + '/' + branch + '/' + fileLocation + '/?' + fileName + filestring + '&value=' + filebody;
+			return base + '/' + branch + '/' + fileLocation + '/?' + fileName + filestring + '.md&value=' + filebody;
 		} else {
 			displayError();
 		}
