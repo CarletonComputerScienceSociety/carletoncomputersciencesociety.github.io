@@ -26,7 +26,6 @@ function getUrlVars() {
 
 $(function () {
   var params = getUrlVars();
-
   if (!params['x']) {
     $("#ballot_display").css("display", "none");
     $("#pre_ballot_error").css("background-color", "red");
@@ -53,10 +52,10 @@ $(function () {
 
       // Verify there are two things in the list of candidates they
       // want to vote for.
-      //if (checked.length != 2) {
-      //  alert("Please select the correct amount of candidates (2)");
-      //  return;
-      //}
+      if (checked.length != 2) {
+        alert("Please select the correct amount of candidates (2)");
+        return;
+      }
 
       ids = checked.map(function (index, checkbox) {
           return checkbox.id;
@@ -95,7 +94,7 @@ You shouldn't see this message.
 </div>
 <div id="ballot_display">
 <div style="padding:20px; font-size:20px">
-Welcome to the 2018 CCSS General Election!<br>Below you will find the ballot. You may place one vote for each position.
+Hello and welcome to the Carleton Computer Science Society first year representative elections!<br>Below you will find the ballot. You may make two (2) choices.<br>The two individuals with the most votes will be your first year representatives for the year!
 </div>
 
 <style>
@@ -114,62 +113,36 @@ body {
 </style>
 
 <form id="ballot" style="padding-left:50px">
-<h2>President</h2>
-  <input id="elisa" class="votebox" type="radio" value="elisa" name="president"/><label for="elisa" style="display: inline-block;font-size:20px">Elisa Kazan</label>
-  <div class="candidate-description">A few goals for the coming year are: to ensure computer science students are aware of all
-the opportunities and events that are happening on and off campus (aka knowing when to
-apply for those awesome hackathons and conferences!), provide a wide range of resources
-for students (study spaces, printing, technical interview prep) that are easily accessible (a
-bigger lounge area would be nice too!), build a stronger community and CS pride through the
-creation and distribution of CCSS merchandise, connect with other groups and societies on
-campus to create bigger and better events, and continue improving the End of Year BBQ,
-reaching out to alumni making it even bigger next year.</div>
-<br><input id="nc1" class="votebox" type="radio" value="nc1" name="president"/><label for="nc1" style="display: inline-block;font-size:20px">No confidence</label>
-  <div class="candidate-description"></div>
+<input id="matthew" class="votebox" type="checkbox" name="vote[]"/><label for="matthew" style="display: inline-block;font-size:20px">Matthew MacRae-Bovell</label>
+  <div class="candidate-description">Hello, my name is Matthew MacRae - Bovell, and I’m a first year computer science student currently running for the position of CCSS first year representative. If elected, my main goal as representative would be to facilitate the creation of new CCSS events that would cater to first year students of all levels of programming experience.
+<br>
+For first year students who are just starting out or have no prior experience programming, it can be daunting and/or confusing to try to participate in talks or workshops that require a certain level of base knowledge. If elected first year representative, I will make sure to cater to first years of all varying levels of experience by creating talks and workshops that directly branch off of the first year curriculum. These talks would likely revolve around Python, due to it being the language taught in COMP 1405. They would also provide information that will be directly applicable to first year classes and assignments. Some potential topics include demonstrations of practical Python modules, and/or demonstrations of some of the real world uses of Python such as web scraping and machine learning.
+<br>
+I think I’d make a great first year representative because I’m very genuine, approachable, and open to meeting new people. If you’d like to contact me or learn more about me and my platform, please visit my campaign website or follow this facebook page for updates. Thank you for your time and consideration!</div>
 
-  <h2>Vice President</h2>
-  <input id="aidan" class="votebox" type="radio" value="aidan" name="vicepresident"/><label for="aidan" style="display: inline-block;font-size:20px">Aidan Crowther</label>
-  <div class="candidate-description">If elected, I intend to expand upon the services and opportunities provided to members and
-volunteers of the CCSS, while also striving to improve our outreach and accessibility to
-students. I intend to do so by working in key areas such as: Improving upon, and maintaining
-our rewards system for volunteers and board members, including our offering of CCR credit
-for these positions. I also intend to expand our offered learning opportunities by working
-closely with our VP Academics in order to ensure that we can offer as much high quality and
-valuable material as possible. Improving our outreach and availability to students is also one
-of my goals, with the hopes that we can attract more of our members to events, as well as
-making our doings and information more easily accessible and understood. I intend to do
-this by working closely with the President and other VPs in order to ensure that all tasks and
-responsibilities are met, and dealt with accordingly, while also assisting in any way possible,
-while also keeping the views and opinions of our members in mind.</div>
-<br><input id="nc2" class="votebox" type="radio" value="nc2" name="vicepresident"/><label for="nc2" style="display: inline-block;font-size:20px">No confidence</label>
-  <div class="candidate-description"></div>
+<input id="sybe" class="votebox" type="checkbox" name="vote[]"/><label for="sybe" style="display: inline-block;font-size:20px">Sybe Jellema</label>
+  <div class="candidate-description">I’m always ready to roll up my sleeves and do the work that is necessary to get events up and running. I’m a very experienced listener and will never dismay anyone from sharing any ideas or suggestions with me. I will always try to keep all the first years in mind with many of the decisions I’ll be making. One of the things I will do as a first-year representative will be to have more academically oriented demonstrations of the Computer Science program. I want to make sure that students will know all about the Computer Science program and what the program can teach them and where it could take them. I also want to have some social events made for the first year Computer Science students so that they can get to know each other and this should help them meet people with interests that are similar to theirs.</div>
 
-  <h2>Vice President of Social</h2>
-  <input id="william" class="votebox" type="radio" value="william" name="vpsocial"/><label for="william" style="display: inline-block;font-size:20px">William So</label>
-  <div class="candidate-description">As VP Social, I will take on the responsibility of communicating CCSS news, events, and other important information to our members, through social media such as Facebook and
-Slack, and through email newsletter. With these open lines of communication, I will encourage the CCSS members to attend our events. I also plan to organize many social get-togethers, such as regular coffee socials and movie nights, as well as social outings such as
-The Loft.</div>
-<br><input id="nc3" class="votebox" type="radio" value="nc3" name="vpsocial"/><label for="nc3" style="display: inline-block;font-size:20px">No confidence</label>
-  <div class="candidate-description"></div>
+  <input id="darren" class="votebox" type="checkbox" name="vote[]"/><label for="sybe" style="display: inline-block;font-size:20px">Darren Bell</label>
+  <div class="candidate-description">Hi, my name is Darren Bell and I am running to be one of the first year students reps for the CCSS! I am a really outgoing person who loves to talk to people and I have a lot of experience in these types of roles from being the Geeks United Rep at my High School all the way to being the head of the music department at my school. The SSSC does not really focus on the Computer Science department that much when it comes to alumni interviews and events as such but I want to change that! I want to have Interviews for coders, by coders and from your specific branch because there are so many branches that we have, from game design to internet security! I have a lot more planned but that is my number one goal! I am always going to be open to suggestions from all of you too! So if I am elected I will have an email set up for requests on events and that I will be constantly looking through throughout the year. Thank you so much for taking the time to read my platform and have a great day!</div>
 
-  <h2>Vice President of Academics</h2>
-  <input id="forest" class="votebox" type="radio" value="forest" name="vpacademics"/><label for="forest" style="display: inline-block;font-size:20px">Forest Anderson</label>
-  <div class="candidate-description">I will start off the year with a tech talk during the Week of Awesome. I will run workshops
-about useful technologies and technical skills. I plan on working closely with the Ottawa Game Development Collective, as well as hack.carleton.</div>
-<br><input id="jeremy" class="votebox" type="radio" value="jeremy" name="vpacademics"/><label for="jeremy" style="display: inline-block;font-size:20px">Jeremy Tian</label>
-  <div class="candidate-description">I will ensure the voices of students are heard at university meetings, host spectacular
-extracurricular academic events for CS students, and guarantee effective academic support workshops.</div>
-<br><input id="nc4" class="votebox" type="radio" value="nc4" name="vpacademics"/><label for="nc4" style="display: inline-block;font-size:20px">No confidence</label>
-  <div class="candidate-description"></div>
+  <input id="lucas" class="votebox" type="checkbox" name="vote[]"/><label for="sybe" style="display: inline-block;font-size:20px">Lucas Colwell</label>
+  <div class="candidate-description">I’m Lucas, and I’m running for FYR! I think I would be a good rep because I have experience, I like being involved with the society, and I have good ideas to bring to the table. So, a little background about me. I was the head of Tech Crew (TC) in high-school, and really enjoyed it! I got to vote on school issues regarding tech, meaning I had to act with the interests of the TC in mind, and represent them on the council. I think this would be useful to experience for a FYR to have. I really enjoy the atmosphere of the society lounge, and have spent many of my first days at Carleton there. I went to (almost) all of the WoA activities, which made me appreciate the society even more. I want to see more of these activities during the school terms, because they are the perfect opportunity to bring everyone together! I really want to contribute to the society and I think being a rep is the perfect way to do this! A really good initiative for the Society to take-up is high school outreach! There are many high schools in the area with people who are unsure about following a path in computer science, and workshops hosted by the CCSS teaching basic CS skills would be helpful to HS students, and would give CU students an opportunity to get useful teaching skills! Thank you, and I hope you’ll vote me for FYR!</div>
 
-  <h2>Treasurer</h2>
-  <input id="benjamin" class="votebox" type="radio" value="benjamin" name="treasurer"/><label for="benjamin" style="display: inline-block;font-size:20px">Benjamin Karstad</label>
-  <div class="candidate-description">As Treasurer, I will strive for improved communication with members and what they want to see funded in the future, transparency of the budget and where funds are allocated, coordination with third parties to sponsor events, and ensuring economical spending of allocated funds and minimizing wastefulness.</div>
-<br><input id="nc5" class="votebox" type="radio" value="nc5" name="treasurer"/><label for="nc5" style="display: inline-block;font-size:20px">No confidence</label>
-  <div class="candidate-description"></div>
+  <input id="karim" class="votebox" type="checkbox" name="vote[]"/><label for="sybe" style="display: inline-block;font-size:20px">Karim Hurani</label>
+  <div class="candidate-description">Platform not received</div>
+
+  <input id="gina" class="votebox" type="checkbox" name="vote[]"/><label for="sybe" style="display: inline-block;font-size:20px">Gina Bak</label>
+  <div class="candidate-description">Platform not received</div>
+
+  <input id="rheana" class="votebox" type="checkbox" name="vote[]"/><label for="sybe" style="display: inline-block;font-size:20px">Rheana Thomas</label>
+  <div class="candidate-description">Platform not received</div>
+
+  <input id="tarek" class="votebox" type="checkbox" name="vote[]"/><label for="sybe" style="display: inline-block;font-size:20px">Tarek Issa</label>
+  <div class="candidate-description">Platform not received</div>
 
   <br>
-  <input type="submit" value="Submit votes"/>
+  <input type="submit" value="VOTE!"/>
 </form>
 </div>
 
