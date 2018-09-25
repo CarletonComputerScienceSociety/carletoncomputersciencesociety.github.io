@@ -61,29 +61,28 @@ published: true
             return checkbox.id;
         });
 
-        console.log(ids);
         // We checked for x above
-        // var x = params['x'];
+        var x = params['x'];
 
-        // for (var i = 0; i < ids.length; i++) {
-        //   // Send to the server
-        //   $.post(BASE_URL + '/vote?x=' + x,
-        //     // We verified above that exactly two things are in the list.
-        //     {"vote": ids[i]},
-        //     function (data) {
-        //       if (data["ok"]) {
-        //         $("#ballot_display").css("display", "none");
-        //         $("#message_container").css("background-color", "greenyellow");
-        //         $("#message_container").text(data["ok"]);
-        //         $("#message_container").css("display", "");
-        //       }
-        //       else {
-        //         $("#message_container").css("background-color", "red");
-        //         $("#message_container").text(data["error"]);
-        //         $("#message_container").css("display", "");
-        //       }
-        //     });
-        // }
+        for (var i = 0; i < ids.length; i++) {
+          // Send to the server
+          $.post(BASE_URL + '/vote?x=' + x,
+            // We verified above that exactly two things are in the list.
+            {"vote": ids[i]},
+            function (data) {
+              if (data["ok"]) {
+                $("#ballot_display").css("display", "none");
+                $("#message_container").css("background-color", "greenyellow");
+                $("#message_container").text(data["ok"]);
+                $("#message_container").css("display", "");
+              }
+              else {
+                $("#message_container").css("background-color", "red");
+                $("#message_container").text(data["error"]);
+                $("#message_container").css("display", "");
+              }
+            });
+        }
       });
   });
 
