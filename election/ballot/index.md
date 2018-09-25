@@ -27,10 +27,10 @@ published: true
   $(function () {
     var params = getUrlVars();
     if (!params['x']) {
-      // $("#ballot_display").css("display", "none");
-      // $("#pre_ballot_error").css("background-color", "red");
-      // $("#pre_ballot_error").css("display", "");
-      // $("#pre_ballot_content").text("We couldn't process your ballot. Please make sure you came here through the SCS authentication system!");
+      $("#ballot_display").css("display", "none");
+      $("#pre_ballot_error").css("background-color", "red");
+      $("#pre_ballot_error").css("display", "");
+      $("#pre_ballot_content").text("We couldn't process your ballot. Please make sure you came here through the SCS authentication system!");
     }
     else {
       $.post(BASE_URL + '/validate?x=' + params['x'],
