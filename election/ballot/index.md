@@ -189,7 +189,7 @@ You shouldn't see this message.
       <br>
       For first year students who are just starting out or have no prior experience programming, it can be daunting and/or confusing to try to participate in talks or workshops that require a certain level of base knowledge. If elected first year representative, I will make sure to cater to first years of all varying levels of experience by creating talks and workshops that directly branch off of the first year curriculum. These talks would likely revolve around Python, due to it being the language taught in COMP 1405. They would also provide information that will be directly applicable to first year classes and assignments. Some potential topics include demonstrations of practical Python modules, and/or demonstrations of some of the real world uses of Python such as web scraping and machine learning.
       <br>
-      I think I’d make a great first year representative because I’m very genuine, approachable, and open to meeting new people. If you’d like to contact me or learn more about me and my platform, please visit my campaign website or follow this facebook page for updates. Thank you for your time and consideration!</div>
+      I think I’d make a great first year representative because I’m very genuine, approachable, and open to meeting new people. Thank you for your time and consideration!</div>
     </label>
   </div>
 
