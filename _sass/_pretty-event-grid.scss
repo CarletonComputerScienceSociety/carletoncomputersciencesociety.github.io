@@ -15,6 +15,11 @@
 		box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
 		display: flex;
 		padding: 10px 20px;
+
+		position: relative;
+		width: 100%;
+		min-height: 105px;
+		padding: 0px;
 	}
 	.event-list > li > time {
 		display: flex;
@@ -69,6 +74,11 @@
 		justify-content: center;
 		background: #fff;
 		background-color: #fff;
+
+		position: relative;
+		min-height: 105px;
+		text-align: left;
+		padding-right: 20px;
 	}
 	.event-list > li > .info > .title {
 		display: block;
@@ -152,29 +162,14 @@
 	}
 
 	@media (min-width: 768px) {
-		.event-list > li {
-			position: relative;
-			width: 100%;
-			min-height: 105px;
-			padding: 0px;
-		}
 		.event-list > li > img  {
 			display: inline-block;
-		}
-		.event-list > li > .info {
-			overflow: hidden;
 		}
 		.event-list > li > time,
 		.event-list > li > img {
 			padding: 0px;
 			margin: 0px;
 		}
-		.event-list > li > .info {
-			position: relative;
-			min-height: 105px;
-			text-align: left;
-			padding-right: 20px;
-		}	
 		.event-list > li > .info > .title, 
 		.event-list > li > .info > .desc {
 			padding: 0px 10px;

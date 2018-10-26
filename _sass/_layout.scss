@@ -7,11 +7,12 @@
    ========================================================================== */
 
 #masthead {
-	position: absolute;
-  display: flex;
-    width: 100vw;
+	// position: absolute;
+	position: relative;
+  	display: flex;
+    width: 100%;
 	//padding: $gutter;
-    background-color: #161717;
+    background-color: #181818;
 	z-index: 17;
       border-bottom: 2px solid #a80925;
 	@include transform(translate(0,0));
@@ -20,7 +21,6 @@
 		@include transform(translate(-1600px,0));
 	}
 	.inner-wrap {
-
 		//@include outer-container;
 	}
     min-height: 63px;
@@ -180,14 +180,13 @@ top-menu {
    ========================================================================== */
 
 #page-wrapper {
-	width: 100vw;
-    float: left;
+	width: 100%;
     padding: 1rem;
     margin: 0;
     padding: 0;
     background-color: whitesmoke;
-    padding-bottom: 50px;
-    margin-bottom: 50px;
+	padding-bottom: 50px;
+	position: relative;
 
     border-bottom: 3px solid #C40729;
 	/*@include size(100% 100%);
@@ -198,7 +197,6 @@ top-menu {
 	&.slide {
 		@include transform(translate(-60rem,0));
 	}*/
-    margin-top: 55px;
 }
 
 
@@ -516,25 +514,27 @@ top-menu {
 /*
    Site footer
    ========================================================================== */
-.footer {
-	color: white;
+#footer {
+	color: #949494;
 	text-align: center;
     font-weight: lighter;
-    padding-top: 35px;
-    padding-bottom: 25px;
-
+	padding: 25px 0;
+	background: #181818;
+}
+#footer .title, #footer .light {
+	color: #fff;
 }
 
-.footer a {
+#footer a {
 	color: white;
     font-weight: lighter;
 }
 
-.footer p {
+#footer p {
     font-weight: lighter;
 }
 
-.footer h4 {
+#footer h4 {
     font-weight: lighter;
 }
 
@@ -555,9 +555,10 @@ top-menu {
 }
 
 #bottom-logo {
-	width: 100vw;
-    padding-top: 20px;
-    margin-top: 15px;
+	width: 100%;
+	padding-top: 50px;
+	margin-top: 50px;
+	border-top: 1px solid #4b4b4b;
 }
 
 #site-footer {
@@ -946,13 +947,13 @@ top-menu {
     padding-top: 15px;
     padding-bottom: 2px;
     color: white;
-    background: #161717;
+    background: #181818;
     text-transform: uppercase;
     float: right;
 
 }
 
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width : 830px) {
 	#primary_nav_wrap {
     	display: none;
     }
@@ -997,7 +998,7 @@ top-menu {
 	font-family: 'Franklin Gothic Medium''sans-serif';
     color: #E5E5E5;
 //    background-color: black;
-		  background: #161717;
+		  background: #181818;
 
 
 

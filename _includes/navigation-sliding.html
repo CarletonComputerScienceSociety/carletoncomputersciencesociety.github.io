@@ -1,32 +1,34 @@
 <nav role="navigation" id="js-menu" class="sliding-menu-content">
-  <h1>Carleton Computer Science Society<!--span>{{ site.data.messages.locales[site.locale].toc }}</span--></h1>
-  <ul class="menu-item">
-    {% for link in site.data.navigation %}
-    {% if link.exclude == false %}
-        <li>
-        <a href="{{ site.baseurl }}{{ link.url }}">
-          {% if link.image %}<img src="{{ site.baseurl }}/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
-          <div class="title">{{ link.title }}</div>
-          {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
-        </a>
-        </li>
-        {% for sublink in link.sublinks %}
-            <li>
-              {% if sublink.url contains 'http' %}
-                {% assign subdomain = '' %}
-                {% else %}
-                {% assign subdomain = site.baseurl %}
-            {% endif %}
-                <a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>				 	
-                    {{ sublink.title }}
-                  </a>
-            </li>
-        {% endfor %}
-      {% endif %}
-  {% endfor %}
-  </ul>
+  <div class='rotatingBackground'></div>
+  <div class='content'>
+    <h1>Carleton Computer Science Society<!--span>{{ site.data.messages.locales[site.locale].toc }}</span--></h1>
+    <ul class="menu-item">
+      {% for link in site.data.navigation %}
+      {% if link.exclude == false %}
+          <li>
+          <a href="{{ site.baseurl }}{{ link.url }}">
+            {% if link.image %}<img src="{{ site.baseurl }}/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
+            <div class="title">{{ link.title }}</div>
+            {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
+          </a>
+          </li>
+          {% for sublink in link.sublinks %}
+              <li>
+                {% if sublink.url contains 'http' %}
+                  {% assign subdomain = '' %}
+                  {% else %}
+                  {% assign subdomain = site.baseurl %}
+              {% endif %}
+                  <a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>				 	
+                      {{ sublink.title }}
+                    </a>
+              </li>
+          {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </ul>
+  </div>
 </nav>
-
-<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation"><span class="nav-lines"></span></button>
+<div type="button" id="js-menu-trigger" class="sliding-menu-button" role="button" aria-label="Toggle Navigation"><div class="nav-slide-lines"></div></div>
 
 <div id="js-menu-screen" class="menu-screen"></div>
