@@ -106,34 +106,103 @@
   padding: 5px;
   background: #fff;
   box-shadow: 0 1px 2px rgba(0,0,0,.3);
-}
 
-.gallery img  {
-  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
 .gallery > div {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+}
+.gallery > div > .wrapper {
   position: relative;
-  float: left;
-  padding: 5px;
-  margin: auto;
+  margin: 5px;
+  flex: 1;
+  overflow: hidden;
 }
 
-.gallery > div > img {
+.gallery > div > .wrapper > img {
+  width: 100%;
+  max-width: none;
+}
+@include media($small){
+  .gallery > div {
+    width: 50%;
+    height: 230px;
+  }
+  .gallery > div > .wrapper > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 110%;
+
+    transform: translate(-50%, -50%);
+  }
+}
+@include media($medium-small){
+  .gallery > div {
+    width: 50%;
+    height: 280px;
+  }
+}
+@include media($medium){
+  .gallery > div {
+    height: 320px;
+  }
+}
+@include media($medium-large){
+  .gallery > div {
+    width: 33.3%;
+    height: 240px;
+  }
+}
+
+.gallery div.click {
+  position: static;
+  z-index: 20;
+}
+.gallery div.click::before {
+  content: '';
   display: block;
-  width:  300px;
-  transition: .1s transform;
-  transform: translateZ(0); /* hack */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+  z-index: 0;
+}
+.gallery div.click img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: auto;
+}
+@include media($medium){
+  .gallery div.click img {
+    width: 80%;
+  }
+}
+@media screen and (min-aspect-ratio: 13/10){
+  .gallery div.click img {
+    width: auto;
+    height: 70%;
+  }
 }
 
 .gallery > div:hover {
   z-index: 1;
-  overflow: hidden;
 }
 
 
-.gallery > div[data-enlarged="0"]:hover > img {
+.gallery div[data-enlarged="0"]:hover img {
   filter: grayscale(100%);
   transition: 0.4s filter;
 }
