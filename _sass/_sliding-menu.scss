@@ -97,8 +97,6 @@
 }
 
 .sliding-menu-content {
-  -ms-overflow-style: none;  // IE 10+ hide scrollbar
-  //overflow: -moz-scrollbars-none;  // Firefox
   position: fixed;
   top: 0;
   left: 100%;
@@ -111,15 +109,16 @@
   &.is-visible {
     z-index: 20;
     transform: translate(-100%, 0);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  // IE 10+ hide scrollbar
+    //overflow: -moz-scrollbars-none;  // Firefox
   }
 
   @include media($medium) {
     display: none;
   }
   z-index: 20;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
   h1 {
     margin: 0 20% 0 10%;
     @include media($large) {
