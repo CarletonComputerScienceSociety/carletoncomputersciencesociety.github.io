@@ -1,32 +1,78 @@
 <nav role="navigation" id="js-menu" class="sliding-menu-content">
   <div class='rotatingBackground'></div>
   <div class='content'>
-    <h1>Carleton Computer Science Society<!--span>{{ site.data.messages.locales[site.locale].toc }}</span--></h1>
-    <ul class="menu-item">
+    <div class='header menu-edge' id='nav-headers'>
+      <h1 class='title active'><div class='text'>Carleton Computer Science Society</div></h1>
       {% for link in site.data.navigation %}
-      {% if link.exclude == false %}
-          <li>
-          <a href="{{ site.baseurl }}{{ link.url }}">
-            {% if link.image %}<img src="{{ site.baseurl }}/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
-            <div class="title">{{ link.title }}</div>
-            {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
-          </a>
-          </li>
-          {% for sublink in link.sublinks %}
-              <li>
-                {% if sublink.url contains 'http' %}
-                  {% assign subdomain = '' %}
-                  {% else %}
-                  {% assign subdomain = site.baseurl %}
-              {% endif %}
-                  <a href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>				 	
-                      {{ sublink.title }}
-                    </a>
-              </li>
-          {% endfor %}
+        {% if link.exclude == false %}
+          <h1 class="title nav-back"><div class='nav-back-icon'><img class='svg' src='{{ site.baseurl }}/images/svg/back_ios.svg'/></div><div class='text'>{{ link.title }}</div></h1>
         {% endif %}
-    {% endfor %}
+      {% endfor %}
+    </div>
+    <ul class="menu-item menu-fill" id='nav-menu-container'>
+      <div id='nav-menu-toggles' class='nav-menu-group active hold'>
+        {% assign menu_item_count = 0 %}
+        {% for link in site.data.navigation %}
+          {% if link.exclude == false %}
+            {% assign menu_item_count = menu_item_count | plus: 1 %}
+            <li class='nav-menu-option nav-menu-toggle active' data-menuIndex="{{ menu_item_count }}">
+            <div class='content'>
+              {% if link.image %}<img src="{{ site.baseurl }}/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
+              <div class="title">{{ link.title }}</div>
+              {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
+            </div>
+
+            <div class='nav-menu-option-dots'>
+              {% for sublink in link.sublinks %}
+                <div class='nav-menu-option-dot'></div>
+              {% endfor %}
+            </div>
+            </li>
+          {% endif %}
+        {% endfor %}
+        {% for i in (menu_item_count..5) %}
+          <li class='nav-menu-option' data-menuIndex="{{ i }}"></li>
+        {% endfor %}
+      </div>
+      {% for link in site.data.navigation %}
+        <div class='nav-menu-group'>
+          {% assign sub_link_count = 0 %}
+          {% for sublink in link.sublinks %}
+            {% assign sub_link_count = sub_link_count | plus: 1 %}
+            {% if sublink.url contains 'http' %}
+              {% assign subdomain = '' %}
+            {% else %}
+              {% assign subdomain = site.baseurl %}
+            {% endif %}
+            <a class='nav-menu-option active' href="{{ subdomain }}{{ sublink.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>
+              <div class='label'>				 	
+                {{ sublink.title }}
+              </div>
+            </a>
+          {% endfor %}
+          {% for i in (sub_link_count..5) %}
+            <div class='nav-menu-option'></div>
+          {% endfor %}
+        </div>
+      {% endfor %}
     </ul>
+    <div class='header menu-edge'>
+      <ul class='nav-media-links'>
+        {% for link in site.data.footer %}
+          {% if link.url contains 'http' %}
+            {% assign domain = '' %}
+          {% else %}
+            {% assign domain = site.baseurl %}
+          {% endif %}
+          <li>
+            <a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>
+              {{ link.title }}
+              <img src="{{ site.baseurl }}/images/{{ link.image }}" alt="" width="20" height="20" border="0">
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </nav>
 <div type="button" id="js-menu-trigger" class="sliding-menu-button" role="button" aria-label="Toggle Navigation"><div class="nav-slide-lines"></div></div>
