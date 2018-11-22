@@ -1,0 +1,41 @@
+---
+layout: base
+published: true
+---
+{% if page.pimage %}
+<div class="page-image-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('{{ page.pimage }}'); font-size:{{ page.subjectsize }};">
+{% endif %}
+{% if page.showlogo %}
+<div class='front-page-logo' style="font-size: {{ page.subjectsize }}">
+{% elsif page.subjecttext %}
+<div class='front-page-subject' style="{{ page.subjectstyle }}">
+{% endif %}
+    {% if page.showlogo %}
+            <img src="{{ site.url }}/images/ccss-logo.png" alt="logo" width="920" height="115" border="0" >
+    {% endif %}
+    {% if page.subjecttext %}
+        {% if page.subjectlink %}
+        <a href="{{ page.subjectlink }}">{{ page.subjecttext }}</a>
+        {% else %}
+            {{ page.subjecttext }}
+        {% endif %}
+    {% endif %}
+{% if page.showlogo or page.subjecttext %}
+    </div>
+    {% endif %}
+<!--video playsinline autoplay muted loop id="video"> <!--poster="{{ site.url }}/images/typing.png">
+    <source src="{{ site.url }}/video/typing2.mov" type="video/mov">
+    <source src="{{ site.url }}/video/typing2.mp4" type="video/mp4">
+</video-->
+{% if page.pimage %}
+</div>
+{% endif %}
+
+<div class='content-wrap'>
+    <a style="margin-left:50px" href="{{ site.baseurl }}/community/gallery/">Go Back</a>
+    <div class="gEvents">
+        {{ content }}
+    </div>
+</div>
+
+<script src="{{ site.baseurl }}/js/gallery.js"></script>
