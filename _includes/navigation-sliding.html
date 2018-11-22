@@ -16,17 +16,27 @@
           {% if link.exclude == false %}
             {% assign menu_item_count = menu_item_count | plus: 1 %}
             <li class='nav-menu-option nav-menu-toggle active' data-menuIndex="{{ menu_item_count }}">
-            <div class='content'>
-              {% if link.image %}<img src="{{ site.baseurl }}/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
-              <div class="title">{{ link.title }}</div>
-              {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
-            </div>
+              <div class='nav-menu-option-dots'>
+                {% assign sub_link_count = 0 %}
+                {% for sublink in link.sublinks %}
+                  {% assign sub_link_count = sub_link_count | plus: 1 %}
+                  <div class='nav-menu-option-dot'></div>
+                {% endfor %}
+              </div>
 
-            <div class='nav-menu-option-dots'>
-              {% for sublink in link.sublinks %}
-                <div class='nav-menu-option-dot'></div>
-              {% endfor %}
-            </div>
+              {% if sub_link_count == 0 %}
+                <a class='content' href="{{ link.url }}">
+                  {% if link.image %}<img src="{{ site.baseurl }}/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
+                  <div class="title">{{ link.title }}</div>
+                  {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
+                </a>
+              {% else %}
+                <div class='content'>
+                  {% if link.image %}<img src="{{ site.baseurl }}/images/{{ link.image }}" alt="teaser" class="teaser">{% endif %}
+                  <div class="title">{{ link.title }}</div>
+                  {% if link.excerpt %}<p class="excerpt">{{ link.excerpt }}</p>{% endif %}
+                </div>
+              {% endif %}
             </li>
           {% endif %}
         {% endfor %}
