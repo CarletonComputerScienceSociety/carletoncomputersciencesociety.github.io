@@ -4,8 +4,6 @@ title: Changes to the Constitution
 category: blog
 by: Elisa Kazan
 ---
-Hey Everyone!
-
 At the Winter General Meeting (Friday, March 8, 6-8 pm), we will be proposing changes to our society's Constitution.
 
 The notable changes are:
