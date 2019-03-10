@@ -8,7 +8,7 @@ subjectstyle: null
 ---
 
 
-<div class="content-wrap">
+<div class="content-wrap no-pad">
 	<!--a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank" style="text-decoration:none;">
 	<img src="./images/Slack-528.png" alt="Slack" height="32" width="32" style="margin-right:10px;">
 	Join the us on slack to keep up to date with events and clubs, and to meet new people! :D
@@ -18,11 +18,13 @@ subjectstyle: null
       </div>
 	-->
 	<div class='feed-wrap'>
-		<div class="half-feed">
-			{% include pretty-event-grid.html %}
-		</div>
-		<div class="half-feed">
-			{% include latest-news-list.html %}
+		<div class='inner-wrap'>
+			<div class="half-feed">
+				{% include pretty-event-grid.html %}
+			</div>
+			<div class="half-feed">
+				{% include latest-news-list.html %}
+			</div>
 		</div>
 	</div>
 </div>
