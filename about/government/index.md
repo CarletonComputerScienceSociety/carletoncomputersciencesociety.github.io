@@ -14,7 +14,7 @@ subjectstyle: 'border-bottom: 5px solid white; border-top: 5px solid white;'
   <h5>Our constitution</h5>
   <p>The CCSS Constitution defines the basic rules the Society must abide by
   to remain in control of its assets and dissolution and operation procedures
-  for the Society. We need to hold a general meeting to change this document. You can find it <a href="https://drive.google.com/file/d/1uEjgfQh323eIVwqPcPCf3Z9C122n16GR/view?usp=sharing" target="_blank">here</a></p>
+  for the Society. We need to hold a general meeting to change this document. You can find it <a href="https://docs.google.com/document/d/1qjUtn-7BfmmLniZZDFm3mfygoKr1cPsf8yWleRk_baU/edit?usp=sharing" target="_blank">here</a></p>
 
   <h5>Our rules of operation</h5>
   <p>The rules of operation are rules that the board of directors can change
@@ -23,7 +23,7 @@ subjectstyle: 'border-bottom: 5px solid white; border-top: 5px solid white;'
 
   <h5>Our electoral code</h5>
   <p>The CCSS Electoral Code outlines the timeline, structure, and rules of a Carleton
-  Computer Science Society (“CCSS”) election. You can find it <a href="https://drive.google.com/open?id=1dno9axDO217R8OBLgfC2x1EmOwLbN4YG" target="_blank">here</a></p>
+  Computer Science Society (“CCSS”) election. You can find it <a href="https://docs.google.com/document/d/1v66nTxoRgAYNnXLr3ZIAhjkyiHMRGUoK3rH9rmLL478/edit?usp=sharing" target="_blank">here</a></p>
 
   <h5>The board of directors</h5>
   <p>The CCSS board of directors is a group of both elected and appointed
