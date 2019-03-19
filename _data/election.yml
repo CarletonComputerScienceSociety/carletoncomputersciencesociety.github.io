@@ -1,0 +1,49 @@
+# Election dictionaries
+spring2019:
+  categories:
+    - title: "President"
+      candidates: ["Mark", "Tony"]
+    - title: "Vice President"
+      candidates: ["Sharkesha", "Aaron", "Banequa"]
+    - title: "Academics"
+      candidates: ["Bartholomue", "Megan", "Katie", "Derek"]
+    - title: "Treasurer"
+      candidates: ["Elisa", "Forest"]
+    - title: "Social"
+      candidates: ["Eric", "Aidan"]
+    - title: "Inclusion"
+      candidates: ["Ben", "Will"]
+
+  candidates:
+    Mark:
+      platform: "I like crayons"
+    Tony:
+      platform: "Mmm dirt"
+    Sharkesha:
+      platform: "I like crayons"
+    Aaron:
+      platform: "Mmm dirt"
+    Banequa:
+      platform: "I want to be a firetruck"
+    Katie:
+      platform: "I like big trucks"
+    Derek:
+      platform: "Grass is green so am I"
+    Bartholomue:
+      platform: "I like crayons"
+    Megan:
+      platform: "Mmm dirt"
+    Elisa:
+      platform: "I like crayons"
+    Forest:
+      platform: "Mmm dirt"
+    Eric:
+      platform: "I like crayons"
+    Aidan:
+      platform: "Mmm dirt"
+    Ben:
+      platform: "I like crayons"
+    Will:
+      platform: "Mmm dirt"
+
+  votesURL: "http://eb.ngrok.io/ccss"
