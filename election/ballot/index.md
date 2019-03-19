@@ -27,10 +27,10 @@ published: true
   $(function () {
     var params = getUrlVars();
     if (!params['x']) {
-      $("#ballot_display").css("display", "none");
-      $("#pre_ballot_error").css("background-color", "red");
-      $("#pre_ballot_error").css("display", "");
-      $("#pre_ballot_content").text("We couldn't process your ballot. Please make sure you came here through the SCS authentication system!");
+      // $("#ballot_display").css("display", "none");
+      // $("#pre_ballot_error").css("background-color", "red");
+      // $("#pre_ballot_error").css("display", "");
+      // $("#pre_ballot_content").text("We couldn't process your ballot. Please make sure you came here through the SCS authentication system!");
     }
     else {
       $.post(BASE_URL + '/validate?x=' + params['x'],
@@ -162,10 +162,6 @@ published: true
   </style>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
-
-<div id="message_container" style="display:none;font-weight: bold">
-You shouldn't see this message.
-</div>
 <div id="ballot_display">
 <div id='ballot_header'>
   <h2>Hello and welcome to the Carleton Computer Science Society first year representative elections!</h2>
