@@ -28,3 +28,8 @@ bundler install
 ```
 bundle exec jekyll serve
 ```
+
+#### To run with Docker
+```
+docker build -t ccss-website .
+docker run -p
