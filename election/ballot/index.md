@@ -4,297 +4,434 @@ permalink: /election/ballot/
 title: Election Ballot
 published: true
 ---
+
 <head>
-  <script src="http://ccss.carleton.ca/js/jquery.min.js"></script>
-
-  <script>
-
-  var BASE_URL = "https://ccss-election.herokuapp.com";
-
-  // Read a page's GET URL variables and return them as an associative array.
-  function getUrlVars() {
-      var vars = [], hash;
-      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-      for(var i = 0; i < hashes.length; i++)
-      {
-          hash = hashes[i].split('=');
-          vars.push(hash[0]);
-          vars[hash[0]] = hash[1];
-      }
-      return vars;
-  }
-
-  $(function () {
-    var params = getUrlVars();
-    if (!params['x']) {
-      // $("#ballot_display").css("display", "none");
-      // $("#pre_ballot_error").css("background-color", "red");
-      // $("#pre_ballot_error").css("display", "");
-      // $("#pre_ballot_content").text("We couldn't process your ballot. Please make sure you came here through the SCS authentication system!");
-    }
-    else {
-      $.post(BASE_URL + '/validate?x=' + params['x'],
-        function (data) {
-          if (!data["ok"]) {
-            $("#ballot_display").css("display", "none");
-            $("#pre_ballot_content").text(data["error"]);
-            $("#pre_ballot_error").css("display", "");
-            $("#pre_ballot_error").css("background-color", "red");
-          }
-        }
-      );
-    }
-
-    $("#ballot").submit(function (e) {
-        e.preventDefault();
-
-        checked = $(".votebox:checked");
-
-        // Verify there are two things in the list of candidates they
-        // want to vote for.
-        if (checked.length != 2) {
-          alert("Please select the correct amount of candidates (2)");
-          return;
-        }
-
-        ids = checked.map(function (index, checkbox) {
-            return checkbox.id;
-        });
-
-        // We checked for x above
-        var x = params['x'];
-
-        for (var i = 0; i < ids.length; i++) {
-          // Send to the server
-          $.post(BASE_URL + '/vote?x=' + x,
-            // We verified above that exactly two things are in the list.
-            {"vote": ids[i]},
-            function (data) {
-              if (data["ok"]) {
-                $("#ballot_display").css("display", "none");
-                $("#message_container").css("background-color", "greenyellow");
-                $("#message_container").text(data["ok"]);
-                $("#message_container").css("display", "");
-              }
-              else {
-                $("#message_container").css("background-color", "red");
-                $("#message_container").text(data["error"]);
-                $("#message_container").css("display", "");
-              }
-            });
-        }
-      });
-  });
-
-  </script>
-
   <style>
-  h1 {
-      color: maroon;
-      margin-left: 40px;
-  }
+    #ballot_display {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+    @media(min-width: 800px) {
+        #ballot_display {
+            padding: 80px 40px;
+        }
+    }
+    #ballot_header {
+    }
+    .election_module_title {
+        font-size: 180%;
+        margin: 4rem 0 0.5rem 0;
+    }
+    .election_module {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1px 1px #eee;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #e3e3e3;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .checkbox_container {
+        flex: 1;
+        padding: 2rem;
+    }
+    .candidate_labels {
+        display: flex;
+    }
 
-  h3 {
-    margin: 0;
-  }
+    .checkbox_container .candidate {
+        display: flex;
+    }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
+    /* The input rows */
+    .checkbox_container .row {
+        display: flex;
+        width: 100%;
+    }
 
-  #ballot {
-    padding: 20px;
-  }
-  #ballot_header {
-    padding: 40px;
-    font-size: 125%;
-  }
+    /* The top row */
+    .checkbox_container .top_axis {
+        margin-bottom: 0.5rem;
+        color: #a80925;
+    }
 
-  .candidate {
-    background: #fff;
-    margin-bottom: 20px;
-  }
-  .candidate input {
-    display: none;
-  }
-  .candidate .label-holder {
-    display: flex;
-    border-bottom: 1px solid #eee;
-  }
-  .candidate-check {
-    height: 80px;
-    width: 81px;
-    position: relative;
-    margin-right: 40px;
-    border-right: 1px solid #eee;
-  }
-  .candidate-check img {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-  }
-  .candidate:hover .candidate-check img, .candidate input:checked ~ label .candidate-check img {
-    display: block;
-  }
-  .candidate h3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .candidate input:checked ~ label .candidate-check {
-    background: #E5F7EC;
-  }
-  .candidate input:checked ~ label .candidate-check {
-    background: #E5F7EC;
-  }
-  .candidate label {
-    font-weight: 500;
-    font-family: inherit;
-  }
+    /* The candidate labels */
+    .row .candidate, .row .candidate_holder {
+        flex: 1;
+        font-weight: 700;
+    }
+    .row .candidate_holder {
+        font-weight: 200;
+        color: #333;
+    }
 
-  .candidate-description {
-    padding: 20px;
-  }
+    /* The input labels */
+    .row .input_labels .label, .row .input_container .label {
+        width: 4rem;
+        height: 4rem;
+        margin: 2px;
+        text-align: center;
+    }
+    @media(min-width: 600px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 3rem;
+            height: 3rem;
+        } 
+    }
+    @media(min-width: 800px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 2rem;
+            height: 2rem;
+        } 
+    }
+
+    .checkbox_container .radio_inputs, .checkbox_container .input_labels {
+        display: flex;
+    }
+
+    .election_module input {
+        margin: 0;
+    }
+
+
+    .platform_header {
+        font-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+        color: #313130;
+        
+        display: flex;
+        justify-content: center;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    .platform_header .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .platform_header .svg {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    .platform_header.click {
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header:hover {
+        color: #a80925;
+    }
+
+    .platform_header .svg_holder > .svg:nth-child(2), .platform_header.click .svg_holder > .svg:nth-child(1) {
+        display: none;
+    }
+    .platform_header.click .svg_holder > .svg:nth-child(2) {
+        display: flex;
+    }
+    .election_platform {
+        display: none;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header.click ~ .election_platform {
+        display: block;
+    }
+    .platform_title {
+        color: #a80925;
+        font-weight: 700;
+    }
+
+
+    #client-error {
+        display: none;
+        color: red;
+        font-size: 120%;
+    }
+    #client-error.active {
+        display: block;
+    }
+
+    .serialize {
+        background: #C40729;
+        color: #fff;
+        border-radius: 4px;
+        padding: 20px 40px;
+        display: inline-block;
+        margin-top: 4rem;
+    }
   </style>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <div id="ballot_display">
-<div id='ballot_header'>
-  <h2>Hello and welcome to the Carleton Computer Science Society first year representative elections!</h2>
-  <br>
-  Below you will find the ballot. You may make two (2) choices.
-  <br>
-  The two individuals with the most votes will be your first year representatives for the year!
-</div>
+    <div id='ballot_header'>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div>Some text here about how the ranking works!</div>
+    </div>
+    {% for category in site.data.election.spring2019.categories %}
+        <div class='election_module_title'>{{ category.title }}</div>
+        <div class='election_module' data-election='{{ category.title }}'>
+            <div class='checkbox_container'>
+                <div class='row top_axis'>
+                    <div class='candidate_holder'>Candidates</div>
+                    <div class='input_labels'>
+                        {% for candidate in category.candidates %}
+                            {% assign d = forloop.index0 | plus: 1 %}
+                            <div class='label'>{% case d %}
+                                {% when 1 %}{{ d }}st
+                                {% when 2 %}{{ d }}nd
+                                {% when 3 %}{{ d }}rd
+                                {% else %}{{ d }}th
+                            {% endcase %}</div>
+                        {% endfor %}
+                        <!-- <div class='label'>1st</div>
+                        <div class='label'>2nd</div>
+                        <div class='label'>3rd</div> -->
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class='election_platforms'>
+                <div class='platform_header'>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                    <div class='text'>Candidate Platforms</div>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    <div class='election_platform'>
+                        <div class='platform_title'>{{candidate}}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
 
-<form id="ballot">
-  <div class='candidate'>
-    <input id="matthew" class="votebox" type="checkbox" name="vote[]"/>
-    <label for="matthew">
-      <div class='label-holder'>
-        <div class='candidate-check'>
-          <img src="{{ site.baseurl }}/images/svg/check.svg" alt="check">
-        </div>
-        <h3>Matthew MacRae-Bovell</h3>
-      </div>
-      <div class="candidate-description">Hello, my name is Matthew MacRae - Bovell, and I’m a first year computer science student currently running for the position of CCSS first year representative. If elected, my main goal as representative would be to facilitate the creation of new CCSS events that would cater to first year students of all levels of programming experience.
-      <br>
-      For first year students who are just starting out or have no prior experience programming, it can be daunting and/or confusing to try to participate in talks or workshops that require a certain level of base knowledge. If elected first year representative, I will make sure to cater to first years of all varying levels of experience by creating talks and workshops that directly branch off of the first year curriculum. These talks would likely revolve around Python, due to it being the language taught in COMP 1405. They would also provide information that will be directly applicable to first year classes and assignments. Some potential topics include demonstrations of practical Python modules, and/or demonstrations of some of the real world uses of Python such as web scraping and machine learning.
-      <br>
-      I think I’d make a great first year representative because I’m very genuine, approachable, and open to meeting new people. Thank you for your time and consideration!</div>
-    </label>
-  </div>
-
-  <div class='candidate'>
-      <input id="sybe" class="votebox" type="checkbox" name="vote[]"/>
-      <label for="sybe">
-        <div class='label-holder'>
-          <div class='candidate-check'>
-            <img src="{{ site.baseurl }}/images/svg/check.svg" alt="check">
-          </div>
-          <h3>Sybe Jellema</h3>
-        </div>
-        <div class="candidate-description">
-          I’m always ready to roll up my sleeves and do the work that is necessary to get events up and running. I’m a very experienced listener and will never dismay anyone from sharing any ideas or suggestions with me. I will always try to keep all the first years in mind with many of the decisions I’ll be making. One of the things I will do as a first-year representative will be to have more academically oriented demonstrations of the Computer Science program. I want to make sure that students will know all about the Computer Science program and what the program can teach them and where it could take them. I also want to have some social events made for the first year Computer Science students so that they can get to know each other and this should help them meet people with interests that are similar to theirs.
-        </div>
-      </label>
+    <div id='client-error'>ERROR: The inputs are not valid</div>
+    <div class='serialize'>
+        Submit Votes
     </div>
 
-  <div class='candidate'>
-      <input id="darren" class="votebox" type="checkbox" name="vote[]"/>
-      <label for="darren">
-        <div class='label-holder'>
-          <div class='candidate-check'>
-            <img src="{{ site.baseurl }}/images/svg/check.svg" alt="check">
-          </div>
-          <h3>Darren Bell</h3>
-        </div>
-        <div class="candidate-description">
-            Hi, my name is Darren Bell and I am running to be one of the first year students reps for the CCSS! I am a really outgoing person who loves to talk to people and I have a lot of experience in these types of roles from being the Geeks United Rep at my High School all the way to being the head of the music department at my school. The SSSC does not really focus on the Computer Science department that much when it comes to alumni interviews and events as such but I want to change that! I want to have Interviews for coders, by coders and from your specific branch because there are so many branches that we have, from game design to internet security! I have a lot more planned but that is my number one goal! I am always going to be open to suggestions from all of you too! So if I am elected I will have an email set up for requests on events and that I will be constantly looking through throughout the year. Thank you so much for taking the time to read my platform and have a great day!
-        </div>
-      </label>
-    </div>
+    <!-- Toggles the platform headers-->
+    <script>
+        function initPlatformHeaders(){
+            let parent = document.getElementsByClassName('platform_header');
+            let len = parent.length;
 
-  <div class='candidate'>
-      <input id="lucas" class="votebox" type="checkbox" name="vote[]"/>
-      <label for="lucas">
-        <div class='label-holder'>
-          <div class='candidate-check'>
-            <img src="{{ site.baseurl }}/images/svg/check.svg" alt="check">
-          </div>
-          <h3>Lucas Colwell</h3>
-        </div>
-        <div class="candidate-description">
-            I’m Lucas, and I’m running for FYR! I think I would be a good rep because I have experience, I like being involved with the society, and I have good ideas to bring to the table. So, a little background about me. I was the head of Tech Crew (TC) in high-school, and really enjoyed it! I got to vote on school issues regarding tech, meaning I had to act with the interests of the TC in mind, and represent them on the council. I think this would be useful to experience for a FYR to have. I really enjoy the atmosphere of the society lounge, and have spent many of my first days at Carleton there. I went to (almost) all of the WoA activities, which made me appreciate the society even more. I want to see more of these activities during the school terms, because they are the perfect opportunity to bring everyone together! I really want to contribute to the society and I think being a rep is the perfect way to do this! A really good initiative for the Society to take-up is high school outreach! There are many high schools in the area with people who are unsure about following a path in computer science, and workshops hosted by the CCSS teaching basic CS skills would be helpful to HS students, and would give CU students an opportunity to get useful teaching skills! Thank you, and I hope you’ll vote me for FYR!
-        </div>
-      </label>
-    </div>
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    this.classList.toggle('click');
+                    console.log(parent[a]);
+                });
+            }
+        }
+        initPlatformHeaders();
+    </script>
 
-  <div class='candidate'>
-      <input id="karim" class="votebox" type="checkbox" name="vote[]"/>
-      <label for="karim">
-        <div class='label-holder'>
-          <div class='candidate-check'>
-            <img src="{{ site.baseurl }}/images/svg/check.svg" alt="check">
-          </div>
-          <h3>Karim Hurani</h3>
-        </div>
-        <div class="candidate-description">Platform not received</div>
-      </label>
-    </div>
+    <!-- Restricts the inputs to one per column/row -->
+    <script>
+        function initInputManagers(){
+            let parent = document.getElementsByClassName('election_input');
+            let len = parent.length;
 
-  <div class='candidate'>
-      <input id="gina" class="votebox" type="checkbox" name="vote[]"/>
-      <label for="gina">
-        <div class='label-holder'>
-          <div class='candidate-check'>
-            <img src="{{ site.baseurl }}/images/svg/check.svg" alt="check">
-          </div>
-          <h3>Gina Bak</h3>
-        </div>
-        <div class="candidate-description">Platform not received</div>
-      </label>
-    </div>
-  
-  <div class='candidate'>
-    <input id="rheana" class="votebox" type="checkbox" name="vote[]"/>
-    <label for="rheana">
-      <div class='label-holder'>
-        <div class='candidate-check'>
-          <img src="{{ site.baseurl }}/images/svg/check.svg" alt="check">
-        </div>
-        <h3>Rheana Thomas</h3>
-      </div>
-      <div class="candidate-description">Platform not received</div>
-    </label>
-  </div>
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    //Find the parent checkbox_container
+                    container = findParentByClass('checkbox_container', this, 0);
 
-  <div class='candidate'>
-    <input id="tarek" class="votebox" type="checkbox" name="vote[]"/>
-    <label for="tarek">
-      <div class='label-holder'>
-        <div class='candidate-check'>
-          <img src="{{ site.baseurl }}/images/svg/check.svg" alt="check">
-        </div>
-        <h3>Tarek Issa</h3>
-      </div>
-      <div class="candidate-description">Platform not received</div>
-    </label>
-  </div>
+                    if(container == null)
+                        return;
 
-  <br>
-  <input type="submit" value="VOTE!"/>
-</form>
-</div>
+                    let inputs = container.getElementsByClassName('election_input');
+                    let inputLen = inputs.length;
+                    let rowLen = Math.sqrt(inputLen);
 
-<div style="padding-left:20px; padding-top: 10px; font-size:20px">
-You cannot change your votes after they have been submitted.
-</div>
+                    let currentCol = parseInt(this.dataset.col);
+                    let currentRow = parseInt(this.dataset.row);
+                    
+                    /*
+                        CLEARS INPUTS VERTICALLY
+                        Disable if you want to disable vertical clearing
+                    */
+                    for(var b = 0; b < rowLen; b++){
+                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
+                    }
 
-<div id="pre_ballot_error" style="display: none">
-<p id="pre_ballot_content" style="font-weight: bold">Fake content you shouldn't see</p>
+
+                    /*
+                        CLEARS INPUTS HORIZONTALLY
+                        Disable if you want to disable horizontal clearing
+                    */
+                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                        inputs[b].checked = false;
+                    }
+
+                    this.checked = true;
+                });
+            }
+        }
+        initInputManagers();
+
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
 </div>
