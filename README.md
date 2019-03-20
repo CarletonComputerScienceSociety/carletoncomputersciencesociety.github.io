@@ -28,3 +28,11 @@ bundler install
 ```
 bundle exec jekyll serve
 ```
+
+#### To run with Docker
+Note, if the Gemfile.lock is not deleted, it will override the one made by `docker build`. Gemfile.lock only needs to be deleted for the Docker method.
+```
+rm Gemfile.lock
+docker build -t ccss-website .
+docker run --rm -it -v $(pwd):/app -w /app -p 4000:4000 ccss-website
+```
