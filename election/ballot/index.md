@@ -435,3 +435,4715 @@ published: true
         }
     </script>
 </div>
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>---
+layout: default
+permalink: /election/ballot/
+title: Election Ballot
+published: true
+---
+
+<head>
+  <style>
+    #ballot_display {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+    @media(min-width: 800px) {
+        #ballot_display {
+            padding: 80px 40px;
+        }
+    }
+    #ballot_header {
+    }
+    .election_module_title {
+        font-size: 180%;
+        margin: 4rem 0 0.5rem 0;
+    }
+    .election_module {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1px 1px #eee;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #e3e3e3;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .checkbox_container {
+        flex: 1;
+        padding: 2rem;
+    }
+    .candidate_labels {
+        display: flex;
+    }
+
+    .checkbox_container .candidate {
+        display: flex;
+    }
+
+    /* The input rows */
+    .checkbox_container .row {
+        display: flex;
+        width: 100%;
+    }
+
+    /* The top row */
+    .checkbox_container .top_axis {
+        margin-bottom: 0.5rem;
+        color: #a80925;
+    }
+
+    /* The candidate labels */
+    .row .candidate, .row .candidate_holder {
+        flex: 1;
+        font-weight: 700;
+    }
+    .row .candidate_holder {
+        font-weight: 200;
+        color: #333;
+    }
+
+    /* The input labels */
+    .row .input_labels .label, .row .input_container .label {
+        width: 4rem;
+        height: 4rem;
+        margin: 2px;
+        text-align: center;
+    }
+    @media(min-width: 600px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 3rem;
+            height: 3rem;
+        } 
+    }
+    @media(min-width: 800px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 2rem;
+            height: 2rem;
+        } 
+    }
+
+    .checkbox_container .radio_inputs, .checkbox_container .input_labels {
+        display: flex;
+    }
+
+    .election_module input {
+        margin: 0;
+    }
+
+
+    .platform_header {
+        font-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+        color: #313130;
+        
+        display: flex;
+        justify-content: center;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    .platform_header .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .platform_header .svg {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    .platform_header.click {
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header:hover {
+        color: #a80925;
+    }
+
+    .platform_header .svg_holder > .svg:nth-child(2), .platform_header.click .svg_holder > .svg:nth-child(1) {
+        display: none;
+    }
+    .platform_header.click .svg_holder > .svg:nth-child(2) {
+        display: flex;
+    }
+    .election_platform {
+        display: none;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header.click ~ .election_platform {
+        display: block;
+    }
+    .platform_title {
+        color: #a80925;
+        font-weight: 700;
+    }
+
+
+    #client-error {
+        display: none;
+        color: red;
+        font-size: 120%;
+    }
+    #client-error.active {
+        display: block;
+    }
+
+    .serialize {
+        background: #C40729;
+        color: #fff;
+        border-radius: 4px;
+        padding: 20px 40px;
+        display: inline-block;
+        margin-top: 4rem;
+    }
+  </style>
+</head>
+<div id="ballot_display">
+    <div id='ballot_header'>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div>Some text here about how the ranking works!</div>
+    </div>
+    {% for category in site.data.election.spring2019.categories %}
+        <div class='election_module_title'>{{ category.title }}</div>
+        <div class='election_module' data-election='{{ category.title }}'>
+            <div class='checkbox_container'>
+                <div class='row top_axis'>
+                    <div class='candidate_holder'>Candidates</div>
+                    <div class='input_labels'>
+                        {% for candidate in category.candidates %}
+                            {% assign d = forloop.index0 | plus: 1 %}
+                            <div class='label'>{% case d %}
+                                {% when 1 %}{{ d }}st
+                                {% when 2 %}{{ d }}nd
+                                {% when 3 %}{{ d }}rd
+                                {% else %}{{ d }}th
+                            {% endcase %}</div>
+                        {% endfor %}
+                        <!-- <div class='label'>1st</div>
+                        <div class='label'>2nd</div>
+                        <div class='label'>3rd</div> -->
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class='election_platforms'>
+                <div class='platform_header'>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                    <div class='text'>Candidate Platforms</div>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    <div class='election_platform'>
+                        <div class='platform_title'>{{candidate}}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id='client-error'>ERROR: The inputs are not valid</div>
+    <div class='serialize'>
+        Submit Votes
+    </div>
+
+    <!-- Toggles the platform headers-->
+    <script>
+        function initPlatformHeaders(){
+            let parent = document.getElementsByClassName('platform_header');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    this.classList.toggle('click');
+                    console.log(parent[a]);
+                });
+            }
+        }
+        initPlatformHeaders();
+    </script>
+
+    <!-- Restricts the inputs to one per column/row -->
+    <script>
+        function initInputManagers(){
+            let parent = document.getElementsByClassName('election_input');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    //Find the parent checkbox_container
+                    container = findParentByClass('checkbox_container', this, 0);
+
+                    if(container == null)
+                        return;
+
+                    let inputs = container.getElementsByClassName('election_input');
+                    let inputLen = inputs.length;
+                    let rowLen = Math.sqrt(inputLen);
+
+                    let currentCol = parseInt(this.dataset.col);
+                    let currentRow = parseInt(this.dataset.row);
+                    
+                    /*
+                        CLEARS INPUTS VERTICALLY
+                        Disable if you want to disable vertical clearing
+                    */
+                    for(var b = 0; b < rowLen; b++){
+                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
+                    }
+
+
+                    /*
+                        CLEARS INPUTS HORIZONTALLY
+                        Disable if you want to disable horizontal clearing
+                    */
+                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                        inputs[b].checked = false;
+                    }
+
+                    this.checked = true;
+                });
+            }
+        }
+        initInputManagers();
+
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>---
+layout: default
+permalink: /election/ballot/
+title: Election Ballot
+published: true
+---
+
+<head>
+  <style>
+    #ballot_display {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+    @media(min-width: 800px) {
+        #ballot_display {
+            padding: 80px 40px;
+        }
+    }
+    #ballot_header {
+    }
+    .election_module_title {
+        font-size: 180%;
+        margin: 4rem 0 0.5rem 0;
+    }
+    .election_module {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1px 1px #eee;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #e3e3e3;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .checkbox_container {
+        flex: 1;
+        padding: 2rem;
+    }
+    .candidate_labels {
+        display: flex;
+    }
+
+    .checkbox_container .candidate {
+        display: flex;
+    }
+
+    /* The input rows */
+    .checkbox_container .row {
+        display: flex;
+        width: 100%;
+    }
+
+    /* The top row */
+    .checkbox_container .top_axis {
+        margin-bottom: 0.5rem;
+        color: #a80925;
+    }
+
+    /* The candidate labels */
+    .row .candidate, .row .candidate_holder {
+        flex: 1;
+        font-weight: 700;
+    }
+    .row .candidate_holder {
+        font-weight: 200;
+        color: #333;
+    }
+
+    /* The input labels */
+    .row .input_labels .label, .row .input_container .label {
+        width: 4rem;
+        height: 4rem;
+        margin: 2px;
+        text-align: center;
+    }
+    @media(min-width: 600px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 3rem;
+            height: 3rem;
+        } 
+    }
+    @media(min-width: 800px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 2rem;
+            height: 2rem;
+        } 
+    }
+
+    .checkbox_container .radio_inputs, .checkbox_container .input_labels {
+        display: flex;
+    }
+
+    .election_module input {
+        margin: 0;
+    }
+
+
+    .platform_header {
+        font-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+        color: #313130;
+        
+        display: flex;
+        justify-content: center;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    .platform_header .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .platform_header .svg {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    .platform_header.click {
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header:hover {
+        color: #a80925;
+    }
+
+    .platform_header .svg_holder > .svg:nth-child(2), .platform_header.click .svg_holder > .svg:nth-child(1) {
+        display: none;
+    }
+    .platform_header.click .svg_holder > .svg:nth-child(2) {
+        display: flex;
+    }
+    .election_platform {
+        display: none;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header.click ~ .election_platform {
+        display: block;
+    }
+    .platform_title {
+        color: #a80925;
+        font-weight: 700;
+    }
+
+
+    #client-error {
+        display: none;
+        color: red;
+        font-size: 120%;
+    }
+    #client-error.active {
+        display: block;
+    }
+
+    .serialize {
+        background: #C40729;
+        color: #fff;
+        border-radius: 4px;
+        padding: 20px 40px;
+        display: inline-block;
+        margin-top: 4rem;
+    }
+  </style>
+</head>
+<div id="ballot_display">
+    <div id='ballot_header'>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div>Some text here about how the ranking works!</div>
+    </div>
+    {% for category in site.data.election.spring2019.categories %}
+        <div class='election_module_title'>{{ category.title }}</div>
+        <div class='election_module' data-election='{{ category.title }}'>
+            <div class='checkbox_container'>
+                <div class='row top_axis'>
+                    <div class='candidate_holder'>Candidates</div>
+                    <div class='input_labels'>
+                        {% for candidate in category.candidates %}
+                            {% assign d = forloop.index0 | plus: 1 %}
+                            <div class='label'>{% case d %}
+                                {% when 1 %}{{ d }}st
+                                {% when 2 %}{{ d }}nd
+                                {% when 3 %}{{ d }}rd
+                                {% else %}{{ d }}th
+                            {% endcase %}</div>
+                        {% endfor %}
+                        <!-- <div class='label'>1st</div>
+                        <div class='label'>2nd</div>
+                        <div class='label'>3rd</div> -->
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class='election_platforms'>
+                <div class='platform_header'>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                    <div class='text'>Candidate Platforms</div>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    <div class='election_platform'>
+                        <div class='platform_title'>{{candidate}}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id='client-error'>ERROR: The inputs are not valid</div>
+    <div class='serialize'>
+        Submit Votes
+    </div>
+
+    <!-- Toggles the platform headers-->
+    <script>
+        function initPlatformHeaders(){
+            let parent = document.getElementsByClassName('platform_header');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    this.classList.toggle('click');
+                    console.log(parent[a]);
+                });
+            }
+        }
+        initPlatformHeaders();
+    </script>
+
+    <!-- Restricts the inputs to one per column/row -->
+    <script>
+        function initInputManagers(){
+            let parent = document.getElementsByClassName('election_input');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    //Find the parent checkbox_container
+                    container = findParentByClass('checkbox_container', this, 0);
+
+                    if(container == null)
+                        return;
+
+                    let inputs = container.getElementsByClassName('election_input');
+                    let inputLen = inputs.length;
+                    let rowLen = Math.sqrt(inputLen);
+
+                    let currentCol = parseInt(this.dataset.col);
+                    let currentRow = parseInt(this.dataset.row);
+                    
+                    /*
+                        CLEARS INPUTS VERTICALLY
+                        Disable if you want to disable vertical clearing
+                    */
+                    for(var b = 0; b < rowLen; b++){
+                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
+                    }
+
+
+                    /*
+                        CLEARS INPUTS HORIZONTALLY
+                        Disable if you want to disable horizontal clearing
+                    */
+                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                        inputs[b].checked = false;
+                    }
+
+                    this.checked = true;
+                });
+            }
+        }
+        initInputManagers();
+
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>---
+layout: default
+permalink: /election/ballot/
+title: Election Ballot
+published: true
+---
+
+<head>
+  <style>
+    #ballot_display {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+    @media(min-width: 800px) {
+        #ballot_display {
+            padding: 80px 40px;
+        }
+    }
+    #ballot_header {
+    }
+    .election_module_title {
+        font-size: 180%;
+        margin: 4rem 0 0.5rem 0;
+    }
+    .election_module {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1px 1px #eee;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #e3e3e3;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .checkbox_container {
+        flex: 1;
+        padding: 2rem;
+    }
+    .candidate_labels {
+        display: flex;
+    }
+
+    .checkbox_container .candidate {
+        display: flex;
+    }
+
+    /* The input rows */
+    .checkbox_container .row {
+        display: flex;
+        width: 100%;
+    }
+
+    /* The top row */
+    .checkbox_container .top_axis {
+        margin-bottom: 0.5rem;
+        color: #a80925;
+    }
+
+    /* The candidate labels */
+    .row .candidate, .row .candidate_holder {
+        flex: 1;
+        font-weight: 700;
+    }
+    .row .candidate_holder {
+        font-weight: 200;
+        color: #333;
+    }
+
+    /* The input labels */
+    .row .input_labels .label, .row .input_container .label {
+        width: 4rem;
+        height: 4rem;
+        margin: 2px;
+        text-align: center;
+    }
+    @media(min-width: 600px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 3rem;
+            height: 3rem;
+        } 
+    }
+    @media(min-width: 800px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 2rem;
+            height: 2rem;
+        } 
+    }
+
+    .checkbox_container .radio_inputs, .checkbox_container .input_labels {
+        display: flex;
+    }
+
+    .election_module input {
+        margin: 0;
+    }
+
+
+    .platform_header {
+        font-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+        color: #313130;
+        
+        display: flex;
+        justify-content: center;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    .platform_header .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .platform_header .svg {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    .platform_header.click {
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header:hover {
+        color: #a80925;
+    }
+
+    .platform_header .svg_holder > .svg:nth-child(2), .platform_header.click .svg_holder > .svg:nth-child(1) {
+        display: none;
+    }
+    .platform_header.click .svg_holder > .svg:nth-child(2) {
+        display: flex;
+    }
+    .election_platform {
+        display: none;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header.click ~ .election_platform {
+        display: block;
+    }
+    .platform_title {
+        color: #a80925;
+        font-weight: 700;
+    }
+
+
+    #client-error {
+        display: none;
+        color: red;
+        font-size: 120%;
+    }
+    #client-error.active {
+        display: block;
+    }
+
+    .serialize {
+        background: #C40729;
+        color: #fff;
+        border-radius: 4px;
+        padding: 20px 40px;
+        display: inline-block;
+        margin-top: 4rem;
+    }
+  </style>
+</head>
+<div id="ballot_display">
+    <div id='ballot_header'>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div>Some text here about how the ranking works!</div>
+    </div>
+    {% for category in site.data.election.spring2019.categories %}
+        <div class='election_module_title'>{{ category.title }}</div>
+        <div class='election_module' data-election='{{ category.title }}'>
+            <div class='checkbox_container'>
+                <div class='row top_axis'>
+                    <div class='candidate_holder'>Candidates</div>
+                    <div class='input_labels'>
+                        {% for candidate in category.candidates %}
+                            {% assign d = forloop.index0 | plus: 1 %}
+                            <div class='label'>{% case d %}
+                                {% when 1 %}{{ d }}st
+                                {% when 2 %}{{ d }}nd
+                                {% when 3 %}{{ d }}rd
+                                {% else %}{{ d }}th
+                            {% endcase %}</div>
+                        {% endfor %}
+                        <!-- <div class='label'>1st</div>
+                        <div class='label'>2nd</div>
+                        <div class='label'>3rd</div> -->
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class='election_platforms'>
+                <div class='platform_header'>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                    <div class='text'>Candidate Platforms</div>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    <div class='election_platform'>
+                        <div class='platform_title'>{{candidate}}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id='client-error'>ERROR: The inputs are not valid</div>
+    <div class='serialize'>
+        Submit Votes
+    </div>
+
+    <!-- Toggles the platform headers-->
+    <script>
+        function initPlatformHeaders(){
+            let parent = document.getElementsByClassName('platform_header');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    this.classList.toggle('click');
+                    console.log(parent[a]);
+                });
+            }
+        }
+        initPlatformHeaders();
+    </script>
+
+    <!-- Restricts the inputs to one per column/row -->
+    <script>
+        function initInputManagers(){
+            let parent = document.getElementsByClassName('election_input');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    //Find the parent checkbox_container
+                    container = findParentByClass('checkbox_container', this, 0);
+
+                    if(container == null)
+                        return;
+
+                    let inputs = container.getElementsByClassName('election_input');
+                    let inputLen = inputs.length;
+                    let rowLen = Math.sqrt(inputLen);
+
+                    let currentCol = parseInt(this.dataset.col);
+                    let currentRow = parseInt(this.dataset.row);
+                    
+                    /*
+                        CLEARS INPUTS VERTICALLY
+                        Disable if you want to disable vertical clearing
+                    */
+                    for(var b = 0; b < rowLen; b++){
+                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
+                    }
+
+
+                    /*
+                        CLEARS INPUTS HORIZONTALLY
+                        Disable if you want to disable horizontal clearing
+                    */
+                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                        inputs[b].checked = false;
+                    }
+
+                    this.checked = true;
+                });
+            }
+        }
+        initInputManagers();
+
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>---
+layout: default
+permalink: /election/ballot/
+title: Election Ballot
+published: true
+---
+
+<head>
+  <style>
+    #ballot_display {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+    @media(min-width: 800px) {
+        #ballot_display {
+            padding: 80px 40px;
+        }
+    }
+    #ballot_header {
+    }
+    .election_module_title {
+        font-size: 180%;
+        margin: 4rem 0 0.5rem 0;
+    }
+    .election_module {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1px 1px #eee;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #e3e3e3;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .checkbox_container {
+        flex: 1;
+        padding: 2rem;
+    }
+    .candidate_labels {
+        display: flex;
+    }
+
+    .checkbox_container .candidate {
+        display: flex;
+    }
+
+    /* The input rows */
+    .checkbox_container .row {
+        display: flex;
+        width: 100%;
+    }
+
+    /* The top row */
+    .checkbox_container .top_axis {
+        margin-bottom: 0.5rem;
+        color: #a80925;
+    }
+
+    /* The candidate labels */
+    .row .candidate, .row .candidate_holder {
+        flex: 1;
+        font-weight: 700;
+    }
+    .row .candidate_holder {
+        font-weight: 200;
+        color: #333;
+    }
+
+    /* The input labels */
+    .row .input_labels .label, .row .input_container .label {
+        width: 4rem;
+        height: 4rem;
+        margin: 2px;
+        text-align: center;
+    }
+    @media(min-width: 600px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 3rem;
+            height: 3rem;
+        } 
+    }
+    @media(min-width: 800px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 2rem;
+            height: 2rem;
+        } 
+    }
+
+    .checkbox_container .radio_inputs, .checkbox_container .input_labels {
+        display: flex;
+    }
+
+    .election_module input {
+        margin: 0;
+    }
+
+
+    .platform_header {
+        font-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+        color: #313130;
+        
+        display: flex;
+        justify-content: center;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    .platform_header .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .platform_header .svg {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    .platform_header.click {
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header:hover {
+        color: #a80925;
+    }
+
+    .platform_header .svg_holder > .svg:nth-child(2), .platform_header.click .svg_holder > .svg:nth-child(1) {
+        display: none;
+    }
+    .platform_header.click .svg_holder > .svg:nth-child(2) {
+        display: flex;
+    }
+    .election_platform {
+        display: none;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header.click ~ .election_platform {
+        display: block;
+    }
+    .platform_title {
+        color: #a80925;
+        font-weight: 700;
+    }
+
+
+    #client-error {
+        display: none;
+        color: red;
+        font-size: 120%;
+    }
+    #client-error.active {
+        display: block;
+    }
+
+    .serialize {
+        background: #C40729;
+        color: #fff;
+        border-radius: 4px;
+        padding: 20px 40px;
+        display: inline-block;
+        margin-top: 4rem;
+    }
+  </style>
+</head>
+<div id="ballot_display">
+    <div id='ballot_header'>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div>Some text here about how the ranking works!</div>
+    </div>
+    {% for category in site.data.election.spring2019.categories %}
+        <div class='election_module_title'>{{ category.title }}</div>
+        <div class='election_module' data-election='{{ category.title }}'>
+            <div class='checkbox_container'>
+                <div class='row top_axis'>
+                    <div class='candidate_holder'>Candidates</div>
+                    <div class='input_labels'>
+                        {% for candidate in category.candidates %}
+                            {% assign d = forloop.index0 | plus: 1 %}
+                            <div class='label'>{% case d %}
+                                {% when 1 %}{{ d }}st
+                                {% when 2 %}{{ d }}nd
+                                {% when 3 %}{{ d }}rd
+                                {% else %}{{ d }}th
+                            {% endcase %}</div>
+                        {% endfor %}
+                        <!-- <div class='label'>1st</div>
+                        <div class='label'>2nd</div>
+                        <div class='label'>3rd</div> -->
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class='election_platforms'>
+                <div class='platform_header'>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                    <div class='text'>Candidate Platforms</div>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    <div class='election_platform'>
+                        <div class='platform_title'>{{candidate}}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id='client-error'>ERROR: The inputs are not valid</div>
+    <div class='serialize'>
+        Submit Votes
+    </div>
+
+    <!-- Toggles the platform headers-->
+    <script>
+        function initPlatformHeaders(){
+            let parent = document.getElementsByClassName('platform_header');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    this.classList.toggle('click');
+                    console.log(parent[a]);
+                });
+            }
+        }
+        initPlatformHeaders();
+    </script>
+
+    <!-- Restricts the inputs to one per column/row -->
+    <script>
+        function initInputManagers(){
+            let parent = document.getElementsByClassName('election_input');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    //Find the parent checkbox_container
+                    container = findParentByClass('checkbox_container', this, 0);
+
+                    if(container == null)
+                        return;
+
+                    let inputs = container.getElementsByClassName('election_input');
+                    let inputLen = inputs.length;
+                    let rowLen = Math.sqrt(inputLen);
+
+                    let currentCol = parseInt(this.dataset.col);
+                    let currentRow = parseInt(this.dataset.row);
+                    
+                    /*
+                        CLEARS INPUTS VERTICALLY
+                        Disable if you want to disable vertical clearing
+                    */
+                    for(var b = 0; b < rowLen; b++){
+                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
+                    }
+
+
+                    /*
+                        CLEARS INPUTS HORIZONTALLY
+                        Disable if you want to disable horizontal clearing
+                    */
+                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                        inputs[b].checked = false;
+                    }
+
+                    this.checked = true;
+                });
+            }
+        }
+        initInputManagers();
+
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>---
+layout: default
+permalink: /election/ballot/
+title: Election Ballot
+published: true
+---
+
+<head>
+  <style>
+    #ballot_display {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+    @media(min-width: 800px) {
+        #ballot_display {
+            padding: 80px 40px;
+        }
+    }
+    #ballot_header {
+    }
+    .election_module_title {
+        font-size: 180%;
+        margin: 4rem 0 0.5rem 0;
+    }
+    .election_module {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1px 1px #eee;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #e3e3e3;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .checkbox_container {
+        flex: 1;
+        padding: 2rem;
+    }
+    .candidate_labels {
+        display: flex;
+    }
+
+    .checkbox_container .candidate {
+        display: flex;
+    }
+
+    /* The input rows */
+    .checkbox_container .row {
+        display: flex;
+        width: 100%;
+    }
+
+    /* The top row */
+    .checkbox_container .top_axis {
+        margin-bottom: 0.5rem;
+        color: #a80925;
+    }
+
+    /* The candidate labels */
+    .row .candidate, .row .candidate_holder {
+        flex: 1;
+        font-weight: 700;
+    }
+    .row .candidate_holder {
+        font-weight: 200;
+        color: #333;
+    }
+
+    /* The input labels */
+    .row .input_labels .label, .row .input_container .label {
+        width: 4rem;
+        height: 4rem;
+        margin: 2px;
+        text-align: center;
+    }
+    @media(min-width: 600px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 3rem;
+            height: 3rem;
+        } 
+    }
+    @media(min-width: 800px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 2rem;
+            height: 2rem;
+        } 
+    }
+
+    .checkbox_container .radio_inputs, .checkbox_container .input_labels {
+        display: flex;
+    }
+
+    .election_module input {
+        margin: 0;
+    }
+
+
+    .platform_header {
+        font-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+        color: #313130;
+        
+        display: flex;
+        justify-content: center;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    .platform_header .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .platform_header .svg {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    .platform_header.click {
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header:hover {
+        color: #a80925;
+    }
+
+    .platform_header .svg_holder > .svg:nth-child(2), .platform_header.click .svg_holder > .svg:nth-child(1) {
+        display: none;
+    }
+    .platform_header.click .svg_holder > .svg:nth-child(2) {
+        display: flex;
+    }
+    .election_platform {
+        display: none;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header.click ~ .election_platform {
+        display: block;
+    }
+    .platform_title {
+        color: #a80925;
+        font-weight: 700;
+    }
+
+
+    #client-error {
+        display: none;
+        color: red;
+        font-size: 120%;
+    }
+    #client-error.active {
+        display: block;
+    }
+
+    .serialize {
+        background: #C40729;
+        color: #fff;
+        border-radius: 4px;
+        padding: 20px 40px;
+        display: inline-block;
+        margin-top: 4rem;
+    }
+  </style>
+</head>
+<div id="ballot_display">
+    <div id='ballot_header'>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div>Some text here about how the ranking works!</div>
+    </div>
+    {% for category in site.data.election.spring2019.categories %}
+        <div class='election_module_title'>{{ category.title }}</div>
+        <div class='election_module' data-election='{{ category.title }}'>
+            <div class='checkbox_container'>
+                <div class='row top_axis'>
+                    <div class='candidate_holder'>Candidates</div>
+                    <div class='input_labels'>
+                        {% for candidate in category.candidates %}
+                            {% assign d = forloop.index0 | plus: 1 %}
+                            <div class='label'>{% case d %}
+                                {% when 1 %}{{ d }}st
+                                {% when 2 %}{{ d }}nd
+                                {% when 3 %}{{ d }}rd
+                                {% else %}{{ d }}th
+                            {% endcase %}</div>
+                        {% endfor %}
+                        <!-- <div class='label'>1st</div>
+                        <div class='label'>2nd</div>
+                        <div class='label'>3rd</div> -->
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class='election_platforms'>
+                <div class='platform_header'>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                    <div class='text'>Candidate Platforms</div>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    <div class='election_platform'>
+                        <div class='platform_title'>{{candidate}}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id='client-error'>ERROR: The inputs are not valid</div>
+    <div class='serialize'>
+        Submit Votes
+    </div>
+
+    <!-- Toggles the platform headers-->
+    <script>
+        function initPlatformHeaders(){
+            let parent = document.getElementsByClassName('platform_header');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    this.classList.toggle('click');
+                    console.log(parent[a]);
+                });
+            }
+        }
+        initPlatformHeaders();
+    </script>
+
+    <!-- Restricts the inputs to one per column/row -->
+    <script>
+        function initInputManagers(){
+            let parent = document.getElementsByClassName('election_input');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    //Find the parent checkbox_container
+                    container = findParentByClass('checkbox_container', this, 0);
+
+                    if(container == null)
+                        return;
+
+                    let inputs = container.getElementsByClassName('election_input');
+                    let inputLen = inputs.length;
+                    let rowLen = Math.sqrt(inputLen);
+
+                    let currentCol = parseInt(this.dataset.col);
+                    let currentRow = parseInt(this.dataset.row);
+                    
+                    /*
+                        CLEARS INPUTS VERTICALLY
+                        Disable if you want to disable vertical clearing
+                    */
+                    for(var b = 0; b < rowLen; b++){
+                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
+                    }
+
+
+                    /*
+                        CLEARS INPUTS HORIZONTALLY
+                        Disable if you want to disable horizontal clearing
+                    */
+                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                        inputs[b].checked = false;
+                    }
+
+                    this.checked = true;
+                });
+            }
+        }
+        initInputManagers();
+
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>---
+layout: default
+permalink: /election/ballot/
+title: Election Ballot
+published: true
+---
+
+<head>
+  <style>
+    #ballot_display {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+    @media(min-width: 800px) {
+        #ballot_display {
+            padding: 80px 40px;
+        }
+    }
+    #ballot_header {
+    }
+    .election_module_title {
+        font-size: 180%;
+        margin: 4rem 0 0.5rem 0;
+    }
+    .election_module {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1px 1px #eee;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #e3e3e3;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .checkbox_container {
+        flex: 1;
+        padding: 2rem;
+    }
+    .candidate_labels {
+        display: flex;
+    }
+
+    .checkbox_container .candidate {
+        display: flex;
+    }
+
+    /* The input rows */
+    .checkbox_container .row {
+        display: flex;
+        width: 100%;
+    }
+
+    /* The top row */
+    .checkbox_container .top_axis {
+        margin-bottom: 0.5rem;
+        color: #a80925;
+    }
+
+    /* The candidate labels */
+    .row .candidate, .row .candidate_holder {
+        flex: 1;
+        font-weight: 700;
+    }
+    .row .candidate_holder {
+        font-weight: 200;
+        color: #333;
+    }
+
+    /* The input labels */
+    .row .input_labels .label, .row .input_container .label {
+        width: 4rem;
+        height: 4rem;
+        margin: 2px;
+        text-align: center;
+    }
+    @media(min-width: 600px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 3rem;
+            height: 3rem;
+        } 
+    }
+    @media(min-width: 800px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 2rem;
+            height: 2rem;
+        } 
+    }
+
+    .checkbox_container .radio_inputs, .checkbox_container .input_labels {
+        display: flex;
+    }
+
+    .election_module input {
+        margin: 0;
+    }
+
+
+    .platform_header {
+        font-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+        color: #313130;
+        
+        display: flex;
+        justify-content: center;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    .platform_header .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .platform_header .svg {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    .platform_header.click {
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header:hover {
+        color: #a80925;
+    }
+
+    .platform_header .svg_holder > .svg:nth-child(2), .platform_header.click .svg_holder > .svg:nth-child(1) {
+        display: none;
+    }
+    .platform_header.click .svg_holder > .svg:nth-child(2) {
+        display: flex;
+    }
+    .election_platform {
+        display: none;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header.click ~ .election_platform {
+        display: block;
+    }
+    .platform_title {
+        color: #a80925;
+        font-weight: 700;
+    }
+
+
+    #client-error {
+        display: none;
+        color: red;
+        font-size: 120%;
+    }
+    #client-error.active {
+        display: block;
+    }
+
+    .serialize {
+        background: #C40729;
+        color: #fff;
+        border-radius: 4px;
+        padding: 20px 40px;
+        display: inline-block;
+        margin-top: 4rem;
+    }
+  </style>
+</head>
+<div id="ballot_display">
+    <div id='ballot_header'>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div>Some text here about how the ranking works!</div>
+    </div>
+    {% for category in site.data.election.spring2019.categories %}
+        <div class='election_module_title'>{{ category.title }}</div>
+        <div class='election_module' data-election='{{ category.title }}'>
+            <div class='checkbox_container'>
+                <div class='row top_axis'>
+                    <div class='candidate_holder'>Candidates</div>
+                    <div class='input_labels'>
+                        {% for candidate in category.candidates %}
+                            {% assign d = forloop.index0 | plus: 1 %}
+                            <div class='label'>{% case d %}
+                                {% when 1 %}{{ d }}st
+                                {% when 2 %}{{ d }}nd
+                                {% when 3 %}{{ d }}rd
+                                {% else %}{{ d }}th
+                            {% endcase %}</div>
+                        {% endfor %}
+                        <!-- <div class='label'>1st</div>
+                        <div class='label'>2nd</div>
+                        <div class='label'>3rd</div> -->
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class='election_platforms'>
+                <div class='platform_header'>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                    <div class='text'>Candidate Platforms</div>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    <div class='election_platform'>
+                        <div class='platform_title'>{{candidate}}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id='client-error'>ERROR: The inputs are not valid</div>
+    <div class='serialize'>
+        Submit Votes
+    </div>
+
+    <!-- Toggles the platform headers-->
+    <script>
+        function initPlatformHeaders(){
+            let parent = document.getElementsByClassName('platform_header');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    this.classList.toggle('click');
+                    console.log(parent[a]);
+                });
+            }
+        }
+        initPlatformHeaders();
+    </script>
+
+    <!-- Restricts the inputs to one per column/row -->
+    <script>
+        function initInputManagers(){
+            let parent = document.getElementsByClassName('election_input');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    //Find the parent checkbox_container
+                    container = findParentByClass('checkbox_container', this, 0);
+
+                    if(container == null)
+                        return;
+
+                    let inputs = container.getElementsByClassName('election_input');
+                    let inputLen = inputs.length;
+                    let rowLen = Math.sqrt(inputLen);
+
+                    let currentCol = parseInt(this.dataset.col);
+                    let currentRow = parseInt(this.dataset.row);
+                    
+                    /*
+                        CLEARS INPUTS VERTICALLY
+                        Disable if you want to disable vertical clearing
+                    */
+                    for(var b = 0; b < rowLen; b++){
+                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
+                    }
+
+
+                    /*
+                        CLEARS INPUTS HORIZONTALLY
+                        Disable if you want to disable horizontal clearing
+                    */
+                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                        inputs[b].checked = false;
+                    }
+
+                    this.checked = true;
+                });
+            }
+        }
+        initInputManagers();
+
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>---
+layout: default
+permalink: /election/ballot/
+title: Election Ballot
+published: true
+---
+
+<head>
+  <style>
+    #ballot_display {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+    @media(min-width: 800px) {
+        #ballot_display {
+            padding: 80px 40px;
+        }
+    }
+    #ballot_header {
+    }
+    .election_module_title {
+        font-size: 180%;
+        margin: 4rem 0 0.5rem 0;
+    }
+    .election_module {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1px 1px #eee;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #e3e3e3;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .checkbox_container {
+        flex: 1;
+        padding: 2rem;
+    }
+    .candidate_labels {
+        display: flex;
+    }
+
+    .checkbox_container .candidate {
+        display: flex;
+    }
+
+    /* The input rows */
+    .checkbox_container .row {
+        display: flex;
+        width: 100%;
+    }
+
+    /* The top row */
+    .checkbox_container .top_axis {
+        margin-bottom: 0.5rem;
+        color: #a80925;
+    }
+
+    /* The candidate labels */
+    .row .candidate, .row .candidate_holder {
+        flex: 1;
+        font-weight: 700;
+    }
+    .row .candidate_holder {
+        font-weight: 200;
+        color: #333;
+    }
+
+    /* The input labels */
+    .row .input_labels .label, .row .input_container .label {
+        width: 4rem;
+        height: 4rem;
+        margin: 2px;
+        text-align: center;
+    }
+    @media(min-width: 600px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 3rem;
+            height: 3rem;
+        } 
+    }
+    @media(min-width: 800px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 2rem;
+            height: 2rem;
+        } 
+    }
+
+    .checkbox_container .radio_inputs, .checkbox_container .input_labels {
+        display: flex;
+    }
+
+    .election_module input {
+        margin: 0;
+    }
+
+
+    .platform_header {
+        font-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+        color: #313130;
+        
+        display: flex;
+        justify-content: center;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    .platform_header .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .platform_header .svg {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    .platform_header.click {
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header:hover {
+        color: #a80925;
+    }
+
+    .platform_header .svg_holder > .svg:nth-child(2), .platform_header.click .svg_holder > .svg:nth-child(1) {
+        display: none;
+    }
+    .platform_header.click .svg_holder > .svg:nth-child(2) {
+        display: flex;
+    }
+    .election_platform {
+        display: none;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header.click ~ .election_platform {
+        display: block;
+    }
+    .platform_title {
+        color: #a80925;
+        font-weight: 700;
+    }
+
+
+    #client-error {
+        display: none;
+        color: red;
+        font-size: 120%;
+    }
+    #client-error.active {
+        display: block;
+    }
+
+    .serialize {
+        background: #C40729;
+        color: #fff;
+        border-radius: 4px;
+        padding: 20px 40px;
+        display: inline-block;
+        margin-top: 4rem;
+    }
+  </style>
+</head>
+<div id="ballot_display">
+    <div id='ballot_header'>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div>Some text here about how the ranking works!</div>
+    </div>
+    {% for category in site.data.election.spring2019.categories %}
+        <div class='election_module_title'>{{ category.title }}</div>
+        <div class='election_module' data-election='{{ category.title }}'>
+            <div class='checkbox_container'>
+                <div class='row top_axis'>
+                    <div class='candidate_holder'>Candidates</div>
+                    <div class='input_labels'>
+                        {% for candidate in category.candidates %}
+                            {% assign d = forloop.index0 | plus: 1 %}
+                            <div class='label'>{% case d %}
+                                {% when 1 %}{{ d }}st
+                                {% when 2 %}{{ d }}nd
+                                {% when 3 %}{{ d }}rd
+                                {% else %}{{ d }}th
+                            {% endcase %}</div>
+                        {% endfor %}
+                        <!-- <div class='label'>1st</div>
+                        <div class='label'>2nd</div>
+                        <div class='label'>3rd</div> -->
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class='election_platforms'>
+                <div class='platform_header'>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                    <div class='text'>Candidate Platforms</div>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    <div class='election_platform'>
+                        <div class='platform_title'>{{candidate}}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id='client-error'>ERROR: The inputs are not valid</div>
+    <div class='serialize'>
+        Submit Votes
+    </div>
+
+    <!-- Toggles the platform headers-->
+    <script>
+        function initPlatformHeaders(){
+            let parent = document.getElementsByClassName('platform_header');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    this.classList.toggle('click');
+                    console.log(parent[a]);
+                });
+            }
+        }
+        initPlatformHeaders();
+    </script>
+
+    <!-- Restricts the inputs to one per column/row -->
+    <script>
+        function initInputManagers(){
+            let parent = document.getElementsByClassName('election_input');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    //Find the parent checkbox_container
+                    container = findParentByClass('checkbox_container', this, 0);
+
+                    if(container == null)
+                        return;
+
+                    let inputs = container.getElementsByClassName('election_input');
+                    let inputLen = inputs.length;
+                    let rowLen = Math.sqrt(inputLen);
+
+                    let currentCol = parseInt(this.dataset.col);
+                    let currentRow = parseInt(this.dataset.row);
+                    
+                    /*
+                        CLEARS INPUTS VERTICALLY
+                        Disable if you want to disable vertical clearing
+                    */
+                    for(var b = 0; b < rowLen; b++){
+                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
+                    }
+
+
+                    /*
+                        CLEARS INPUTS HORIZONTALLY
+                        Disable if you want to disable horizontal clearing
+                    */
+                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                        inputs[b].checked = false;
+                    }
+
+                    this.checked = true;
+                });
+            }
+        }
+        initInputManagers();
+
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>---
+layout: default
+permalink: /election/ballot/
+title: Election Ballot
+published: true
+---
+
+<head>
+  <style>
+    #ballot_display {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+    @media(min-width: 800px) {
+        #ballot_display {
+            padding: 80px 40px;
+        }
+    }
+    #ballot_header {
+    }
+    .election_module_title {
+        font-size: 180%;
+        margin: 4rem 0 0.5rem 0;
+    }
+    .election_module {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1px 1px #eee;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #e3e3e3;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .checkbox_container {
+        flex: 1;
+        padding: 2rem;
+    }
+    .candidate_labels {
+        display: flex;
+    }
+
+    .checkbox_container .candidate {
+        display: flex;
+    }
+
+    /* The input rows */
+    .checkbox_container .row {
+        display: flex;
+        width: 100%;
+    }
+
+    /* The top row */
+    .checkbox_container .top_axis {
+        margin-bottom: 0.5rem;
+        color: #a80925;
+    }
+
+    /* The candidate labels */
+    .row .candidate, .row .candidate_holder {
+        flex: 1;
+        font-weight: 700;
+    }
+    .row .candidate_holder {
+        font-weight: 200;
+        color: #333;
+    }
+
+    /* The input labels */
+    .row .input_labels .label, .row .input_container .label {
+        width: 4rem;
+        height: 4rem;
+        margin: 2px;
+        text-align: center;
+    }
+    @media(min-width: 600px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 3rem;
+            height: 3rem;
+        } 
+    }
+    @media(min-width: 800px) {
+        .row .input_labels .label, .row .input_container .label {
+            width: 2rem;
+            height: 2rem;
+        } 
+    }
+
+    .checkbox_container .radio_inputs, .checkbox_container .input_labels {
+        display: flex;
+    }
+
+    .election_module input {
+        margin: 0;
+    }
+
+
+    .platform_header {
+        font-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+        color: #313130;
+        
+        display: flex;
+        justify-content: center;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    .platform_header .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .platform_header .svg {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    .platform_header.click {
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header:hover {
+        color: #a80925;
+    }
+
+    .platform_header .svg_holder > .svg:nth-child(2), .platform_header.click .svg_holder > .svg:nth-child(1) {
+        display: none;
+    }
+    .platform_header.click .svg_holder > .svg:nth-child(2) {
+        display: flex;
+    }
+    .election_platform {
+        display: none;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .platform_header.click ~ .election_platform {
+        display: block;
+    }
+    .platform_title {
+        color: #a80925;
+        font-weight: 700;
+    }
+
+
+    #client-error {
+        display: none;
+        color: red;
+        font-size: 120%;
+    }
+    #client-error.active {
+        display: block;
+    }
+
+    .serialize {
+        background: #C40729;
+        color: #fff;
+        border-radius: 4px;
+        padding: 20px 40px;
+        display: inline-block;
+        margin-top: 4rem;
+    }
+  </style>
+</head>
+<div id="ballot_display">
+    <div id='ballot_header'>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div>Some text here about how the ranking works!</div>
+    </div>
+    {% for category in site.data.election.spring2019.categories %}
+        <div class='election_module_title'>{{ category.title }}</div>
+        <div class='election_module' data-election='{{ category.title }}'>
+            <div class='checkbox_container'>
+                <div class='row top_axis'>
+                    <div class='candidate_holder'>Candidates</div>
+                    <div class='input_labels'>
+                        {% for candidate in category.candidates %}
+                            {% assign d = forloop.index0 | plus: 1 %}
+                            <div class='label'>{% case d %}
+                                {% when 1 %}{{ d }}st
+                                {% when 2 %}{{ d }}nd
+                                {% when 3 %}{{ d }}rd
+                                {% else %}{{ d }}th
+                            {% endcase %}</div>
+                        {% endfor %}
+                        <!-- <div class='label'>1st</div>
+                        <div class='label'>2nd</div>
+                        <div class='label'>3rd</div> -->
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class='election_platforms'>
+                <div class='platform_header'>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                    <div class='text'>Candidate Platforms</div>
+                    <div class='svg_holder'>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-down.svg'/>
+                        <img class='svg' src='{{ site.baseurl }}/images/svg/sort-up.svg'/>
+                    </div>
+                </div>
+                {% for candidate in category.candidates %}
+                    <div class='election_platform'>
+                        <div class='platform_title'>{{candidate}}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id='client-error'>ERROR: The inputs are not valid</div>
+    <div class='serialize'>
+        Submit Votes
+    </div>
+
+    <!-- Toggles the platform headers-->
+    <script>
+        function initPlatformHeaders(){
+            let parent = document.getElementsByClassName('platform_header');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    this.classList.toggle('click');
+                    console.log(parent[a]);
+                });
+            }
+        }
+        initPlatformHeaders();
+    </script>
+
+    <!-- Restricts the inputs to one per column/row -->
+    <script>
+        function initInputManagers(){
+            let parent = document.getElementsByClassName('election_input');
+            let len = parent.length;
+
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    //Find the parent checkbox_container
+                    container = findParentByClass('checkbox_container', this, 0);
+
+                    if(container == null)
+                        return;
+
+                    let inputs = container.getElementsByClassName('election_input');
+                    let inputLen = inputs.length;
+                    let rowLen = Math.sqrt(inputLen);
+
+                    let currentCol = parseInt(this.dataset.col);
+                    let currentRow = parseInt(this.dataset.row);
+                    
+                    /*
+                        CLEARS INPUTS VERTICALLY
+                        Disable if you want to disable vertical clearing
+                    */
+                    for(var b = 0; b < rowLen; b++){
+                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
+                    }
+
+
+                    /*
+                        CLEARS INPUTS HORIZONTALLY
+                        Disable if you want to disable horizontal clearing
+                    */
+                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                        inputs[b].checked = false;
+                    }
+
+                    this.checked = true;
+                });
+            }
+        }
+        initInputManagers();
+
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>
+        // Recursively finds the parent element with the target class
+        function findParentByClass(targetClass, ele, limit, callback){
+            if(ele.classList.contains(targetClass) === true){
+                return ele;
+            }else if(ele.parentNode !== undefined && limit < 10)
+                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+            else
+                return null;
+        }
+    </script>
+
+    <!-- Serializes the input fields -->
+    <script>
+        function toggleError(status){
+            document.getElementById('client-error').classList.toggle('active', status);
+        }
+
+        function serializeModules(){
+            let parent = document.getElementsByClassName('election_module');
+            let len = parent.length;
+
+            let election = {};
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                election[currElection] = {};
+
+                let inputs = parent[a].getElementsByClassName('election_input');
+                let inputLen = inputs.length;
+                let rowLen = Math.sqrt(inputLen);
+
+                for(var b = 0; b < inputs.length; b++){
+                    election[currElection][b] = null;
+                }
+                
+                for(var b = 0; b < inputs.length; b++){
+                    if(inputs[b].checked){
+                        let candidate = findParentByClass('row', inputs[b], 0);
+                        candidate = candidate.getElementsByClassName('candidate')[0];
+
+                        // election : category : ranking = name
+                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                    }
+                }
+            }
+
+            for(var a = 0; a < len; a++){
+                let currElection = parent[a].dataset.election;
+                let keys = Object.keys(election[currElection]);
+                let keyLen = keys.length;
+                for(var b = 0; b < keyLen; b++){
+                    // None of the options can be null
+                    if(election[currElection][keys[b]] == null){
+                        toggleError(true);
+                        return;
+                    }
+                }
+            }
+
+            toggleError(false);
+
+            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+                if(err){
+                    // Handle the error
+                } else {
+                    // Do something here with the response object
+                }
+            });
+        }
+
+        function initSerialBtns(){
+            let parent = document.getElementsByClassName('serialize');
+            let len = parent.length;
+            for(var a = 0; a < len; a++){
+                parent[a].addEventListener('click', function(){
+                    serializeModules();
+                });
+            }
+        }
+        initSerialBtns();
+    </script>
+
+    <script>
+        // Response Reading
+        function readBody(xhr) {
+            var data;
+            if (!xhr.responseType || xhr.responseType === "text") {
+                data = xhr.responseText;
+            } else if (xhr.responseType === "document") {
+                data = xhr.responseXML;
+            } else {
+                data = xhr.response;
+            }
+            return data;
+        }
+
+        // Form sending, set encode = true to stringify JSON
+        function sendData(data, url, callback) {
+            var XHR = new XMLHttpRequest();
+            var urlEncodedData = JSON.stringify(data);
+            var urlEncodedDataPairs = [];
+            var name;
+        
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    try {
+                        callback(null, JSON.parse(readBody(XHR)));
+                    } catch(err){
+                        callback("ERROR IN POST REQUEST");
+                    }
+                }
+            }
+        
+            // Define what happens on successful data submission
+            XHR.addEventListener('load', function(event) {
+
+            });
+
+            
+        
+            // Define what happens in case of error
+            XHR.addEventListener('error', function(event) {
+
+            });
+        
+            // Set up our request
+            XHR.open('POST', url);
+        
+            // Add the required HTTP header for form data POST requests
+            XHR.setRequestHeader('Content-Type', 'application/json');
+        
+            console.log(urlEncodedData);
+            // Finally, send our data.
+            XHR.send(urlEncodedData);
+        }
+    </script>
+</div>
