@@ -883,7 +883,7 @@ top-menu {
 
 	li {
 		background: #fff;
-		box-shadow: 0 0 4px 1px #eee;
+		box-shadow: 0 0 4px 1px #C40729;
 		cursor: pointer;
 
 		a {
@@ -894,7 +894,7 @@ top-menu {
 		}
 
 		&:hover {
-			box-shadow: 0 0 10px 1px #ddd;
+			box-shadow: 0 0 10px 1px lighten(#C40729, 15);
 		}
 
 		&:hover a {
