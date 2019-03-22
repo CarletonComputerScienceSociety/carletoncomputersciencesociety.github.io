@@ -191,9 +191,6 @@ published: true
                                 {% else %}{{ d }}th
                             {% endcase %}</div>
                         {% endfor %}
-                        <!-- <div class='label'>1st</div>
-                        <div class='label'>2nd</div>
-                        <div class='label'>3rd</div> -->
                     </div>
                 </div>
                 {% for candidate in category.candidates %}
@@ -211,6 +208,16 @@ published: true
                         </div>
                     </div>
                 {% endfor %}
+                <div class='row'>
+                    <div class='candidate'>NO CONFIDENCE</div>
+                    <div class='input_container'>
+                        <div class='radio_inputs election_input_row'>
+                            <div class='label'>
+                                <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class='election_platforms'>
                 <div class='platform_header'>
