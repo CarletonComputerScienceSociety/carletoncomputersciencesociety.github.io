@@ -76,6 +76,29 @@ published: true
         margin: 2px;
         text-align: center;
     }
+    .radio_inputs .label {
+        padding: 0.25rem;
+    }
+    .election_input_btn {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #fff;
+        border: 1px solid #e3e3e3;
+        cursor: pointer;
+    }
+    .election_input_btn.click {
+        border: 0.5rem solid #C40729;
+    }
+    .election_input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1000000;
+        opacity: 0;
+        visibility: hidden;
+    }
+
     @media(min-width: 600px) {
         .row .input_labels .label, .row .input_container .label {
             width: 3rem;
@@ -201,7 +224,8 @@ published: true
                             <div class='radio_inputs election_input_row'>
                                 {% for candidate in category.candidates %}
                                 <div class='label'>
-                                    <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                    <div class='election_input_btn election_candidate_input_btn'></div>
+                                    <input type='radio' class='election_input election_candidate_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
                                 </div>
                                 {% endfor %}
                             </div>
@@ -213,7 +237,8 @@ published: true
                     <div class='input_container'>
                         <div class='radio_inputs election_input_row'>
                             <div class='label'>
-                                <input type='radio' class='election_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                <div class='election_input_btn election_no_confidence_btn'></div>
+                                <input type='radio' class='election_input election_no_confidence' data-value='no_confidence' data-col='-1'/>
                             </div>
                         </div>
                     </div>
@@ -240,205 +265,246 @@ published: true
             </div>
         </div>
     {% endfor %}
-
     <div id='client-error'>ERROR: The inputs are not valid</div>
     <div class='serialize'>
         Submit Votes
     </div>
+</div>
 
-    <!-- Toggles the platform headers-->
-    <script>
-        function initPlatformHeaders(){
-            let parent = document.getElementsByClassName('platform_header');
-            let len = parent.length;
+<!-- Toggles the platform headers-->
+<script>
+    function initPlatformHeaders(){
+        let parent = document.getElementsByClassName('platform_header');
+        let len = parent.length;
 
-            for(var a = 0; a < len; a++){
-                parent[a].addEventListener('click', function(){
-                    this.classList.toggle('click');
-                    console.log(parent[a]);
-                });
-            }
+        for(var a = 0; a < len; a++){
+            parent[a].addEventListener('click', function(){
+                this.classList.toggle('click');
+            });
         }
-        initPlatformHeaders();
-    </script>
+    }
+    initPlatformHeaders();
+</script>
 
-    <!-- Restricts the inputs to one per column/row -->
-    <script>
-        function initInputManagers(){
-            let parent = document.getElementsByClassName('election_input');
-            let len = parent.length;
+<!-- Restricts the inputs to one per column/row -->
+<script>
+    function initInputManagers(){
+        let parent = document.getElementsByClassName('election_candidate_input_btn');
+        let len = parent.length;
 
-            for(var a = 0; a < len; a++){
-                parent[a].addEventListener('click', function(){
-                    //Find the parent checkbox_container
-                    container = findParentByClass('checkbox_container', this, 0);
+        for(var a = 0; a < len; a++){
+            parent[a].addEventListener('click', function(){
+                //Find the parent checkbox_container
+                container = findParentByClass('checkbox_container', this, 0);
+                let radioBtn = this.parentNode.getElementsByClassName('election_candidate_input')[0];
 
-                    if(container == null)
-                        return;
+                if(container == null)
+                    return;
 
-                    let inputs = container.getElementsByClassName('election_input');
-                    let inputLen = inputs.length;
-                    let rowLen = Math.sqrt(inputLen);
-
-                    let currentCol = parseInt(this.dataset.col);
-                    let currentRow = parseInt(this.dataset.row);
-                    
-                    /*
-                        CLEARS INPUTS VERTICALLY
-                        Disable if you want to disable vertical clearing
-                    */
-                    for(var b = 0; b < rowLen; b++){
-                        inputs[parseInt(this.dataset.col) + rowLen * b].checked = false;
-                    }
-
-
-                    /*
-                        CLEARS INPUTS HORIZONTALLY
-                        Disable if you want to disable horizontal clearing
-                    */
-                    for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
-                        inputs[b].checked = false;
-                    }
-
-                    this.checked = true;
-                });
-            }
-        }
-        initInputManagers();
-
-        // Recursively finds the parent element with the target class
-        function findParentByClass(targetClass, ele, limit, callback){
-            if(ele.classList.contains(targetClass) === true){
-                return ele;
-            }else if(ele.parentNode !== undefined && limit < 10)
-                return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
-            else
-                return null;
-        }
-    </script>
-
-    <!-- Serializes the input fields -->
-    <script>
-        function toggleError(status){
-            document.getElementById('client-error').classList.toggle('active', status);
-        }
-
-        function serializeModules(){
-            let parent = document.getElementsByClassName('election_module');
-            let len = parent.length;
-
-            let election = {};
-            for(var a = 0; a < len; a++){
-                let currElection = parent[a].dataset.election;
-                election[currElection] = {};
-
-                let inputs = parent[a].getElementsByClassName('election_input');
+                // Unset the no confidence votes
+                let inputs = container.getElementsByClassName('election_no_confidence');
                 let inputLen = inputs.length;
+                for(var a = 0; a < inputLen; a++){
+                    inputs[a].checked = false;
+                    inputs[a].parentNode.getElementsByClassName('election_input_btn')[0].classList.toggle('click', false);
+                }
+
+                // Validate the inputs
+                inputs = container.getElementsByClassName('election_candidate_input');
+                inputLen = inputs.length;
                 let rowLen = Math.sqrt(inputLen);
 
-                for(var b = 0; b < inputs.length; b++){
-                    election[currElection][b] = null;
-                }
+                let currentCol = parseInt(radioBtn.dataset.col);
+                let currentRow = parseInt(radioBtn.dataset.row);
                 
-                for(var b = 0; b < inputs.length; b++){
-                    if(inputs[b].checked){
-                        let candidate = findParentByClass('row', inputs[b], 0);
-                        candidate = candidate.getElementsByClassName('candidate')[0];
-
-                        // election : category : ranking = name
-                        election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
-                    }
+                /*
+                    CLEARS INPUTS VERTICALLY
+                    Disable if you want to disable vertical clearing
+                */
+                for(var b = 0; b < rowLen; b++){
+                    let targetInput = inputs[parseInt(radioBtn.dataset.col) + rowLen * b];
+                    targetInput.checked = false;
+                    targetInput.parentNode.getElementsByClassName('election_input_btn')[0].classList.toggle('click', false);
                 }
-            }
 
-            for(var a = 0; a < len; a++){
-                let currElection = parent[a].dataset.election;
-                let keys = Object.keys(election[currElection]);
-                let keyLen = keys.length;
-                for(var b = 0; b < keyLen; b++){
-                    // None of the options can be null
-                    if(election[currElection][keys[b]] == null){
-                        toggleError(true);
-                        return;
-                    }
+
+                /*
+                    CLEARS INPUTS HORIZONTALLY
+                    Disable if you want to disable horizontal clearing
+                */
+                for(var b = currentRow * rowLen; b < currentRow * rowLen + rowLen; b++){
+                    let targetInput = inputs[b];
+                    inputs[b].checked = false;
+                    targetInput.parentNode.getElementsByClassName('election_input_btn')[0].classList.toggle('click', false);
                 }
-            }
 
-            toggleError(false);
-
-            sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
-                if(err){
-                    // Handle the error
-                } else {
-                    // Do something here with the response object
-                }
+                this.classList.toggle('click');
+                radioBtn.checked = this.classList.contains('click');
             });
         }
 
-        function initSerialBtns(){
-            let parent = document.getElementsByClassName('serialize');
-            let len = parent.length;
-            for(var a = 0; a < len; a++){
-                parent[a].addEventListener('click', function(){
-                    serializeModules();
-                });
-            }
-        }
-        initSerialBtns();
-    </script>
+        parent = document.getElementsByClassName('election_no_confidence_btn');
+        len = parent.length;
 
-    <script>
-        // Response Reading
-        function readBody(xhr) {
-            var data;
-            if (!xhr.responseType || xhr.responseType === "text") {
-                data = xhr.responseText;
-            } else if (xhr.responseType === "document") {
-                data = xhr.responseXML;
-            } else {
-                data = xhr.response;
-            }
-            return data;
-        }
+        for(var a = 0; a < len; a++){
+            parent[a].addEventListener('click', function(){
+                let radioBtn = this.parentNode.getElementsByClassName('election_no_confidence')[0];
+                this.classList.toggle('click');
+                radioBtn.checked = this.classList.contains('click');
 
-        // Form sending, set encode = true to stringify JSON
-        function sendData(data, url, callback) {
-            var XHR = new XMLHttpRequest();
-            var urlEncodedData = JSON.stringify(data);
-            var urlEncodedDataPairs = [];
-            var name;
-        
-            XHR.onreadystatechange = function() {
-                if (XHR.readyState == 4) {
-                    try {
-                        callback(null, JSON.parse(readBody(XHR)));
-                    } catch(err){
-                        callback("ERROR IN POST REQUEST");
+                if(radioBtn.checked === true){
+                    container = findParentByClass('checkbox_container', this, 0);
+                    let inputs = container.getElementsByClassName('election_candidate_input');
+                    let inputLen = inputs.length;
+                    for(var a = 0; a < inputLen; a++){
+                        let targetInput = inputs[a];
+                        targetInput.checked = false;
+                        targetInput.parentNode.getElementsByClassName('election_input_btn')[0].classList.toggle('click', false);
                     }
                 }
-            }
-        
-            // Define what happens on successful data submission
-            XHR.addEventListener('load', function(event) {
-
             });
+        }
+    }
+    initInputManagers();
 
+    // Recursively finds the parent element with the target class
+    function findParentByClass(targetClass, ele, limit, callback){
+        if(ele.classList.contains(targetClass) === true){
+            return ele;
+        }else if(ele.parentNode !== undefined && limit < 10)
+            return findParentByClass(targetClass, ele.parentNode, limit + 1, callback)
+        else
+            return null;
+    }
+</script>
+
+<!-- Serializes the input fields -->
+<script>
+    function toggleError(status){
+        document.getElementById('client-error').classList.toggle('active', status);
+    }
+
+    // Serializes the inputs into the election object
+    function serializeModules(){
+        let parent = document.getElementsByClassName('election_module');
+        let len = parent.length;
+
+        let election = {};
+        for(var a = 0; a < len; a++){
+            let currElection = parent[a].dataset.election;
+            election[currElection] = {};
+
+            let inputs = parent[a].getElementsByClassName('election_input');
+            let inputLen = inputs.length;
+            let rowLen = Math.sqrt(inputLen);
+
+            // Initialize the rows
+            for(var b = 0; b < rowLen; b++){
+                election[currElection][b] = null;
+            }
             
-        
-            // Define what happens in case of error
-            XHR.addEventListener('error', function(event) {
+            // Set the column values
+            for(var b = 0; b < inputs.length; b++){
+                if(inputs[b].checked){
+                    let candidate = findParentByClass('row', inputs[b], 0);
+                    candidate = candidate.getElementsByClassName('candidate')[0];
 
-            });
-        
-            // Set up our request
-            XHR.open('POST', url);
-        
-            // Add the required HTTP header for form data POST requests
-            XHR.setRequestHeader('Content-Type', 'application/json');
-        
-            console.log(urlEncodedData);
-            // Finally, send our data.
-            XHR.send(urlEncodedData);
+                    // election : category : ranking = name
+                    election[currElection][parseInt(inputs[b].dataset.col) + 1] = candidate.innerHTML;
+                }
+            }
         }
-    </script>
-</div>
+
+        // Quick validation of the election object
+        for(var a = 0; a < len; a++){
+            let currElection = parent[a].dataset.election;
+            let keys = Object.keys(election[currElection]);
+            let keyLen = keys.length;
+            for(var b = 0; b < keyLen; b++){
+                // None of the options can be null
+                if(b != 0 && election[currElection][keys[b]] == null){
+                    return toggleError(true);
+                } else if(b == 0 && election[currElection][keys[b]] !== null){
+                    break;
+                }
+            }
+        }
+
+        toggleError(false);
+        console.log("THIS ELECTION DATA IS VALID");
+
+        // sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+        //     if(err){
+        //         // Handle the error
+        //     } else {
+        //         // Do something here with the response object
+        //     }
+        // });
+    }
+
+    function initSerialBtns(){
+        let parent = document.getElementsByClassName('serialize');
+        let len = parent.length;
+        for(var a = 0; a < len; a++){
+            parent[a].addEventListener('click', function(){
+                serializeModules();
+            });
+        }
+    }
+    initSerialBtns();
+</script>
+
+<script>
+    // Response Reading
+    function readBody(xhr) {
+        var data;
+        if (!xhr.responseType || xhr.responseType === "text") {
+            data = xhr.responseText;
+        } else if (xhr.responseType === "document") {
+            data = xhr.responseXML;
+        } else {
+            data = xhr.response;
+        }
+        return data;
+    }
+
+    // Form sending, set encode = true to stringify JSON
+    function sendData(data, url, callback) {
+        var XHR = new XMLHttpRequest();
+        var urlEncodedData = JSON.stringify(data);
+        var urlEncodedDataPairs = [];
+        var name;
+    
+        XHR.onreadystatechange = function() {
+            if (XHR.readyState == 4) {
+                try {
+                    callback(null, JSON.parse(readBody(XHR)));
+                } catch(err){
+                    callback("ERROR IN POST REQUEST");
+                }
+            }
+        }
+    
+        // Define what happens on successful data submission
+        XHR.addEventListener('load', function(event) {
+
+        });
+
+        
+    
+        // Define what happens in case of error
+        XHR.addEventListener('error', function(event) {
+
+        });
+    
+        // Set up our request
+        XHR.open('POST', url);
+    
+        // Add the required HTTP header for form data POST requests
+        XHR.setRequestHeader('Content-Type', 'application/json');
+    
+        console.log(urlEncodedData);
+        // Finally, send our data.
+        XHR.send(urlEncodedData);
+    }
+</script>
