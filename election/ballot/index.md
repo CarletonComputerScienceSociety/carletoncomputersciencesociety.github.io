@@ -195,7 +195,6 @@ published: true
 <div id="ballot_display">
     <div id='ballot_header'>
         <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
-        <div><h2>Until this message is gone, the voting server is still being setup. ETA is currently 00:30 Mar 25</h2></div>
         <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
         <div>For each position, you are given the option to rank all the candidates for that role. Rank each candidate in order of your preference. When the votes are tallied at the end of the election, only your first choice will be counted. In the event that no candidate has the majority (50%+1) of the votes, the candidate with the least number of votes will be removed, and any voters who selected this candidate will have their next choice counted instead. This process continues until there is a candidate with a majority of the votes.</div>
     </div>
