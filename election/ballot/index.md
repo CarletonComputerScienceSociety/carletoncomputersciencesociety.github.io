@@ -576,11 +576,24 @@ published: true
         return data;
     }
 
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
     // Form sending, set encode = true to stringify JSON
     function sendData(data, url, callback) {
         console.log("SENDING DATA");
         var XHR = new XMLHttpRequest();
-        var urlEncodedData = JSON.stringify(data);
+        var urlEncodedData = JSON.stringify({
+            scs_key: getParameterByName('x'),
+            vote: data,
+        });
         var urlEncodedDataPairs = [];
         var name;
     
@@ -589,7 +602,8 @@ published: true
                 try {
                     // callback(null, JSON.parse(readBody(XHR)));
                     console.log(XHR);
-                    return callback(null, readBody(XHR));
+                    // return callback(null, readBody(XHR));
+                    return;
                 } catch(err){
                     return callback("ERROR IN POST REQUEST");
                 }
@@ -615,6 +629,7 @@ published: true
         XHR.setRequestHeader('Content-Type', 'application/json');
     
         console.log(urlEncodedData);
+        
         // Finally, send our data.
         XHR.send(urlEncodedData);
     }
