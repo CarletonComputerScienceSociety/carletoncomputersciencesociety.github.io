@@ -189,14 +189,31 @@ published: true
         padding: 20px 40px;
         display: inline-block;
         margin-top: 4rem;
+        cursor: pointer;
+    }
+
+
+
+    #ballot_display #ballot_closing {
+        display: none;
+    }
+    #ballot_display.voted #ballot_header, #ballot_display.voted .election_module_title, #ballot_display.voted .election_module {
+        display: none;
+    }
+    #ballot_display.voted #ballot_closing {
+        display: block;
     }
   </style>
 </head>
 <div id="ballot_display">
     <div id='ballot_header'>
         <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
+        <div><h2>Until this message is gone, the voting server is still being setup. ETA is currently 00:30 Mar 25</h2></div>
         <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
         <div>For each position, you are given the option to rank all the candidates for that role. Rank each candidate in order of your preference. When the votes are tallied at the end of the election, only your first choice will be counted. In the event that no candidate has the majority (50%+1) of the votes, the candidate with the least number of votes will be removed, and any voters who selected this candidate will have their next choice counted instead. This process continues until there is a candidate with a majority of the votes.</div>
+    </div>
+    <div id='ballot_closing'>
+        <div><h2>Thank you for voting!</h2></div>
     </div>
     {% for category in site.data.election.spring2019.categories %}
         <div class='election_module_title'>{{ category.title }}</div>
@@ -344,6 +361,16 @@ published: true
 
 <!-- Restricts the inputs to one per column/row -->
 <script>
+    function initSerialBtns(){
+        let parent = document.getElementsByClassName('serialize');
+        let len = parent.length;
+        for(var a = 0; a < len; a++){
+            parent[a].addEventListener('click', function(){
+                serializeModules();
+            });
+        }
+    }
+
     function initInputManagers(){
         let parent = document.getElementsByClassName('election_candidate_input_btn');
         let len = parent.length;
@@ -398,6 +425,7 @@ published: true
                 radioBtn.checked = this.classList.contains('click');
             });
         }
+        initSerialBtns();
 
         parent = document.getElementsByClassName('election_no_confidence_btn');
         len = parent.length;
@@ -421,7 +449,6 @@ published: true
             });
         }
     }
-    initInputManagers();
 
     // Recursively finds the parent element with the target class
     function findParentByClass(targetClass, ele, limit, callback){
@@ -432,6 +459,30 @@ published: true
         else
             return null;
     }
+
+    function initRandomization(callback){
+        let parent = document.getElementsByClassName('candidate_row_container');
+        let len = parent.length;
+
+        for(var a = 0; a < len; a++){
+            for (var i = parent[a].children.length; i >= 0; i--) {
+                parent[a].appendChild(parent[a].children[Math.random() * i | 0]);
+            }
+        }
+
+        for(var a = 0; a < len; a++){
+            let inputs = parent[a].getElementsByClassName('election_candidate_input');
+            let inputLen = inputs.length;
+            let rowLen = Math.sqrt(inputLen);
+            for(var b = 0; b < inputLen; b++){
+                inputs[b].dataset.row = Math.floor(b / rowLen);
+                inputs[b].dataset.col = Math.floor(b % rowLen);
+            }
+        }
+
+        callback();
+    }
+    initRandomization(initInputManagers);
 </script>
 
 <!-- Serializes the input fields -->
@@ -497,17 +548,6 @@ published: true
             }
         });
     }
-
-    function initSerialBtns(){
-        let parent = document.getElementsByClassName('serialize');
-        let len = parent.length;
-        for(var a = 0; a < len; a++){
-            parent[a].addEventListener('click', function(){
-                serializeModules();
-            });
-        }
-    }
-    initSerialBtns();
 </script>
 
 <script>
