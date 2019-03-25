@@ -194,13 +194,19 @@ published: true
 
 
 
-    #ballot_display #ballot_closing {
+    #ballot_display #ballot_closing, #ballot_display #ballot_closing_error {
         display: none;
     }
     #ballot_display.voted #ballot_header, #ballot_display.voted .election_module_title, #ballot_display.voted .election_module {
         display: none;
     }
-    #ballot_display.voted #ballot_closing {
+    #ballot_display.error #ballot_header, #ballot_display.error .election_module_title, #ballot_display.error .election_module {
+        display: none;
+    }
+    #ballot_display.voted .serialize, #ballot_display.error .serialize {
+        display: none;
+    }
+    #ballot_display.voted #ballot_closing, #ballot_display.error #ballot_closing_error {
         display: block;
     }
   </style>
@@ -214,6 +220,9 @@ published: true
     </div>
     <div id='ballot_closing'>
         <div><h2>Thank you for voting!</h2></div>
+    </div>
+    <div id='ballot_closing_error'>
+        <div><h2>The voting server responded with an error.</h2></div>
     </div>
     {% for category in site.data.election.spring2019.categories %}
         <div class='election_module_title'>{{ category.title }}</div>
@@ -541,10 +550,13 @@ published: true
         console.log("THIS ELECTION DATA IS VALID");
 
         sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
-            if(err){
-                // Handle the error
+            console.log("THIS IS THE SEND DATA CALLBACK");
+            console.log(err);
+            console.log(response);
+            if(err){ // Handle the error
+                document.getElementById('ballot_display').classList.toggle('error');
             } else {
-                // Do something here with the response object
+                document.getElementById('ballot_display').classList.toggle('voted');
             }
         });
     }
