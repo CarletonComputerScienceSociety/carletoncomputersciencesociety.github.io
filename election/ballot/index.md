@@ -216,22 +216,24 @@ published: true
                         {% endfor %}
                     </div>
                 </div>
-                {% for candidate in category.candidates %}
-                    {% assign row = forloop.index0 %}
-                    <div class='row'>
-                        <div class='candidate'>{{ candidate }}</div>
-                        <div class='input_container'>
-                            <div class='radio_inputs election_input_row'>
-                                {% for candidate in category.candidates %}
-                                <div class='label'>
-                                    <div class='election_input_btn election_candidate_input_btn'></div>
-                                    <input type='radio' class='election_input election_candidate_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                <div class='candidate_row_container'>
+                    {% for candidate in category.candidates %}
+                        {% assign row = forloop.index0 %}
+                        <div class='row candidate_row'>
+                            <div class='candidate'>{{ candidate }}</div>
+                            <div class='input_container'>
+                                <div class='radio_inputs election_input_row'>
+                                    {% for candidate in category.candidates %}
+                                    <div class='label'>
+                                        <div class='election_input_btn election_candidate_input_btn'></div>
+                                        <input type='radio' class='election_input election_candidate_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                    </div>
+                                    {% endfor %}
                                 </div>
-                                {% endfor %}
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
                 <div class='row'>
                     <div class='candidate'>NO CONFIDENCE</div>
                     <div class='input_container'>
@@ -273,6 +275,41 @@ published: true
 
 <!-- Toggles the platform headers-->
 <script>
+    function initRandomization(){
+        let parent = document.getElementsByClassName('candidate_row_container');
+        let len = parent.length;
+
+        for(var a = 0; a < len; a++){
+            for (var i = parent[a].children.length; i >= 0; i--) {
+                parent[a].appendChild(parent[a].children[Math.random() * i | 0]);
+            }
+        }
+
+        // for(var a = 0; a < len; a++){
+        //     let inputs = parent[a].getElementsByClassName('candidate_row');
+        //     let inputLen = inputs.length;
+
+        //     let inputIndex = [];
+        //     for(var b = 0; b < inputLen; b++){
+        //         inputIndex.push(b);
+        //     }
+        //     inputIndex = shuffle(inputIndex);
+        //     console.log(inputIndex);
+            
+
+        //     // var 
+        //     // for(var b = 0; b < inputLen; b++){
+        //     //     var clone = inputs[b].cloneNode(true);
+        //     //     console.log(clone);
+        //     // }
+        //     for (var b = inputLen; i >= 0; i--) {
+        //         ul.appendChild(inputs[Math.random() * i | 0]);
+        //     }
+        // }
+
+    }
+    initRandomization();
+
     function initPlatformHeaders(){
         let parent = document.getElementsByClassName('platform_header');
         let len = parent.length;
@@ -284,6 +321,25 @@ published: true
         }
     }
     initPlatformHeaders();
+
+    function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
 </script>
 
 <!-- Restricts the inputs to one per column/row -->
