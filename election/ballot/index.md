@@ -578,6 +578,7 @@ published: true
 
     // Form sending, set encode = true to stringify JSON
     function sendData(data, url, callback) {
+        console.log("SENDING DATA");
         var XHR = new XMLHttpRequest();
         var urlEncodedData = JSON.stringify(data);
         var urlEncodedDataPairs = [];
@@ -586,9 +587,11 @@ published: true
         XHR.onreadystatechange = function() {
             if (XHR.readyState == 4) {
                 try {
-                    callback(null, JSON.parse(readBody(XHR)));
+                    // callback(null, JSON.parse(readBody(XHR)));
+                    console.log(XHR);
+                    return callback(null, readBody(XHR));
                 } catch(err){
-                    callback("ERROR IN POST REQUEST");
+                    return callback("ERROR IN POST REQUEST");
                 }
             }
         }
