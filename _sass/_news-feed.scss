@@ -1,6 +1,10 @@
 .feed-wrap {
 	display: flex;
 	flex-direction: column;
+
+	.inner-wrap {
+		flex-direction: column;
+	}
 }
 
 .half-feed {
@@ -14,7 +18,9 @@
 	.half-feed {
 		width: 50%;
 	}
-	.inner-wrap {
-		flex-direction: row;
+	.feed-wrap {
+		.inner-wrap {
+			flex-direction: row;
+		}
 	}
 }
