@@ -195,7 +195,6 @@ published: true
 <div id="ballot_display">
     <div id='ballot_header'>
         <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
-        <div><h2>Until this message is gone, the voting server is still being setup. ETA is currently 00:30 Mar 25</h2></div>
         <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
         <div>For each position, you are given the option to rank all the candidates for that role. Rank each candidate in order of your preference. When the votes are tallied at the end of the election, only your first choice will be counted. In the event that no candidate has the majority (50%+1) of the votes, the candidate with the least number of votes will be removed, and any voters who selected this candidate will have their next choice counted instead. This process continues until there is a candidate with a majority of the votes.</div>
     </div>
@@ -217,24 +216,22 @@ published: true
                         {% endfor %}
                     </div>
                 </div>
-                <div class='candidate_row_container'>
-                    {% for candidate in category.candidates %}
-                        {% assign row = forloop.index0 %}
-                        <div class='row candidate_row'>
-                            <div class='candidate'>{{ candidate }}</div>
-                            <div class='input_container'>
-                                <div class='radio_inputs election_input_row'>
-                                    {% for candidate in category.candidates %}
-                                    <div class='label'>
-                                        <div class='election_input_btn election_candidate_input_btn'></div>
-                                        <input type='radio' class='election_input election_candidate_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
-                                    </div>
-                                    {% endfor %}
+                {% for candidate in category.candidates %}
+                    {% assign row = forloop.index0 %}
+                    <div class='row'>
+                        <div class='candidate'>{{ candidate }}</div>
+                        <div class='input_container'>
+                            <div class='radio_inputs election_input_row'>
+                                {% for candidate in category.candidates %}
+                                <div class='label'>
+                                    <div class='election_input_btn election_candidate_input_btn'></div>
+                                    <input type='radio' class='election_input election_candidate_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
                                 </div>
+                                {% endfor %}
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
+                    </div>
+                {% endfor %}
                 <div class='row'>
                     <div class='candidate'>NO CONFIDENCE</div>
                     <div class='input_container'>
@@ -276,41 +273,6 @@ published: true
 
 <!-- Toggles the platform headers-->
 <script>
-    function initRandomization(){
-        let parent = document.getElementsByClassName('candidate_row_container');
-        let len = parent.length;
-
-        for(var a = 0; a < len; a++){
-            for (var i = parent[a].children.length; i >= 0; i--) {
-                parent[a].appendChild(parent[a].children[Math.random() * i | 0]);
-            }
-        }
-
-        // for(var a = 0; a < len; a++){
-        //     let inputs = parent[a].getElementsByClassName('candidate_row');
-        //     let inputLen = inputs.length;
-
-        //     let inputIndex = [];
-        //     for(var b = 0; b < inputLen; b++){
-        //         inputIndex.push(b);
-        //     }
-        //     inputIndex = shuffle(inputIndex);
-        //     console.log(inputIndex);
-            
-
-        //     // var 
-        //     // for(var b = 0; b < inputLen; b++){
-        //     //     var clone = inputs[b].cloneNode(true);
-        //     //     console.log(clone);
-        //     // }
-        //     for (var b = inputLen; i >= 0; i--) {
-        //         ul.appendChild(inputs[Math.random() * i | 0]);
-        //     }
-        // }
-
-    }
-    initRandomization();
-
     function initPlatformHeaders(){
         let parent = document.getElementsByClassName('platform_header');
         let len = parent.length;
@@ -322,25 +284,6 @@ published: true
         }
     }
     initPlatformHeaders();
-
-    function shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
-
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
-
-            // Pick a remaining element...
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-
-            // And swap it with the current element.
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
-        }
-
-        return array;
-    }
 </script>
 
 <!-- Restricts the inputs to one per column/row -->
