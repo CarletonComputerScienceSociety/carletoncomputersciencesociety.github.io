@@ -189,14 +189,39 @@ published: true
         padding: 20px 40px;
         display: inline-block;
         margin-top: 4rem;
+        cursor: pointer;
+    }
+
+
+
+    #ballot_display #ballot_closing, #ballot_display #ballot_closing_error {
+        display: none;
+    }
+    #ballot_display.voted #ballot_header, #ballot_display.voted .election_module_title, #ballot_display.voted .election_module {
+        display: none;
+    }
+    #ballot_display.error #ballot_header, #ballot_display.error .election_module_title, #ballot_display.error .election_module {
+        display: none;
+    }
+    #ballot_display.voted .serialize, #ballot_display.error .serialize {
+        display: none;
+    }
+    #ballot_display.voted #ballot_closing, #ballot_display.error #ballot_closing_error {
+        display: block;
     }
   </style>
 </head>
 <div id="ballot_display">
     <div id='ballot_header'>
         <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
-        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div><h4>The voting server will be open until Friday, March 29 2019 at 23:59</h4></div>
         <div>For each position, you are given the option to rank all the candidates for that role. Rank each candidate in order of your preference. When the votes are tallied at the end of the election, only your first choice will be counted. In the event that no candidate has the majority (50%+1) of the votes, the candidate with the least number of votes will be removed, and any voters who selected this candidate will have their next choice counted instead. This process continues until there is a candidate with a majority of the votes.</div>
+    </div>
+    <div id='ballot_closing'>
+        <div><h2 id='ballot_closing_statement'>Thank you for voting!</h2></div>
+    </div>
+    <div id='ballot_closing_error'>
+        <div><h2>The voting server responded with an error.</h2></div>
     </div>
     {% for category in site.data.election.spring2019.categories %}
         <div class='election_module_title'>{{ category.title }}</div>
@@ -216,22 +241,24 @@ published: true
                         {% endfor %}
                     </div>
                 </div>
-                {% for candidate in category.candidates %}
-                    {% assign row = forloop.index0 %}
-                    <div class='row'>
-                        <div class='candidate'>{{ candidate }}</div>
-                        <div class='input_container'>
-                            <div class='radio_inputs election_input_row'>
-                                {% for candidate in category.candidates %}
-                                <div class='label'>
-                                    <div class='election_input_btn election_candidate_input_btn'></div>
-                                    <input type='radio' class='election_input election_candidate_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                <div class='candidate_row_container'>
+                    {% for candidate in category.candidates %}
+                        {% assign row = forloop.index0 %}
+                        <div class='row candidate_row'>
+                            <div class='candidate'>{{ candidate }}</div>
+                            <div class='input_container'>
+                                <div class='radio_inputs election_input_row'>
+                                    {% for candidate in category.candidates %}
+                                    <div class='label'>
+                                        <div class='election_input_btn election_candidate_input_btn'></div>
+                                        <input type='radio' class='election_input election_candidate_input' data-col='{{forloop.index0}}' data-row='{{row}}'/>
+                                    </div>
+                                    {% endfor %}
                                 </div>
-                                {% endfor %}
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
                 <div class='row'>
                     <div class='candidate'>NO CONFIDENCE</div>
                     <div class='input_container'>
@@ -273,6 +300,7 @@ published: true
 
 <!-- Toggles the platform headers-->
 <script>
+
     function initPlatformHeaders(){
         let parent = document.getElementsByClassName('platform_header');
         let len = parent.length;
@@ -284,10 +312,39 @@ published: true
         }
     }
     initPlatformHeaders();
+
+    function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
 </script>
 
 <!-- Restricts the inputs to one per column/row -->
 <script>
+    function initSerialBtns(){
+        let parent = document.getElementsByClassName('serialize');
+        let len = parent.length;
+        for(var a = 0; a < len; a++){
+            parent[a].addEventListener('click', function(){
+                serializeModules();
+            });
+        }
+    }
+
     function initInputManagers(){
         let parent = document.getElementsByClassName('election_candidate_input_btn');
         let len = parent.length;
@@ -342,6 +399,7 @@ published: true
                 radioBtn.checked = this.classList.contains('click');
             });
         }
+        initSerialBtns();
 
         parent = document.getElementsByClassName('election_no_confidence_btn');
         len = parent.length;
@@ -365,7 +423,6 @@ published: true
             });
         }
     }
-    initInputManagers();
 
     // Recursively finds the parent element with the target class
     function findParentByClass(targetClass, ele, limit, callback){
@@ -376,6 +433,30 @@ published: true
         else
             return null;
     }
+
+    function initRandomization(callback){
+        let parent = document.getElementsByClassName('candidate_row_container');
+        let len = parent.length;
+
+        for(var a = 0; a < len; a++){
+            for (var i = parent[a].children.length; i >= 0; i--) {
+                parent[a].appendChild(parent[a].children[Math.random() * i | 0]);
+            }
+        }
+
+        for(var a = 0; a < len; a++){
+            let inputs = parent[a].getElementsByClassName('election_candidate_input');
+            let inputLen = inputs.length;
+            let rowLen = Math.sqrt(inputLen);
+            for(var b = 0; b < inputLen; b++){
+                inputs[b].dataset.row = Math.floor(b / rowLen);
+                inputs[b].dataset.col = Math.floor(b % rowLen);
+            }
+        }
+
+        callback();
+    }
+    initRandomization(initInputManagers);
 </script>
 
 <!-- Serializes the input fields -->
@@ -433,25 +514,19 @@ published: true
         toggleError(false);
         console.log("THIS ELECTION DATA IS VALID");
 
-        sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
-            if(err){
-                // Handle the error
+        sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response, responseText){
+            console.log("THIS IS THE SEND DATA CALLBACK");
+            console.log(err);
+            console.log(response);
+
+            if(err){ // Handle the error
+                document.getElementById('ballot_display').classList.toggle('error');
             } else {
-                // Do something here with the response object
+                document.getElementById('ballot_display').classList.toggle('voted');
+                document.getElementById('ballot_closing_statement').innerHTML = responseText;
             }
         });
     }
-
-    function initSerialBtns(){
-        let parent = document.getElementsByClassName('serialize');
-        let len = parent.length;
-        for(var a = 0; a < len; a++){
-            parent[a].addEventListener('click', function(){
-                serializeModules();
-            });
-        }
-    }
-    initSerialBtns();
 </script>
 
 <script>
@@ -468,19 +543,33 @@ published: true
         return data;
     }
 
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
     // Form sending, set encode = true to stringify JSON
     function sendData(data, url, callback) {
+        console.log("SENDING DATA");
         var XHR = new XMLHttpRequest();
-        var urlEncodedData = JSON.stringify(data);
+        var urlEncodedData = JSON.stringify({
+            scs_key: getParameterByName('x'),
+            vote: data,
+        });
         var urlEncodedDataPairs = [];
         var name;
     
         XHR.onreadystatechange = function() {
             if (XHR.readyState == 4) {
                 try {
-                    callback(null, JSON.parse(readBody(XHR)));
+                    return callback(null, XHR, readBody(XHR));
                 } catch(err){
-                    callback("ERROR IN POST REQUEST");
+                    return callback("ERROR IN POST REQUEST");
                 }
             }
         }
@@ -504,6 +593,7 @@ published: true
         XHR.setRequestHeader('Content-Type', 'application/json');
     
         console.log(urlEncodedData);
+        
         // Finally, send our data.
         XHR.send(urlEncodedData);
     }

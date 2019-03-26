@@ -4,7 +4,7 @@ COPY ./Gemfile /app/
 
 WORKDIR /app/
 
-RUN bundler install; cat Gemfile.lock
+RUN bundle install
 
 EXPOSE 4000
 
