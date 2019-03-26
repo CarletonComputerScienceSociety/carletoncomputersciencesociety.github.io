@@ -214,12 +214,11 @@ published: true
 <div id="ballot_display">
     <div id='ballot_header'>
         <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
-        <div><h2>Until this message is gone, the voting server is still being setup. ETA is currently 00:30 Mar 25</h2></div>
-        <div>Below you will find the ballots. You are able to give each candidate a rank.</div>
+        <div><h4>The voting server will be open until Friday, March 29 2019 at 23:59</h4></div>
         <div>For each position, you are given the option to rank all the candidates for that role. Rank each candidate in order of your preference. When the votes are tallied at the end of the election, only your first choice will be counted. In the event that no candidate has the majority (50%+1) of the votes, the candidate with the least number of votes will be removed, and any voters who selected this candidate will have their next choice counted instead. This process continues until there is a candidate with a majority of the votes.</div>
     </div>
     <div id='ballot_closing'>
-        <div><h2>Thank you for voting!</h2></div>
+        <div><h2 id='ballot_closing_statement'>Thank you for voting!</h2></div>
     </div>
     <div id='ballot_closing_error'>
         <div><h2>The voting server responded with an error.</h2></div>
@@ -301,40 +300,6 @@ published: true
 
 <!-- Toggles the platform headers-->
 <script>
-    function initRandomization(){
-        let parent = document.getElementsByClassName('candidate_row_container');
-        let len = parent.length;
-
-        for(var a = 0; a < len; a++){
-            for (var i = parent[a].children.length; i >= 0; i--) {
-                parent[a].appendChild(parent[a].children[Math.random() * i | 0]);
-            }
-        }
-
-        // for(var a = 0; a < len; a++){
-        //     let inputs = parent[a].getElementsByClassName('candidate_row');
-        //     let inputLen = inputs.length;
-
-        //     let inputIndex = [];
-        //     for(var b = 0; b < inputLen; b++){
-        //         inputIndex.push(b);
-        //     }
-        //     inputIndex = shuffle(inputIndex);
-        //     console.log(inputIndex);
-            
-
-        //     // var 
-        //     // for(var b = 0; b < inputLen; b++){
-        //     //     var clone = inputs[b].cloneNode(true);
-        //     //     console.log(clone);
-        //     // }
-        //     for (var b = inputLen; i >= 0; i--) {
-        //         ul.appendChild(inputs[Math.random() * i | 0]);
-        //     }
-        // }
-
-    }
-    initRandomization();
 
     function initPlatformHeaders(){
         let parent = document.getElementsByClassName('platform_header');
@@ -549,14 +514,16 @@ published: true
         toggleError(false);
         console.log("THIS ELECTION DATA IS VALID");
 
-        sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response){
+        sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response, responseText){
             console.log("THIS IS THE SEND DATA CALLBACK");
             console.log(err);
             console.log(response);
+
             if(err){ // Handle the error
                 document.getElementById('ballot_display').classList.toggle('error');
             } else {
                 document.getElementById('ballot_display').classList.toggle('voted');
+                document.getElementById('ballot_closing_statement').innerHTML = responseText;
             }
         });
     }
@@ -600,10 +567,7 @@ published: true
         XHR.onreadystatechange = function() {
             if (XHR.readyState == 4) {
                 try {
-                    // callback(null, JSON.parse(readBody(XHR)));
-                    console.log(XHR);
-                    // return callback(null, readBody(XHR));
-                    return;
+                    return callback(null, XHR, readBody(XHR));
                 } catch(err){
                     return callback("ERROR IN POST REQUEST");
                 }
