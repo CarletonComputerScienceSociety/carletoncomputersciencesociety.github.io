@@ -89,12 +89,12 @@ published: true
     <li>
       <div class="team-member">
         <div class="team-img">
-          <img img src="/images/about-pics/unknown_id.jpg" class="img-responsive">
+          <img img src="/images/about-pics/faareha_khalid.jpg" class="img-responsive">
         </div>
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>Bio Coming soon</p>
+            <p>I'm going into my third year but CS is my second undergraduate degree ! If you're a mature student, doing a 2nd+ degree, a woman in CS, or want me to address anything related to inclusivity, reach out ! I'm here to represent you.</p>
           </div>
         </div>
         <div class="team-title">
