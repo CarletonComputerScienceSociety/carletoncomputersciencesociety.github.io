@@ -23,7 +23,7 @@ Hi everyone! I’m an international student from India and I’m excited to be a
 I’m a huge soccer buff and an MCU fan (fight me, DC fan bois.) I love trivia and quizzing and just love fiddling around with the computer but also, making friends and meeting new people, in general. I would be honoured to be an FYR for the CCSS, and to be the voice of all the first-year students who are often looked over. I promise that I will listen to what everyone has to say and feed your opinions to the rest of the exec board if I’m chosen. I’ve previously assumed leadership roles in high school so I know the responsibilities that such a position demands. I have plenty of exciting plans for the CCSS in general but also to ensure fun participation for all the first years. So, do vote for me and I will not let you down. Cheers!
 
 
-<img src='/images/election_2018/first_rep/youssef.jpg' />  
+<img src='/images/election_2018/first_rep/youssef.png' />  
 
 **Youssef Zayed:**  
 
@@ -44,9 +44,10 @@ I will be a good first year representative because I enjoy meeting new people, I
 
 Hello! My name is Malcolm Smith, and this is my first year at Carleton University! I think it would be awesome if I were elected as first year representative for the CCSS.
 
-    - Weekly/Monthly challenges (coding competitions, CTF’s, game-jams and stream-specific projects ), which is a great opportunity to show off and compete with your friends!
-    - Project expo: I’ve been programming for years, and one of the thing that I enjoy the most in CS is sharing projects with friends and family! An expo would be a great idea to get suggestions and ideas for your projects, and inspiration for many more!
-    - Tech workshops: I would love to run workshops on new tools and tech in CS, and to show people how to write code like a pro with cool new editors, extensions, and software!
+
+  - Weekly/Monthly challenges (coding competitions, CTF’s, game-jams and stream-specific projects ), which is a great opportunity to show off and compete with your friends!
+  - Project expo: I’ve been programming for years, and one of the thing that I enjoy the most in CS is sharing projects with friends and family! An expo would be a great idea to get suggestions and ideas for your projects, and inspiration for many more!
+  - Tech workshops: I would love to run workshops on new tools and tech in CS, and to show people how to write code like a pro with cool new editors, extensions, and software!
 
 Thanks and I look forward to the next couple years with you guys!"
 
@@ -78,9 +79,4 @@ Have fun and learn 24/7/365.
 **Naji Krayem:**  
 (platform summary and photo pending)
 
-
-
 Thank you again to all the applicants, and we wish good luck and a good year!
-
-Aidan Crowther,
-Vice President, CCSS
