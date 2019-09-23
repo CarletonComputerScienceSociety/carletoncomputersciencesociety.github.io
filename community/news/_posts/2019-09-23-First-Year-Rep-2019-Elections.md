@@ -47,7 +47,7 @@ Hello! My name is Malcolm Smith, and this is my first year at Carleton Universit
 
 
   - Weekly/Monthly challenges (coding competitions, CTF’s, game-jams and stream-specific projects ), which is a great opportunity to show off and compete with your friends!
-  - Project expo: I’ve been programming for years, and one of the thing that I enjoy the most in CS is sharing projects with friends and family! An expo would be a great idea to get suggestions and ideas for your projects, and inspiration for many more!
+  - Project expo: I’ve been programming for years, and one of the things that I enjoy the most in CS is sharing projects with friends and family! An expo would be a great idea to get suggestions and ideas for your projects, and inspiration for many more!
   - Tech workshops: I would love to run workshops on new tools and tech in CS, and to show people how to write code like a pro with cool new editors, extensions, and software!
 
 Thanks and I look forward to the next couple years with you guys!"
@@ -85,6 +85,3 @@ Have fun and learn 24/7/365.
 
 
 Thank you again to all the applicants, and we wish good luck and a good year!
-
-Aidan Crowther,
-Vice President, CCSS
