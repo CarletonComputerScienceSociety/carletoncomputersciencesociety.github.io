@@ -14,7 +14,7 @@ Election Calendar:
 
 The following are the representatives who are running for your first year representative:
 
-
+<hr>
 <img src='/images/election_2018/first_rep/ujan.png' />  
 
 **Ujan Sen:**  
