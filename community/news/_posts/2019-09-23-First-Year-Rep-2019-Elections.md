@@ -23,13 +23,13 @@ Hi everyone! I’m an international student from India and I’m excited to be a
 I’m a huge soccer buff and an MCU fan (fight me, DC fan bois.) I love trivia and quizzing and just love fiddling around with the computer but also, making friends and meeting new people, in general. I would be honoured to be an FYR for the CCSS, and to be the voice of all the first-year students who are often looked over. I promise that I will listen to what everyone has to say and feed your opinions to the rest of the exec board if I’m chosen. I’ve previously assumed leadership roles in high school so I know the responsibilities that such a position demands. I have plenty of exciting plans for the CCSS in general but also to ensure fun participation for all the first years. So, do vote for me and I will not let you down. Cheers!
 
 
-<img src='/images/election_2018/first_rep/youssef.png' />  
+<img style="height:20em" src='/images/election_2018/first_rep/youssef.png' />  
 
 **Youssef Zayed:**  
 
 Do you like programming? What about having an environment to grow and succeed? Well if you do, make sure to vote for Youssef Zayed as your first-year rep for the CCSS. With me as a first-year rep you will get more chances to shine and show your skills off, as well as learn new skills in surrounded by like minded people who will support you when you are struggling. Want to be even MORE employable than you currently are, well just so happens that I will also try to get more companies to come to you looking for someone with your skillset to work for them. But wait there is more, how would you like to work on an incredibly large mega project with most of the CCSS participating? Just make sure to vote Youssef Zayed for first year rep.
 
-<img src='/images/election_2018/first_rep/ben.png' />
+<img style="width:20em" src='/images/election_2018/first_rep/ben.png' />
 
 **Benjamin AuCoin:**  
 
@@ -38,7 +38,7 @@ The first year of university is very exciting but it can also be very stressful.
 I will be a good first year representative because I enjoy meeting new people, I am committed and I will take my responsibilities very seriously. Don’t hesitate to contact me if you have any questions. My Carleton email is <a href="mailto:benjaminaucoin@cmail.carleton.ca">benjaminaucoin@cmail.carleton.ca</a> . Thank you for your consideration, I hope you will choose me as your first year representative!
 
 
-<img src='/images/election_2018/first_rep/malcolm.png' />  
+<img style="width:20em" src='/images/election_2018/first_rep/malcolm.png' />  
 
 **Malcolm Smith:**  
 
@@ -51,19 +51,19 @@ Hello! My name is Malcolm Smith, and this is my first year at Carleton Universit
 
 Thanks and I look forward to the next couple years with you guys!"
 
-<img src='/images/election_2018/first_rep/majd.png' />  
+<img style="width:20em" src='/images/election_2018/first_rep/majd.png' />  
 
 **Majd Taweel:**  
 
 My name is Majd Taweel, I'm an international student from Jordan and I'm trying to be your first year rep so I can deal with any concerns we all have without you having to worry about them. I'm also going to be focused on building a community of first years and breaking the stereotype that CS students are anti-social (if we're all being anti social together, it kinda counts as being social). If you want to meet people all around Carleton, be a part of events, have study groups with other classmates or just focus on yourself and your studies, I'm here to make all that happen.
 
-<img src='/images/election_2018/first_rep/myron.png' />  
+<img style="width:20em" src='/images/election_2018/first_rep/myron.png' />  
 
 **Myron Huang:**  
 
 I am a second degree student entering into my first year in Computer Science. I'm from Toronto and I enjoy programming for fun. I am interested in web development and advanced analytics for sports. At my previous school, I was elected to the position of  Communications Executive on the Student Council. As Communications Executive, I organized and promoted many events for the student population.  I can bring this experience to my role as First Year Representative. As First Year Rep, I promise to serve as a bridge between the student body and the Student Council Executives. If elected, I will take the steps needed to strengthen the sense of community and inclusivity amongst Computer Science students. I will work to ensure that all students have the academic and social support that they need from Student Council. I want to serve as a person that you, the people can confide in.
 
-<img src='/images/election_2018/first_rep/gordan.png' />  
+<img style="height:20em" src='/images/election_2018/first_rep/gordan.png' />  
 
 **Gordon Tang:**  
 
@@ -79,4 +79,9 @@ Have fun and learn 24/7/365.
 **Naji Krayem:**  
 (platform summary and photo pending)
 
+
+
 Thank you again to all the applicants, and we wish good luck and a good year!
+
+Aidan Crowther,
+Vice President, CCSS
