@@ -43,7 +43,7 @@ I will be a good first year representative because I enjoy meeting new people, I
 
 **Malcolm Smith:**  
 
-Hello! My name is Malcolm Smith, and this is my first year at Carleton University! I think it would be awesome if I were elected as first year representative for the CCSS.
+Hello! My name is Malcolm Smith, and this is my first year at Carleton University! I think it would be awesome if I were elected as first year representative for the CCSS. There are a couple of things I would be super excited to pursue as a first year representative:
 
 
   - Weekly/Monthly challenges (coding competitions, CTF’s, game-jams and stream-specific projects ), which is a great opportunity to show off and compete with your friends!
