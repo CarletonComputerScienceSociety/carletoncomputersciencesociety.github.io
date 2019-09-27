@@ -63,6 +63,7 @@ published: true
     .row .candidate, .row .candidate_holder {
         flex: 1;
         font-weight: 700;
+        margin-bottom: 20px;
     }
     .row .candidate_holder {
         font-weight: 200;
@@ -213,9 +214,9 @@ published: true
 </head>
 <div id="ballot_display">
     <div id='ballot_header'>
-        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019-2020 general elections!</h2></div>
-        <div><h4>The voting server will be open until Friday, March 29 2019 at 23:59</h4></div>
-        <div>For each position, you are given the option to rank all the candidates for that role. Rank each candidate in order of your preference. When the votes are tallied at the end of the election, only your first choice will be counted. In the event that no candidate has the majority (50%+1) of the votes, the candidate with the least number of votes will be removed, and any voters who selected this candidate will have their next choice counted instead. This process continues until there is a candidate with a majority of the votes.</div>
+        <div><h2>Hello and welcome to the Carleton Computer Science Society 2019 first year representative elections!</h2></div>
+        <div><h4>The voting server will be open until Friday, October 4 2019 at 23:59</h4></div>
+        <div>Rank each candidate in order of your preference. When the votes are tallied at the end of the election, only your first choice will be counted. In the event that no candidate has the majority (50%+1) of the votes, the candidate with the least number of votes will be removed, and any voters who selected this candidate will have their next choice counted instead. This process continues until there is a candidate with a majority of the votes. Take a look <a href="https://ccss.carleton.ca/community/news/blog/First-Year-Rep-2019-Elections/">here</a> to see the full platforms of the candidates.</div>
     </div>
     <div id='ballot_closing'>
         <div><h2 id='ballot_closing_statement'>Thank you for voting!</h2></div>
@@ -223,7 +224,7 @@ published: true
     <div id='ballot_closing_error'>
         <div><h2>The voting server responded with an error.</h2></div>
     </div>
-    {% for category in site.data.election.spring2019.categories %}
+    {% for category in site.data.election.fall2019.categories %}
         <div class='election_module_title'>{{ category.title }}</div>
         <div class='election_module' data-election='{{ category.title }}'>
             <div class='checkbox_container'>
@@ -286,7 +287,7 @@ published: true
                 {% for candidate in category.candidates %}
                     <div class='election_platform'>
                         <div class='platform_title'>{{candidate}}</div>
-                        <div class='platform_description'>{{ site.data.election.spring2019.candidates[candidate].platform }}</div>
+                        <div class='platform_description'>{{ site.data.election.fall2019.candidates[candidate].platform }}</div>
                     </div>
                 {% endfor %}
             </div>
@@ -514,7 +515,7 @@ published: true
         toggleError(false);
         console.log("THIS ELECTION DATA IS VALID");
 
-        sendData(election, '{{ site.data.election.spring2019.votesURL }}', function(err, response, responseText){
+        sendData(election, '{{ site.data.election.fall2019.votesURL }}', function(err, response, responseText){
             console.log("THIS IS THE SEND DATA CALLBACK");
             console.log(err);
             console.log(response);
