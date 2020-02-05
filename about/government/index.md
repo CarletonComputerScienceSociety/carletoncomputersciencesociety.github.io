@@ -21,6 +21,9 @@ subjectstyle: 'border-bottom: 5px solid white; border-top: 5px solid white;'
   within a meeting as long as the society membership is notified. You can
   find them <a href="https://docs.google.com/document/d/1GdX5OPCI5gdbViDAfCIbFto6tgNxH-gwHzLy9e2S3o8/edit?usp=sharing" target="_blank">here</a></p>
 
+  <h5>Code of Conduct</h5>
+  <p>The CCSS aims to foster an inclusive and welcoming environment in our lounge space and at our events. Individuals participating in any CCSS event or service are expected to follow what is outlined <a href="https://docs.google.com/document/d/1TTkDQtwMI3NfYDknUdlibpJzmvClc06_CTa8eaGDSIc/edit?fbclid=IwAR2S1xOydGXNGuUk5_KTodh0aljQl3Q1JVpsiMpkEyYn8TiZS2Qb8deZpZs" target="_blank">here</a></p>
+
   <h5>Our electoral code</h5>
   <p>The CCSS Electoral Code outlines the timeline, structure, and rules of a Carleton
   Computer Science Society (“CCSS”) election. You can find it <a href="https://docs.google.com/document/d/1v66nTxoRgAYNnXLr3ZIAhjkyiHMRGUoK3rH9rmLL478/edit?usp=sharing" target="_blank">here</a></p>
