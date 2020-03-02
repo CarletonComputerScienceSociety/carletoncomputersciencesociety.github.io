@@ -4,7 +4,7 @@ title: CCSS Election for 2020-2021
 category: blog
 by: Eliza Kazan
 ---
-The CCSS Elections for 2020-2021 have begun! We're excited to announce that we have 9 candidates running for positions on the board of directors.
+The CCSS Elections for 2020-2021 have begun! We're excited to announce that we have 7 candidates running for positions on the board of directors.
 
 ## The Candidates are:
 
