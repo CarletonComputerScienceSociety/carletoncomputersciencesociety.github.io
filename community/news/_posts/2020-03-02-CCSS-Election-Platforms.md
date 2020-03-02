@@ -107,4 +107,4 @@ I will make sure that the CCSS works closely together with the School of Compute
 
 I will aim to work with the newly elected board of directors to diversify our events and initiatives and to develop a variety of services to better serve the student body. I will ensure that the CCSS lounge is a welcoming and safe space for all CS students to relax, study, and bond! I would also like to ensure that an anonymous feedback and suggestions form is implemented so that all ideas are heard and considered.
 
-Last but not least, I will do my best to ensure that CS students are well informed about the various volunteer opportunities, events, and resources that are available to them
+Last but not least, I will do my best to ensure that CS students are well informed about the various volunteer opportunities, events, and resources that are available to them.
