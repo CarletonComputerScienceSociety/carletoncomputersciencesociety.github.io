@@ -41,29 +41,43 @@ If elected, my primary objective as Treasurer will be to ensure that the financi
 ### Alexa de Grandmont - Director of Academics:
 Hi! My name is Alexa de Grandmont and I’m an upper (and I mean 6th-year upper) year BCS Honours student and 6-time TA for COMP 2804. I care a lot about grades, but even more about learning, and even more than that about helping others learn. Here are some ideas and plans for how I’d like to promote your learning, collaboration, and development of stuff you’re proud of:
 
-Developing resources for CS concepts that aren’t as well-documented online (Discrete Math in particular)
+•  Developing resources for CS concepts that aren’t as well• documented online (Discrete Math in particular)
+<ul>
+    <li>Already in Progress: Expanding the COMP 1805 Discrete Math Study Center (<a href="http://cglab.ca/~discmath/">http://cglab.ca/~discmath/</a>), to include practice problems and mock exams for COMP 2804 (and later COMP 3804 and other theoretical CS courses)
+    </li>
+    <li>
+    Encouraging student collaboration on resource development (see below)
+    </li>
+</ul>
+•   Come to Dev Club - Work on Side Projects
+<ul>
+    <li>Supplementary workshops on requested topics (e.g., code stuff, discrete math, algorithms, git & other topics not found in courses) for anyone who wants to review or get ahead
+    </li>
+    <li>
+    Mentorship for lower-years / anyone looking for advice / friends
+    </li>
+</ul>
 
-Already in Progress: Expanding the COMP 1805 Discrete Math Study Center (<a href="http://cglab.ca/~discmath/">http://cglab.ca/~discmath/</a>), to include practice problems and mock exams for COMP 2804 (and later COMP 3804 and other theoretical CS courses)
+•   Talks from Industry Professionals / Researchers
+<ul>
+    <li>Find out what tech industry is like, meet & greet & make connections
+        <ul>
+        <li>
+            Also working with Carleton WiCS (Women in Computer Science) on this
+        </li>
+        </ul>
+    </li>
+    <li>
+    Find out what graduate school is like, learn about research opportunities
+        <ul>
+        <li>
+            More Prof Nights!
+        </li>
+        </ul>
+    </li>
+</ul>
 
-Encouraging student collaboration on resource development (see below)
-
-Come to Dev Club - Work on Side Projects
-
-Supplementary workshops on requested topics (e.g., code stuff, discrete math, algorithms, git & other topics not found in courses) for anyone who wants to review or get ahead
-
-Mentorship for lower-years / anyone looking for advice / friends
-
-Talks from Industry Professionals / Researchers
-
-Find out what tech industry is like, meet & greet & make connections
-
-Also working with Carleton WiCS (Women in Computer Science) on this
-
-Find out what graduate school is like, learn about research opportunities
-
-More Prof Nights!
-
-...I’ll play Despacito if you’re sad
+•   ...I’ll play Despacito if you’re sad
 
 ### Malcolm Smith - Director of Social:
 
