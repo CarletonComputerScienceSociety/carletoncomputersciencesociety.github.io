@@ -83,7 +83,7 @@ Hi! My name is Alexa de Grandmont and I’m an upper (and I mean 6th-year upper)
 
 If elected, I intend to continue developing the awesome events and opportunities that the CCSS offers!
 
-I've had a lot of fun with my experience of being first year representative and working hard on creating and mainting events for the CCSS! It was a blast to come up with events for the new first-year week, such as the jackbox night and the personal project expo.
+I've had a lot of fun with my experience of being first year representative and working hard on creating and maintaining events for the CCSS! It was a blast to come up with events for the new first-year week, such as the jackbox night and the personal project expo.
 
 Being elected as Director of Social would allow me to continue having fun working with the CCSS on managing new and exiting ways to engage students, and to have a great time at Carleton!
 
@@ -108,7 +108,7 @@ Event ideas:
 
 •             Resume/coop support workshops
 
-•             Notworking events
+•             Networking events
 
 •             Mentorship
 
