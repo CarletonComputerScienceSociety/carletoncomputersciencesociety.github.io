@@ -224,7 +224,7 @@ published: true
     <div id='ballot_closing_error'>
         <div><h2>The voting server responded with an error.</h2></div>
     </div>
-    {% for category in site.data.election.fall2019.categories %}
+    {% for category in site.data.election.spring2020.categories %}
         <div class='election_module_title'>{{ category.title }}</div>
         <div class='election_module' data-election='{{ category.title }}'>
             <div class='checkbox_container'>
@@ -287,7 +287,7 @@ published: true
                 {% for candidate in category.candidates %}
                     <div class='election_platform'>
                         <div class='platform_title'>{{candidate}}</div>
-                        <div class='platform_description'>{{ site.data.election.fall2019.candidates[candidate].platform }}</div>
+                        <div class='platform_description'>{{ site.data.election.spring2020.candidates[candidate].platform }}</div>
                     </div>
                 {% endfor %}
             </div>
@@ -515,7 +515,7 @@ published: true
         toggleError(false);
         console.log("THIS ELECTION DATA IS VALID");
 
-        sendData(election, '{{ site.data.election.fall2019.votesURL }}', function(err, response, responseText){
+        sendData(election, '{{ site.data.election.spring2020.votesURL }}', function(err, response, responseText){
             console.log("THIS IS THE SEND DATA CALLBACK");
             console.log(err);
             console.log(response);
