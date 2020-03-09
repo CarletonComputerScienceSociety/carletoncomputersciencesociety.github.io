@@ -224,7 +224,7 @@ published: true
     <div id='ballot_closing_error'>
         <div><h2>The voting server responded with an error.</h2></div>
     </div>
-    {% for category in site.data.election.spring2020.categories %}
+    {% for category in site.data.election.fall2019.categories %}
         <div class='election_module_title'>{{ category.title }}</div>
         <div class='election_module' data-election='{{ category.title }}'>
             <div class='checkbox_container'>
