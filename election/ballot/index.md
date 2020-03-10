@@ -215,9 +215,10 @@ published: true
 <div id="ballot_display">
     <div id='ballot_header'>
         <div><h2>Hello and welcome to the Carleton Computer Science Society 2020-2021 elections!</h2></div>
-        <div><h4>The voting server will be open until Saturday, March 14 2020 at 23:59</h4></div>
-        <div>Rank each candidate in order of your preference. When the votes are tallied at the end of the election, only your first choice will be counted. In the event that no candidate has the majority (50%+1) of the votes, the candidate with the least number of votes will be removed, and any voters who selected this candidate will have their next choice counted instead. This process continues until there is a candidate with a majority of the votes. Take a look <a href="http://ccss.carleton.ca/community/news/blog/CCSS-Election-Platforms/">here</a> to see the full platforms of the candidates.</div>
+        <div><h4>The voting server will open Thursday, March 12 2020 and be open until Saturday, March 14 2020 at 23:59</h4></div>
+        <!--<div>Rank each candidate in order of your preference. When the votes are tallied at the end of the election, only your first choice will be counted. In the event that no candidate has the majority (50%+1) of the votes, the candidate with the least number of votes will be removed, and any voters who selected this candidate will have their next choice counted instead. This process continues until there is a candidate with a majority of the votes. Take a look <a href="http://ccss.carleton.ca/community/news/blog/CCSS-Election-Platforms/">here</a> to see the full platforms of the candidates.</div>-->
     </div>
+    <!--
     <div id='ballot_closing'>
         <div><h2 id='ballot_closing_statement'>Thank you for voting!</h2></div>
     </div>
@@ -296,7 +297,7 @@ published: true
     <div id='client-error'>ERROR: The inputs are not valid</div>
     <div class='serialize'>
         Submit Votes
-    </div>
+    </div>!-->
 </div>
 
 <!-- Toggles the platform headers-->
