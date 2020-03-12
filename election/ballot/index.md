@@ -224,7 +224,6 @@ published: true
     <div id='ballot_closing_error'>
         <div><h2>The voting server responded with an error.</h2></div>
     </div>
-    <!--
     {% for category in site.data.election.spring2020.categories %}
         <div class='election_module_title'>{{ category.title }}</div>
         <div class='election_module' data-election='{{ category.title }}'>
@@ -294,7 +293,6 @@ published: true
             </div>
         </div>
     {% endfor %}
-    -->
     <div id='client-error'>ERROR: The inputs are not valid</div>
     <div class='serialize'>
         Submit Votes
