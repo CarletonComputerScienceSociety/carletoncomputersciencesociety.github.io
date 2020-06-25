@@ -18,6 +18,11 @@
       image: /images/collaborate.jpg
   exclude: false
 
+- title: Events
+  url: /community/events/
+  excerpt:
+  image:
+  exclude: false
 
 - title: Community
   url: /community
@@ -27,9 +32,12 @@
     - title: Slack
       url: https://carletoncss.slack.com/signup
       image: /images/travel.jpg
-    - title: Events
-      url: /community/events/
-      image: /images/travel.jpg
+    #- title: Discord
+    #  url: https://carletoncss.slack.com/signup
+    #  image: /images/travel.jpg
+    #- title: Events
+    #  url: /community/events/
+    #  image: /images/travel.jpg
     - title: News
       url: /community/news/
       image: /images/teaser.png
@@ -46,9 +54,9 @@
     - title: Volunteer
       url: /opportunities/volunteer/
       image: /images/collaborate_4.jpg
-    - title: Job Postings
-      url: /opportunities/jobs/
-      image: /images/jobs.jpg
+    #- title: Job Postings
+    #  url: /opportunities/jobs/
+    #  image: /images/jobs.jpg
   exclude: false
 
 - title: Resources
