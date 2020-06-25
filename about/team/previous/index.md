@@ -4,6 +4,143 @@ permalink: /about/team/previous/
 title: Team
 published: true
 ---
+<!-- ----2019-2020 -->
+<div class="heading-title text-center">
+<h3 class="text-uppercase" style="border-bottom: 1px solid black; padding-bottom:5px; padding-left:10px; padding-right:10px; width:95%; margin:auto;">2019-2020</h3>
+<div class = "content-team">
+  <ul >
+     <!-- ----Person 1 -->
+    <li>
+      <div class="team-member">
+        <div class="team-img">
+          <img img src="/images/about-pics/william_so2019.jpg" class="img-responsive">
+        </div>
+        <div class="team-hover">
+          <div class="desk">
+            <h4>Hi There!</h4>
+            <p>I am a third year computer science student in the software engineering stream. Interests include pointless fun facts and bad puns. Don't hesitate to contact me if you want to chat!</p>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>William So</h5>
+          <span>President</span>
+        </div>
+      </div>
+    </li>
+    <!-- ----Person 2 -->
+    <li>
+      <div class="team-member">
+        <div class="team-img">
+          <img img src="/images/about-pics/matthew_macraebovell.jpg" class="img-responsive">
+        </div>
+        <div class="team-hover">
+          <div class="desk">
+            <h4>Hi There!</h4>
+            <p>I’m a 2nd year student with an interest in web development, cloud infrastructure, and internet security. You'll often find me helping with events or trying to level up my programming skills. If you have any questions, I would love to talk! </p>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Matthew M-B</h5>
+          <span>Vice-President</span>
+        </div>
+      </div>
+    </li>
+    <!-- ----Person 3 -->
+    <li>
+      <div class="team-member">
+        <div class="team-img">
+          <img img src="/images/about-pics/tiffany_lau.jpg" class="img-responsive">
+        </div>
+        <div class="team-hover">
+          <div class="desk">
+            <h4>Hi There!</h4>
+            <p>I’m a 2nd year student in the software engineering stream. Music is my passion and I love meeting people. If you ever want to get involved with CCSS events, feel free to reach out to me!</p>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Tiffany Lau</h5>
+          <span>Director of Social</span>
+        </div>
+      </div>
+    </li>
+    <!-- ----Person 4 -->
+    <li>
+      <div class="team-member">
+        <div class="team-img">
+          <img img src="/images/about-pics/adam_payzant.jpg" class="img-responsive">
+        </div>
+        <div class="team-hover">
+          <div class="desk">
+            <h4>Hi There!</h4>
+            <p>I'm a third year in the general stream. Most people call me "Tennessee". I have a deep love for anything open source as well as absurd and impractical solutions to dumb problems. i use arch btw.</p>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Adam Payzant</h5>
+          <span>Director of Academics</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class = "content-team">
+  <ul>
+     <!-- ----Person 5 -->
+    <li>
+      <div class="team-member">
+        <div class="team-img">
+          <img img src="/images/about-pics/faareha_khalid.jpg" class="img-responsive">
+        </div>
+        <div class="team-hover">
+          <div class="desk">
+            <h4>Hi There!</h4>
+            <p>I'm going into my third year but CS is my second undergraduate degree ! If you're a mature student, doing a 2nd+ degree, a woman in CS, or want me to address anything related to inclusivity, reach out ! I'm here to represent you.</p>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Faareha Khalid</h5>
+          <span>Director of Inclusion</span>
+        </div>
+      </div>
+    </li>
+    <!-- ----Person 6 -->
+    <li>
+      <div class="team-member">
+        <div class="team-img">
+          <img img src="/images/about-pics/ben_karstad2019.jpg" class="img-responsive">
+        </div>
+        <div class="team-hover">
+          <div class="desk">
+            <h4>Hi There!</h4>
+            <p>Third year student and second time Treasurer. Fascinated with database and network infrastructure. If you see me in the lounge or at events, please come say hi.</p>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Ben Karstad</h5>
+          <span>Treasurer</span>
+        </div>
+      </div>
+    </li>
+    <!-- ----Person 7 -->
+    <li>
+      <div class="team-member">
+        <div class="team-img">
+          <img img src="/images/about-pics/chantal_brousseau.jpg" class="img-responsive">
+        </div>
+        <div class="team-hover">
+          <div class="desk">
+            <h4>Hi There!</h4>
+            <p>I’m a 3rd student studying history and comp sci! I’m most interested in database programming and UI/UX Design. Aside from that, I’m easy to find around campus; when not in class you can find me in the CCSS Lounge or gym.</p>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Chantal Brousseau</h5>
+          <span>Administrator</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
 <!-- ----2018-2019 -->
 <div class="heading-title text-center">
 <h3 class="text-uppercase" style="border-bottom: 1px solid black; padding-bottom:5px; padding-left:10px; padding-right:10px; width:95%; margin:auto;">2018-2019</h3>

@@ -18,7 +18,7 @@ published: true
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>I am a third year computer science student in the software engineering stream. Interests include pointless fun facts and bad puns. Don't hesitate to contact me if you want to chat!</p>
+            <p>I am a forth year computer science student in the software engineering stream. Interests include pointless fun facts and bad puns. Don't hesitate to contact me if you want to chat!</p>
           </div>
         </div>
         <div class="team-title">
@@ -31,17 +31,17 @@ published: true
     <li>
       <div class="team-member">
         <div class="team-img">
-          <img img src="/images/about-pics/matthew_macraebovell.jpg" class="img-responsive">
+          <img img src="/images/about-pics/jerry.png" class="img-responsive">
         </div>
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>I’m a 2nd year student with an interest in web development, cloud infrastructure, and internet security. You'll often find me helping with events or trying to level up my programming skills. If you have any questions, I would love to talk! </p>
+            <p>I'm a third year computer science student in the game dev stream. I love to chat with people, even though I have headphones on a lot. If you have any questions, let me know! </p>
           </div>
         </div>
         <div class="team-title">
-          <h5>Matthew M-B</h5>
-          <span>Vice-President<span> <a href ="mailto:matthew.macraebovell@ccss.carleton.ca" target="_top"> matthew.macraebovell@ccss.carleton.ca</a></span> </span>
+          <h5>Jerry Liu</h5>
+          <span>Vice-President<span> <a href ="mailto:jerry.liu@ccss.carleton.ca" target="_top"> jerry.liu@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
@@ -49,17 +49,17 @@ published: true
     <li>
       <div class="team-member">
         <div class="team-img">
-          <img img src="/images/about-pics/tiffany_lau.jpg" class="img-responsive">
+          <img img src="/images/about-pics/malcolm.png" class="img-responsive">
         </div>
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>I’m a 2nd year student in the software engineering stream. Music is my passion and I love meeting people. If you ever want to get involved with CCSS events, feel free to reach out to me!</p>
+            <p>Hey! I am a second year student deeply interested in all things computers. You can find me most of the time in the lounge, or at our events! Feel free to introduce yourself! I use arch btw.</p>
           </div>
         </div>
         <div class="team-title">
-          <h5>Tiffany Lau</h5>
-          <span>Director of Social <span> <a href ="mailto:tiffany.lau.so@ccss.carleton.ca" target ="_top">tiffany.lau@ccss.carleton.ca</a></span> </span>
+          <h5>Malcolm Smith</h5>
+          <span>Director of Social <span> <a href ="mailto:malcolm.smith@ccss.carleton.ca" target ="_top">malcolm.smith@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
@@ -67,17 +67,17 @@ published: true
     <li>
       <div class="team-member">
         <div class="team-img">
-          <img img src="/images/about-pics/adam_payzant.jpg" class="img-responsive">
+          <img img src="/images/about-pics/alexa.png" class="img-responsive">
         </div>
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>I'm a third year in the general stream. Most people call me "Tennessee". I have a deep love for anything open source as well as absurd and impractical solutions to dumb problems. i use arch btw.</p>
+            <p>I’m in my final year of Comp Sci honours, pursuing minors in math and linguistics. I love Python, Discrete Math, NLP, and everything Japanese. If you wanna talk courses, research, anime, or anything in between, hmu!</p>
           </div>
         </div>
         <div class="team-title">
-          <h5>Adam Payzant</h5>
-          <span>Director of Academics<span><a href="mailto:adam.payzant@ccss.carleton.ca" target ="_top">adam.payzant@ccss.carleton.ca</a></span> </span>
+          <h5>Alexa De Grandmont</h5>
+          <span>Director of Academics<span><a href="mailto:alexa.degrandmont@ccss.carleton.ca" target ="_top">alexa.degrandmont@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
@@ -89,17 +89,17 @@ published: true
     <li>
       <div class="team-member">
         <div class="team-img">
-          <img img src="/images/about-pics/faareha_khalid.jpg" class="img-responsive">
+          <img img src="/images/about-pics/tiffany_lau.jpg" class="img-responsive">
         </div>
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>I'm going into my third year but CS is my second undergraduate degree ! If you're a mature student, doing a 2nd+ degree, a woman in CS, or want me to address anything related to inclusivity, reach out ! I'm here to represent you.</p>
+            <p>I am a 3rd-year student in the software engineering stream! I love meeting people and making a positive social impact! If you ever want to get involved with CCSS activities, please feel free to reach out to me!</p>
           </div>
         </div>
         <div class="team-title">
-          <h5>Faareha Khalid</h5>
-          <span>Director of Inclusion<span><a href="mailto:faareha.khalid@ccss.carleton.ca" target ="_top">faareha.khalid@ccss.carleton.ca</a></span> </span>
+          <h5>Tiffany Lau</h5>
+          <span>Director of Inclusion<span><a href="mailto:tiffany.lau@ccss.carleton.ca" target ="_top">tiffany.lau@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
@@ -107,17 +107,17 @@ published: true
     <li>
       <div class="team-member">
         <div class="team-img">
-          <img img src="/images/about-pics/ben_karstad2019.jpg" class="img-responsive">
+          <img img src="/images/about-pics/matthew_macraebovell.jpg" class="img-responsive">
         </div>
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>Third year student and second time Treasurer. Fascinated with database and network infrastructure. If you see me in the lounge or at events, please come say hi.</p>
+            <p>I’m a 3rd year student with an interest in web development, system design, and cloud infrastructure. I love working on side projects and If you have any questions, I would love to talk!</p>
           </div>
         </div>
         <div class="team-title">
-          <h5>Ben Karstad</h5>
-          <span>Treasurer<span><a href ="mailto:ben.karstad@ccss.carleton.ca" target="_top">ben.karstad@ccss.carleton.ca</a></span> </span>
+          <h5>Matthew M-B</h5>
+          <span>Treasurer<span><a href ="mailto:matthew.macraebovell@ccss.carleton.ca" target="_top">matthew.macraebovell@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
@@ -130,12 +130,30 @@ published: true
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>I’m a 3rd student studying history and comp sci! I’m most interested in database programming and UI/UX Design. Aside from that, I’m easy to find around campus; when not in class you can find me in the CCSS Lounge or gym.</p>
+            <p>Hello all! I’m a 4th-year student studying history and comp sci! I'm interested in data analysis and UI/UX Design, and beyond CS, I'm a passionate maker with a particular penchant for DIY keyboards and knitting-- you can usually find me in the CCSS Lounge with a project in hand!</p>
           </div>
         </div>
         <div class="team-title">
           <h5>Chantal Brousseau</h5>
           <span>Administrator<span><a href ="mailto:chantal.brousseau@ccss.carleton.ca" target="_top">chantal.brousseau@ccss.carleton.ca</a></span> </span>
+        </div>
+      </div>
+    </li>
+    <!-- ----Person 8 -->
+    <li>
+      <div class="team-member">
+        <div class="team-img">
+          <img img src="/images/about-pics/sarah.png" class="img-responsive">
+        </div>
+        <div class="team-hover">
+          <div class="desk">
+            <h4>Hi There!</h4>
+            <p>I’m Sarah! I’m a third year CS student specializing in business and management. I love punk rock, my beautiful cat and making people laugh. When I get the chance, I love painting and devouring the YA fiction section of my local library. I’m really excited to be a part of the CCSS this year!</p>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Sarah Ali</h5>
+          <span>Communications<span><a href ="mailto:sarah.ali@ccss.carleton.ca" target="_top">sarah.ali@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
