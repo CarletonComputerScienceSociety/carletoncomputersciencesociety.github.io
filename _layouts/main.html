@@ -2,15 +2,153 @@
 layout: base
 published: true
 ---
+
+<style>
+  #carouselExampleIndicators{
+    /*max-height: 70vh;*/
+    padding-top: -10vh;
+    padding-bottom: 8vh;
+    height: 100vh;
+    position: relative;
+  }
+
+  .carousel-inner{
+    padding-top: -10vh;
+    padding-bottom: 8vh;
+    height: 100vh;
+    position: relative;
+    background-color: black;
+  }
+
+  .carousel-item{
+    padding-top: -10vh;
+    padding-bottom: 8vh;
+    height: 100vh;
+    position: relative;
+  }
+
+  .slide1{
+    background-image: url(./images/orientation2018.jpg);
+    width: 100vw;
+    min-height: 296px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    text-align: center;
+    padding-top: 14vh;
+    padding-bottom: 12vh;
+  }
+
+  .slide2{
+    background-image: url(./images/cusec.jpg);
+    width: 100vw;
+    min-height: 296px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    text-align: center;
+    padding-top: 14vh;
+    padding-bottom: 12vh;
+  }
+
+  .slide3{
+    background-image: url(./images/bbq20192.jpg);
+    width: 100vw;
+    min-height: 296px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    text-align: center;
+    padding-top: 14vh;
+    padding-bottom: 12vh;
+  }
+
+
+  .backgroundCover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.3;
+    z-index: 10;
+  }
+
+  .slide {
+   transform: translateX(-0%) !important; 
+  }
+</style>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <div class='background backgroundCover'></div>
+  <div class='main-front-page-subject' style="{{ page.subjectstyle }}">
+  	CARLETON COMPUTER<br>SCIENCE SOCIETY
+  </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item active slide1">
+      <!--<img class="d-block w-100" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" data-color="lightblue" alt="First Image">-->
+      <div class="carousel-caption d-md-block">
+        <!--<h5>First Image</h5>-->
+      </div>
+    </div>
+    <div class="carousel-item slide2">
+      <!--<img class="d-block w-100" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" data-color="lightblue" alt="First Image">-->
+      <div class="carousel-caption d-md-block">
+        <!--<h5>Second Image</h5>-->
+      </div>
+    </div>
+    <div class="carousel-item slide3">
+      <!--<img class="d-block w-100" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" data-color="lightblue" alt="First Image">-->
+      <div class="carousel-caption d-md-block">
+        <!--<h5>Third Image</h5>-->
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+<script src="https://unpkg.com/popper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<script>
+
+  $('.carousel').carousel({
+    interval: 6000,
+    pause: "false"
+  });
+
+</script>
+
+<!--
 <div class="main-page-image-wrapper" style="
-    background-image: url('{{ page.pimage }}');">
+    background-image: url('{{ page.pimage }}');">-->
   <!--div class="front-logo">  
     <img style="display:block;"class="cu-logo" src= "/images/cu-logo.png">
-  </div-->
+  </div--><!--
   <div class='background'></div>
   <div class='main-front-page-subject' style="{{ page.subjectstyle }}">
   	CARLETON COMPUTER<br>SCIENCE SOCIETY
   </div>
 </div>
+-->
     	<!--a href="http://ccss.carleton.ca/opportunities/volunteer/" target="_blank" class="skinny-underline">Sign up to be a volunteer!</a-->
       {{ content }}
