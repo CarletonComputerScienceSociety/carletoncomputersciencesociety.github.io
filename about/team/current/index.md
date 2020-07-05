@@ -18,7 +18,7 @@ published: true
         <div class="team-hover">
           <div class="desk">
             <h4>Hi There!</h4>
-            <p>I am a forth year computer science student in the software engineering stream. Interests include pointless fun facts and bad puns. Don't hesitate to contact me if you want to chat!</p>
+            <p>I am a fourth-year student majoring in Computer Science: Algorithms and minoring in Mathematics. I write code, music, and insane plot twists. Focused on growing the society to meet student needs. Reach out anytime!</p>
           </div>
         </div>
         <div class="team-title">
