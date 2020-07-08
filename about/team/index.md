@@ -7,7 +7,7 @@ published: true
 
 <div class="heading-title text-center">
 <h3 class="text-uppercase">MEET THE TEAM </h3>
-<p class="p-top-30 half-txt">Carleton Computer Science Society (CCSS) is an academic society that aims to create opportunities and resources for computer science students and anyone who is interested in similar fields. We represent undergraduate Computer Science students at Carleton University in Ottawa academically, socially, and technically.</p>
+<p class="p-top-30 half-txt">The Carleton Computer Science Society (CCSS) is an academic society that represents undergraduate computer science students at Carleton University. The CCSS aims to create academic, social, and industry-related opportunities and resources for computer science students.</p>
 
 
 <div class = "content-team">
@@ -47,21 +47,6 @@ published: true
     </div>
   </li>
 
-  <li>
-    <div class="team-member">
-
-      <div class="team-img" >
-        <a href= "{{ site.baseurl }}/about/team/volunteers/">
-          <img src="{{ site.baseurl }}/images/people.png">
-        </a>
-      </div>
-
-      <div class="team-title">
-        <h5>VOLUNTEERS</h5>
-      </div>
-
-    </div>
-  </li>
 </ul>
 
 </div>

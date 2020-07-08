@@ -10,8 +10,8 @@ subjectstyle: 'border-bottom: 5px solid white; border-top: 5px solid white;'
 
 <div class='content-wrap'>
   <h1>About Us</h1>
-  <p>Established in 1980, the Carleton Computer Science Society (CCSS) is an academic society that represents undergraduate computer science students. The CCSS aims to create academic, social, and industry-related opportunities and resources for those computer science students. Computer science students studying at Carleton University are automatically a member of the society and have the opportunity to participate in meetings, discussions, and run for executive or representative positions. </p>
-  <h3>Our mandate</h3>
+  <p>Established in 1980, the Carleton Computer Science Society (CCSS) is an academic society that represents undergraduate computer science students. The CCSS aims to create academic, social, and industry-related opportunities and resources for those computer science students. Computer science students studying at Carleton University are automatically a member of the society and have the opportunity to participate in meetings, discussions, and run for executive or representative positions. </p><br>
+  <h3>Our Mandate</h3>
   <ul class='dash-list'>
     <li>To engage Carleton University’s School of Computer Science undergraduate students in various social and academic activities</li>
     <li>To represent those students in the Carleton University community</li>
