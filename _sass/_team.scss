@@ -134,7 +134,6 @@ body {
 }
 .team-title {
   position: static;
-  padding: 10px 0;
   display: inline-block;
   letter-spacing: 2px;
   width: 100%;
@@ -142,6 +141,7 @@ body {
 }
 .team-title h5 {
     margin-bottom: 0px;
+    margin-top: 25px;
     display: block;
     text-transform: uppercase;
     font-size: 1.1rem;
