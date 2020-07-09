@@ -2,7 +2,7 @@
 layout: article
 title: CCSS Election for 2020-2021
 category: blog
-by: Eliza Kazan
+by: The CCSS Team
 ---
 The CCSS Elections for 2020-2021 have begun! We're excited to announce that we have 7 candidates running for positions on the board of directors.
 
@@ -40,44 +40,32 @@ If elected, my primary objective as Treasurer will be to ensure that the financi
 
 ### Alexa de Grandmont - Director of Academics:
 Hi! My name is Alexa de Grandmont and I’m an upper (and I mean 6th-year upper) year BCS Honours student and 6-time TA for COMP 2804. I care a lot about grades, but even more about learning, and even more than that about helping others learn. Here are some ideas and plans for how I’d like to promote your learning, collaboration, and development of stuff you’re proud of:
-
-•  Developing resources for CS concepts that aren’t as well• documented online (Discrete Math in particular)
 <ul>
-    <li>Already in Progress: Expanding the COMP 1805 Discrete Math Study Center (<a href="http://cglab.ca/~discmath/">http://cglab.ca/~discmath/</a>), to include practice problems and mock exams for COMP 2804 (and later COMP 3804 and other theoretical CS courses)
-    </li>
-    <li>
-    Encouraging student collaboration on resource development (see below)
-    </li>
-</ul>
-•   Come to Dev Club - Work on Side Projects
-<ul>
-    <li>Supplementary workshops on requested topics (e.g., code stuff, discrete math, algorithms, git & other topics not found in courses) for anyone who wants to review or get ahead
-    </li>
-    <li>
-    Mentorship for lower-years / anyone looking for advice / friends
-    </li>
-</ul>
-
-•   Talks from Industry Professionals / Researchers
-<ul>
+  <li>Developing resources for CS concepts that aren’t as well• documented online (Discrete Math in particular)</li>
+  <ul>
+    <li>Already in Progress: Expanding the COMP 1805 Discrete Math Study Center (<a href="http://cglab.ca/~discmath/">http://cglab.ca/~discmath/</a>), to include practice problems and mock exams for COMP 2804 (and later COMP 3804 and other theoretical CS courses)</li>
+    <li>Encouraging student collaboration on resource development (see below)</li>
+  </ul>
+  <li>Come to Dev Club - Work on Side Projects</li>
+  <ul>
+    <li>Supplementary workshops on requested topics (e.g., code stuff, discrete math, algorithms, git & other topics not found in courses) for anyone who wants to review or get ahead</li>
+    <li>Mentorship for lower-years / anyone looking for advice / friends</li>
+  </ul>
+  <li>Talks from Industry Professionals / Researchers</li>
+  <ul>
     <li>Find out what tech industry is like, meet & greet & make connections
-        <ul>
-        <li>
-            Also working with Carleton WiCS (Women in Computer Science) on this
-        </li>
-        </ul>
+      <ul>
+      <li>Also working with Carleton WiCS (Women in Computer Science) on this</li>
+      </ul>
     </li>
-    <li>
-    Find out what graduate school is like, learn about research opportunities
-        <ul>
-        <li>
-            More Prof Nights!
-        </li>
-        </ul>
+    <li>Find out what graduate school is like, learn about research opportunities
+      <ul>
+      <li>More Prof Nights!</li>
+      </ul>
     </li>
+  </ul>
+  <li>...I’ll play Despacito if you’re sad</li>
 </ul>
-
-•   ...I’ll play Despacito if you’re sad
 
 ### Malcolm Smith - Director of Social:
 
@@ -93,24 +81,16 @@ I hope that next year I will be able to bring back events such as these and cont
 I’m a second year computer science student. I have experience managing a board game club at the University of Waterloo as President. My goal is to bring more diversity to CCSS events, namely more female students.
 
 Event ideas:
-
-•             CS formal/dance
-
-•             Intro to new technologies events
-
-•             Board game nights (especially deception board games)
-
-•             Anime/movie nights
-
-•             Side project events/support
-
-•             LAN parties
-
-•             Resume/coop support workshops
-
-•             Networking events
-
-•             Mentorship
+<ul>
+  <li>CS formal/dance</li>
+  <li>Intro to new technologies events</li>
+  <li>Board game nights (especially deception board games)</li>
+  <li>Anime/movie nights</li>
+  <li>Side project events/support</li>
+  <li>Resume/coop support workshops</li>
+  <li>Networking events</li>
+  <li>Mentorship</li>
+</ul>
 
 ### Tiffany Lau - Director of Inclusion:
 If elected as Director of Inclusion, I will strive to help foster a strong sense of community among all undergraduate computer science students at Carleton.

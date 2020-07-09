@@ -33,5 +33,5 @@ published: true
             </ul>
         </li>
     </ul>
-    <h4>Want us to add a new site? Send your suggestions to <a href="mailto:support@ccss.carleton.ca?Subject=Useful%20Links" target="_top" target="_blank">support@ccss.carleton.ca</a> with the subject line “Useful Links”</h4>
+    <h4>Want us to add a new site? Send your suggestions to <a href="mailto:info@ccss.carleton.ca?Subject=Useful%20Links" target="_top" target="_blank">info@ccss.carleton.ca</a> with the subject line: “Useful Links”</h4>
 </div>

@@ -4,63 +4,73 @@ permalink: /about/elections/
 title: Election
 published: true
 pimage: /images/code_5.jpg
-subjecttext: 2018 GENERAL ELECTIONS
+subjecttext: 2020 GENERAL ELECTIONS
 subjectstyle: 'border-bottom: 5px solid white; border-top: 5px solid white;'
 ---
 <div class='content-wrap'>
-  <h1>2018 General Elections</h1>
-  <h6>The nomination period for the 2018 CCSS General Election is over! Here are the confirmed nominees:</h6>
+  <h1>2020 General Elections</h1>
+  <h6>The nomination period for the 2020 CCSS General Election is over! Here are the confirmed nominees:</h6>
 
   <h2>President nominations</h2>
-  <h5>Elisa Kazan</h5>
-  <p>A few goals for the coming year are to ensure computer science students are aware of all
-  the opportunities and events that are happening on and off campus (aka knowing when to
-  apply for those awesome hackathons and conferences!). Provide a wide range of resources
-  for students (study spaces, printing, technical interview prep) that are easily accessible. A
-  bigger lounge area would be nice too! Build a stronger community and CS pride through the
-  creation and distribution of CCSS merchandise. Connect with other groups and societies on
-  campus to create bigger and better events. Continue improving the End of Year BBQ,
-  reaching out to alumni making it even bigger next year.</p>
+  <h4>William So</h4>
+  <p>Hello everyone! It is my great pleasure to be running for CCSS President once again. In my three years of experience on the CCSS Board of Directors, I have amassed a varied skillset and informed insight on the way the society operates. The society has undergone many changes and significant growth under my governance over the past year. I plan to continue this trajectory as your president for next year. If re-elected,I will 1) advocate to the School of Computer Science and the Faculty of Science for an increase in dedicated space on campus for CS students; 2) create more opportunities for our student body to get involved in the society's activities (e.g. facilitating event collaboration with experienced students, reforming Carleton DevClub, increasing student-prof interaction); and 3) improve the quality of the society's current services (e.g. establishing higher standards for event organization, increasing funding for lounge services, bettering communication to students through relevant social media). It's time for the CCSS to fill its shoes as a society that represents all of Carleton University's undergraduate CS students. So when you're filling out your ballots, just remember: where there's a Will, there's a way! As always, I am open to any feedback you may have. Please contact me by email via william.so@ccss.carleton.ca for questions, concerns, or suggestions regarding my candidacy.</p>
 
   <h2>Vice President nominations</h2>
-  <h5>Aidan Crowther</h5>
-  <p>If elected, I intend to expand upon the services and opportunities provided to members and
-  volunteers of the CCSS, while also striving to improve our outreach and accessibility to
-  students. I intend to do so by working in key areas such as: Improving upon, and maintaining
-  our rewards system for volunteers and board members, including our offering of CCR credit
-  for these positions. I also intend to expand our offered learning opportunities by working
-  closely with our VP Academics in order to ensure that we can offer as much high quality and
-  valuable material as possible. Improving our outreach and availability to students is also one
-  of my goals, with the hopes that we can attract more of our members to events, as well as
-  making our doings and information more easily accessible and understood. I intend to do
-  this by working closely with the President and other VPs in order to ensure that all tasks and
-  responsibilities are met, and dealt with accordingly, while also assisting in any way possible,
-  while also keeping the views and opinions of our members in mind.</p>
+  <h4>Jerry Liu</h4>
+  <p>If elected, I would focus on increasing awareness for future CCSS events and resources. Events hosted by CCSS last year, such as the coffee socials and Dev Club, were successful in helping computer science students engage with each other and creating a sense of community. However, I feel that a large portion of students are not aware of the resources available to them that CCSS provide. As vice president, I would strive to encourage more students to be involved with CCSS through having more presence on social media platforms. I would also look to continue the work of the previous vice president and continue to improve event scheduling.</p>
 
-  <h2>VP Social nominations</h2>
-  <h5>William So</h5>
-  <p>As VP Social, I will take on the responsibility of communicating CCSS news, events, and
-  other important information to our members, through social media such as Facebook and
-  Slack, and through email newsletter. With these open lines of communication, I will
-  encourage the CCSS members to attend our events. I also plan to organize many social get-
-  togethers, such as regular coffee socials and movie nights, as well as social outings such as
-  The Loft.</p>
+  <h2>Director of Social nominations</h2>
+  <h4>Malcolm Smith</h4>
+  <p>If elected, I intend to continue developing the awesome events and opportunities that the CCSS offers!<br><br>I've had a lot of fun with my experience of being first year representative and working hard on creating and maintaining events for the CCSS! It was a blast to come up with events for the new first-year week, such as the jackbox night and the personal project expo.<br><br>Being elected as Director of Social would allow me to continue having fun working with the CCSS on managing new and exiting ways to engage students, and to have a great time at Carleton!<br><br>I hope that next year I will be able to bring back events such as these and continue working on making the Computer Science Society a highlight of your university experience!</p>
 
-  <h2>VP Academics nominations</h2>
-  <h5>Forest Anderson</h5>
-  <p>I will start off the year with a tech talk during the Week of Awesome. I will run workshops
-  about useful technologies and technical skills. I plan on working closely with the Ottawa
-  Game Development Collective, as well as hack.carleton.</p>
+  <h4>Sarah Ali</h4>
+  <p>I’m a second year computer science student. I have experience managing a board game club at the University of Waterloo as President. My goal is to bring more diversity to CCSS events, namely more female students.<br><br>Event ideas:</p>
+  <ul>
+    <li>CS formal/dance</li>
+    <li>Intro to new technologies events</li>
+    <li>Board game nights (especially deception board games)</li>
+    <li>Anime/movie nights</li>
+    <li>Side project events/support</li>
+    <li>Resume/coop support workshops</li>
+    <li>Networking events</li>
+    <li>Mentorship</li>
+  </ul>
 
-  <h5>Jeremy Tian</h5>
-  <p>I will ensure the voices of students are heard at university meetings, host spectacular
-  extracurricular academic events for CS students, and guarantee effective academic support
-  workshops.</p>
+  <h2>Director of Academics nominations</h2>
+  <h4>Alexa de Grandmont</h4>
+  <p>Hi! My name is Alexa de Grandmont and I’m an upper (and I mean 6th-year upper) year BCS Honours student and 6-time TA for COMP 2804. I care a lot about grades, but even more about learning, and even more than that about helping others learn. Here are some ideas and plans for how I’d like to promote your learning, collaboration, and development of stuff you’re proud of:</p>
+  <ul>
+    <li>Developing resources for CS concepts that aren’t as well• documented online (Discrete Math in particular)</li>
+    <ul>
+      <li>Already in Progress: Expanding the COMP 1805 Discrete Math Study Center (<a href="http://cglab.ca/~discmath/">http://cglab.ca/~discmath/</a>), to include practice problems and mock exams for COMP 2804 (and later COMP 3804 and other theoretical CS courses)</li>
+      <li>Encouraging student collaboration on resource development (see below)</li>
+    </ul>
+    <li>Come to Dev Club - Work on Side Projects</li>
+    <ul>
+      <li>Supplementary workshops on requested topics (e.g., code stuff, discrete math, algorithms, git & other topics not found in courses) for anyone who wants to review or get ahead</li>
+      <li>Mentorship for lower-years / anyone looking for advice / friends</li>
+    </ul>
+    <li>Talks from Industry Professionals / Researchers</li>
+    <ul>
+      <li>Find out what tech industry is like, meet & greet & make connections
+        <ul>
+        <li>Also working with Carleton WiCS (Women in Computer Science) on this</li>
+        </ul>
+      </li>
+      <li>Find out what graduate school is like, learn about research opportunities
+        <ul>
+        <li>More Prof Nights!</li>
+        </ul>
+      </li>
+    </ul>
+    <li>...I’ll play Despacito if you’re sad</li>
+  </ul>
+
+  <h2>Director of Inclusion nominations</h2>
+  <h4>Tiffany Lau</h4>
+  <p>If elected as Director of Inclusion, I will strive to help foster a strong sense of community among all undergraduate computer science students at Carleton.<br><br>I want CS students to be able to connect and learn from each other, build meaningful relationships, understand different perspectives, and get the most out of their university years!<br><br>I will make sure that the CCSS works closely together with the School of Computer Science to improve student involvement in the CS community,and more importantly, act as a liaison between CS students and the SCS to ensure that their voices are heard and address any questions or concerns.<br><br>I will aim to work with the newly elected board of directors to diversify our events and initiatives and to develop a variety of services to better serve the student body. I will ensure that the CCSS lounge is a welcoming and safe space for all CS students to relax, study, and bond! I would also like to ensure that an anonymous feedback and suggestions form is implemented so that all ideas are heard and considered.<br><br>Last but not least, I will do my best to ensure that CS students are well informed about the various volunteer opportunities, events, and resources that are available to them.</p>
 
   <h2>Treasurer nominations</h2>
-  <h5>Benjamin Karstad</h5>
-  <p>As treasurer, I will strive for improved communication with members and what they want to
-  see funded in the future, transparency of the budget and where funds are allocated,
-  coordination with third parties to sponsor events, and ensuring economical spending of
-  allocated funds and minimizing wastefulness.</p>
+  <h4>Matthew MacRae-Bovell</h4>
+  <p>If elected, my primary objective as Treasurer will be to ensure that the financial activities of the society are organized and transparent. With two years of experience being a CCSS board member and having been this year’s Vice President, I have previously overseen a year’s budget and will ensure the transition between Treasurers is seamless. In addition to my responsibilities as Treasurer, I plan to continue running events similar to those I ran this year including more technical workshops and industry related talks.</p>
 </div>
