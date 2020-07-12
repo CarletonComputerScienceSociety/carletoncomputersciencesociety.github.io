@@ -14,10 +14,22 @@
     vertical-align: top;
 }
 
+.full-feed {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0 40px;
+    vertical-align: top;
+}
+
 @include media($medium){
 	.half-feed {
 		width: 50%;
 	}
+
+	.full-feed {
+		width: 100%;
+	}
+
 	.feed-wrap {
 		.inner-wrap {
 			flex-direction: row;

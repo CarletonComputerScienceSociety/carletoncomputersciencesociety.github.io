@@ -26,8 +26,13 @@ subjectstyle: null
 				{% include latest-news-list.html %}
 			</div>
 		</div>
+		<div class='inner-wrap'>
+			<div class="full-feed">
+			{% include past-events.html %}
+			</div>
+		</div>
 	</div>
-</div>
+		
 
 <!--
 <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"9cf7bd25f0dd28305d846fee0","lid":"1da36a669e","uniqueMethods":false}) })</script>-->
