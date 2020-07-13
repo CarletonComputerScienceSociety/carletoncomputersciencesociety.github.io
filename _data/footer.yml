@@ -3,10 +3,17 @@
 - title:
   url: https://www.facebook.com/CarletonComputerScienceSociety
   image: facebook-7-64.png
+- title:
+  url: https://www.instagram.com/carletoncss/
+  image: instagram-64.png
+  
+- title:
+  url: https://carletoncss.slack.com/signup
+  image: slack-64.png  
 
 - title:
-  url: https://www.reddit.com/r/CCSS
-  image: reddit-64.png
+  url: https://discord.gg/UNUHeXW
+  image: discord-64.png
 
 - title:
   url: https://twitter.com/carletoncss
