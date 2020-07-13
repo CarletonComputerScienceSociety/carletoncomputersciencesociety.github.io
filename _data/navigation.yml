@@ -29,8 +29,11 @@
   excerpt:
   image:
   sublinks:
-    - title: Slack
-      url: https://carletoncss.slack.com/signup
+    #- title: Slack
+    #  url: https://carletoncss.slack.com/signup
+    #  image: /images/travel.jpg
+    - title: Social Media
+      url: /community/socialmedia
       image: /images/travel.jpg
     #- title: Discord
     #  url: https://carletoncss.slack.com/signup
