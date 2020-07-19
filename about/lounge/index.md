@@ -11,7 +11,10 @@ subjectstyle: 'color: white; border-bottom: 5px solid white; border-top: 5px sol
   <!--h1 class='big-page-title centered'>THE LOUNGE</h1-->
   <div class='content-wrap'>
     <h1>Come hangout with other CS students and enjoy our free high-speed wifi and ethernet!</h1>
-    <p>The CCSS lounge, located at HP 4135, is opened 24/7 to all computer science students! The office is located inside and is typically opened from 9:00 am - 12:00 pm and 1:00 pm - 4:00 pm (same hours as the School of Computer Science) Drop-in anytime to say hi and feel free to introduce yourself!<!-- See our office hours <a href='https://docs.google.com/document/d/1xhDxY5kxrM99Skak515VcjEzoZBD2W7kBjC18-4Vyhk/edit?usp=sharing' target="_blank">here</a>.--></p>
+    <div class='services-wrap'>
+      <p>The CCSS lounge, located at HP 4135, is opened 24/7 to all computer science students! The office is located inside and is typically opened from 9:00 am - 12:00 pm and 1:00 pm - 4:00 pm (same hours as the School of Computer Science) Drop-in anytime to say hi and feel free to introduce yourself!<!-- See our office hours <a href='https://docs.google.com/document/d/1xhDxY5kxrM99Skak515VcjEzoZBD2W7kBjC18-4Vyhk/edit?usp=sharing' target="_blank">here</a>.--></p>
+      <img class="services-image" src="/images/lounge2020.jpg" width="500px">
+    </div>
     <h3>LIBRARY</h3>
     <p>Most textbooks are expensive, so why not share them? The CCSS lounge has a library that anyone can browse through and borrow the books. We have a wide selection of books, including discrete structures, Java, calculus, and so much more! Please make sure you return the books once you are done reading it so that others have the opportunity to borrow the books as well. If you have a book that you would like to donate, please email us at <a href="mailto:info@ccss.carleton.ca" target="_blank">info@ccss.carleton.ca</a> with the subject line: "Textbook Donation".</p>
     <h3>PRINTER</h3>

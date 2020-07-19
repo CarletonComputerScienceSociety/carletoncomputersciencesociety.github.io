@@ -824,6 +824,28 @@ top-menu {
 	}
 }
 
+.services-wrap{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.services-image{
+	margin: auto;
+	margin-top:2em;
+}
+
+@media only screen and (max-width : 768px) {
+	.services-wrap{
+		display:flex;
+		flex-direction: column;
+	}
+
+	.services-image{
+		margin-top: auto;
+	}
+}
+
 .classy-link{
 	text-align: center;
     z-index: 10;
@@ -1166,3 +1188,4 @@ h1,h2,h3,h4,h5,h6,li,a,p{
 ul li {
 
 }
+
