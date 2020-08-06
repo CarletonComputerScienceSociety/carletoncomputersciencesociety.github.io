@@ -9,14 +9,12 @@ subjectstyle: null
 
 
 <div class="content-wrap no-pad">
-	<!--a href="https://carletoncss.slack.com/signup" class="flex-center-align" target="_blank" style="text-decoration:none;">
-	<img src="./images/Slack-528.png" alt="Slack" height="32" width="32" style="margin-right:10px;">
-	Join the us on slack to keep up to date with events and clubs, and to meet new people! :D
-	</a
-      <div style="padding-left:20px;display:inline-block;">
-      {% include social-media.html %}
-      </div>
-	-->
+	<div style="display:flex; justify-content:center; text-align:center; background-color:yellow">
+	<a href="https://students.carleton.ca/coronavirus/" class="flex-center-align" target="_blank" style="text-decoration:none; text-align:center; padding:1.5em; color:black; font-size:16px;">
+	In light of recent developments due to the spread of COVID-19, the CCSS lounge & services will be put on hold until further notice.
+	</a>
+	</div>
+	
 	<div class='feed-wrap'>
 		<div class='inner-wrap'>
 			<div class="half-feed">
