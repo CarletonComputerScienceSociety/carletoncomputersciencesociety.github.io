@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /community/events/woa
+permalink: /community/events/woa/
 title: Week of Awesome
 published: true
 ---
