@@ -22,6 +22,9 @@
   url: /community/events/
   excerpt:
   image:
+  sublinks:
+    - title: Week of Awesome
+      url: /community/events/woa/
   exclude: false
 
 - title: Community
