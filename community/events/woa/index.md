@@ -11,7 +11,8 @@ published: true
         align-items: center;
         justify-content:center;
         flex-direction:column;
-        padding-top:5em
+        padding-top:5em;
+        height:fit-content;
     }
 
     .event{
