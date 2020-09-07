@@ -11,7 +11,8 @@ blockquote{
 </style>
 <div class='content-wrap'>
 <h1>International Students Useful Links and Resources</h1>
-	<p>Hey there, and a <b>super big welcome to you!</b> This is an <b>ongoing page</b> that is constantly updated with relevant links and resources for international students studying computer science at Carleton University.</p>
+	<p>Hey there, and a <b>super big welcome to you!</b></p>
+	<p>This is an <b>ongoing page</b> that is constantly updated with relevant links and resources for international students studying computer science at Carleton University.</p>
 	<hr>
 	<p><h4>Undergraduate Admissions International <a href="https://admissions.carleton.ca/international-homepage/" target="_blank">Homepage</a></h4></p>
 	<hr>
@@ -39,8 +40,8 @@ Here, you can:
 <br>
 <p><b>Important note</b> from the <a href="https://carleton.ca/isso/uhip/">ISSO University Health Insurance Plan (UHIP) page</a>:</p>
 
-<p>The University Health Insurance Plan (UHIP) is a <b>mandatory</b> health insurance plan for all international and/or non-residents (and their dependents) studying or working at Carleton University.</p>
-<p><b>If you are studying at Carleton from outside of Canada during the 2020/21 academic year and no longer require UHIP coverage, please complete the</b> <a href="https://carleton.ca/isso/university-health-insurance-plan-uhip-opt-out-form/?fbclid=IwAR3kqcM-aDsAbPy04bMjDitekb_0EhqDhsrTC-g5_YIduIg1JFFpQ6cEoh0" target="_blank">UHIP Opt-Out Form</a>.</p>
+<p>The University Health Insurance Plan (UHIP) is a <b>mandatory</b> health insurance plan for all international and/or non-residents (and their dependents) studying or working at Carleton University.
+<b>If you are studying at Carleton from outside of Canada during the 2020/21 academic year and no longer require UHIP coverage, please complete the</b> <a href="https://carleton.ca/isso/university-health-insurance-plan-uhip-opt-out-form/?fbclid=IwAR3kqcM-aDsAbPy04bMjDitekb_0EhqDhsrTC-g5_YIduIg1JFFpQ6cEoh0" target="_blank">UHIP Opt-Out Form</a>.</p>
 
 	<hr>
 	<p>Here is the <a href="https://drive.google.com/file/d/1wAZFZJ_o4Yo12i7VLVjQNw10qvTTPJ_a/view?usp=sharing ">link to a presentation</a> put together by the ISSO for the international student panel discussion, From Faraway on September 7th, hosted by Tiffany Lau (Director of Inclusion) on behalf of the CCSS.
