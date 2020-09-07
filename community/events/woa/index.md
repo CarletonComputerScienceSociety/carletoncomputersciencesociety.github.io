@@ -54,7 +54,7 @@ published: true
     <div class="event">
         <img src="/images/woa2020/1.png" width="250px">
         <div class="event-info">
-            <h5><a href="">CS Clubs Info Session</a></h5>
+            <h5><a href="https://www.facebook.com/events/3268190949931309">CS Clubs Info Session</a></h5>
             <div>Are you an incoming or returning CS student looking to get involved this year, but not sure how? Well, look no further! The CCSS is collaborating with ALL clubs and societies affiliated with the School of Computer Science (SCS) to bring you an exciting, virtual CS Clubs & Societies Information Session!</div>
             <br>
             <div><b>September 13 - 1:00PM EDT</b></div>
@@ -153,7 +153,7 @@ published: true
     <div class="event">
         <img src="/images/woa2020/1.png" width="250px">
         <div class="event-info">
-            <h5><a href="">CS Clubs Info Session #2</a></h5>
+            <h5><a href="https://www.facebook.com/events/3268190949931309">CS Clubs Info Session #2</a></h5>
             <div>Are you an incoming or returning CS student looking to get involved this year, but not sure how? Well, look no further! The CCSS is collaborating with ALL clubs and societies affiliated with the School of Computer Science (SCS) to bring you an exciting, virtual CS Clubs & Societies Information Session!</div>
             <br>
             <div><b>September 19 - 9:00AM EDT</b></div>

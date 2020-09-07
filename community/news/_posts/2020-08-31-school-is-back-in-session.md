@@ -12,7 +12,7 @@ blockquote{
 
 <b>Hey everyone!</b> Fall semester is right around the corner - we hope you are all excited to start the new academic year! We've got a lot of news to share with you all - read on for all <b>the latest CCSS updates!</b>
 
-<h4>CS Clubs and Societies Info Sessions</h4>
+<h4><a href="https://www.facebook.com/events/3268190949931309">CS Clubs and Societies Info Sessions</a></h4>
 
 Are you an incoming or returning CS student <b>looking to get involved this year, but not sure how?</b> Well, look no further! The CCSS is collaborating with <b>ALL clubs and societies affiliated with the School of Computer Science (SCS)</b> to bring you an exciting, virtual <b>CS Clubs & Societies Information Session!</b>
 
