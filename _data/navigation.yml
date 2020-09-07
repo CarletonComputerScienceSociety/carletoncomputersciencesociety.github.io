@@ -73,6 +73,9 @@
     - title: Free Stuff
       url: /resources/textbooks/
       image: /images/study_3.jpg
+    - title: International Students
+      url: /resources/International/
+      image: /images/study_3.jpg
     - title: Useful Links
       url: /resources/links/
       image: /images/teaser.png
