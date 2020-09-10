@@ -51,7 +51,7 @@
     - title: Gallery
       url: /community/gallery/
       image: /images/teaser.png
-    - title: Clubs
+    - title: Clubs & Societies
       url: /community/clubs
       image: /images/travel.jpg
   exclude: false
