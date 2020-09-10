@@ -38,6 +38,7 @@
     - title: Social Media
       url: /community/socialmedia
       image: /images/travel.jpg
+
     #- title: Discord
     #  url: https://carletoncss.slack.com/signup
     #  image: /images/travel.jpg
@@ -50,6 +51,9 @@
     - title: Gallery
       url: /community/gallery/
       image: /images/teaser.png
+    - title: Clubs
+      url: /community/clubs
+      image: /images/travel.jpg
   exclude: false
 
 - title: Opportunities
