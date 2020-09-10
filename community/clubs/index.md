@@ -7,7 +7,7 @@ published: true
 <div class='content-wrap'>
    <div style="display:flex; flex-wrap: wrap; width:100%; justify-content:center;">
       <div style="margin:2em">
-         <a href="cuhacking.com"><img style="width:10em" src="/images/clubs/cuhacking.png"></a>
+         <a href="https://cuhacking.com"><img style="width:10em" src="/images/clubs/cuhacking.png"></a>
          <div style="text-align:center; margin-top:0.5em;">Cuhacking</div>
       </div>
       <div style="margin:2em">
@@ -15,7 +15,7 @@ published: true
          <div style="text-align:center; margin-top:0.5em;">Carleton AI Society</div>
       </div>
       <div style="margin:2em">
-         <a href="cublueprint.org"><img style="width:10em" src="/images/clubs/blueprint.png"></a>
+         <a href="https://cublueprint.org"><img style="width:10em" src="/images/clubs/blueprint.png"></a>
          <div style="text-align:center; margin-top:0.5em;">CuBlueprint</div>
       </div>
       <div style="margin:2em">
@@ -33,7 +33,7 @@ published: true
          <div style="text-align:center; margin-top:0.5em;">Carleton Web Dev Club</div>
       </div>
       <div style="margin:2em">
-         <a href="https://m.facebook.com/technolgap/"><img style="width:10em" src="/images/clubs/technolgap.png"></a>
+         <a href="https://facebook.com/technolgap/"><img style="width:10em" src="/images/clubs/technolgap.png"></a>
          <div style="text-align:center; margin-top:0.5em;">Technolgap</div>
       </div>
    </div>
