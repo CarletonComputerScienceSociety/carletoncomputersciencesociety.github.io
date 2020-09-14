@@ -70,7 +70,7 @@ published: true
             if(data.data.correct){
                 document.querySelector(".result").innerHTML ='<h5 style="color:green">That Answer is Correct!</h5>'
             }else{
-                document.querySelector(".result").innerHTML ='<h5 style="color:red">ThatThat Answer is incorrect.</h5>'
+                document.querySelector(".result").innerHTML ='<h5 style="color:red">That Answer is incorrect.</h5>'
             }
 
         } catch (e) {
@@ -84,7 +84,7 @@ published: true
 </script>
 <div class='content-wrap'>
     <div class="questions"></div>
-     <div style="margin:auto;">
+     <div style="margin:auto; text-align:center">
         <p class="result" style="margin:auto;"></p>
     </div>
     <ul class="small-subpage-list">
