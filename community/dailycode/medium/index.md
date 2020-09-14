@@ -68,9 +68,9 @@ published: true
             document.querySelector(".result").innerHTML =""
             
             if(data.data.correct){
-                document.querySelector(".result").innerHTML ="That Answer is Correct!"
+                document.querySelector(".result").innerHTML ='<h5 style="color:green">That Answer is Correct!</h5>'
             }else{
-                document.querySelector(".result").innerHTML ="That Answer is inorrect."
+                document.querySelector(".result").innerHTML ='<h5 style="color:red">ThatThat Answer is incorrect.</h5>'
             }
 
         } catch (e) {
@@ -84,7 +84,9 @@ published: true
 </script>
 <div class='content-wrap'>
     <div class="questions"></div>
-    <p class="result" style="margin:auto;"></p>
+     <div style="margin:auto;">
+        <p class="result" style="margin:auto;"></p>
+    </div>
     <ul class="small-subpage-list">
         <li>
             <a href="/community/dailycode/">
