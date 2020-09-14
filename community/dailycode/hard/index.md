@@ -18,7 +18,6 @@ published: true
     async function getQuestions(){
         let response = await fetch(`https://cors-anywhere.herokuapp.com/https://puzzle.discretemath.ca/api/questions`);
         let data = await response.json()
-        console.log(data)
         let questions = document.querySelector(".questions")
         
         for(let i = 0; i<data.data.length; i++){
@@ -64,7 +63,6 @@ published: true
         try {
             let fetchResponse = await fetch(`https://cors-anywhere.herokuapp.com/https://puzzle.discretemath.ca/api/submissions`, settings);
             let data = await fetchResponse.json();
-            console.log(data)
             document.querySelector(".result").innerHTML =""
             
             if(data.data.correct){
