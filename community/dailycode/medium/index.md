@@ -16,7 +16,7 @@ published: true
         }
     };
     async function getQuestions(){
-        let response = await fetch(`https://cors-anywhere.herokuapp.com/https://puzzle.discretemath.ca/api/questions`);
+        let response = await fetch(`https://cors.discretemath.ca/https://puzzle.discretemath.ca/api/questions`);
         let data = await response.json()
         let questions = document.querySelector(".questions")
         
@@ -61,7 +61,7 @@ published: true
         };
         
         try {
-            let fetchResponse = await fetch(`https://cors-anywhere.herokuapp.com/https://puzzle.discretemath.ca/api/submissions`, settings);
+            let fetchResponse = await fetch(`https://cors.discretemath.ca/https://puzzle.discretemath.ca/api/submissions`, settings);
             let data = await fetchResponse.json();
             document.querySelector(".result").innerHTML =""
             
