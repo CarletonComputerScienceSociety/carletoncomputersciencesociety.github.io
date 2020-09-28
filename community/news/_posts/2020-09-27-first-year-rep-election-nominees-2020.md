@@ -44,7 +44,6 @@ $(document).ready(function(){
 
 <p>Hey y'all, my name is Abdelrahim (call me abdel) and I'm a first computer science student in the software engineering stream! This is a really weird year for us all so I'd like to make it a bit easier and more fun for us. As first year rep I want to make sure that you get ample opportunities to meet new people and make the best of your first year! I also want to make sure that your voice is heard and input is passed on to the CCSS, and I'm hoping to hold more events for us to help figure out what we want to do in the future (I know it can be confusing and scary, so I'd love to reduce that stress!). If that sounds like something you're interested in, vote Abdelrahim Karaja (I won't let you down) I'm hoping to meet a lot of you this year, so HMU either way!</p>
 
-<!--<img src='/images/fyr/2020/2.jpg' />-->
 
 </div>
 <div>
@@ -53,6 +52,7 @@ $(document).ready(function(){
 <b>Abhijeet Abhijeet:</b>  
 <br>
 <br>
+<img src='/images/fyr/2020/2.jpeg' width="400px"/>
 
 <p>Hi, my name is Abhijeet and I’m an international student from India. I, like you, am a first-year computer science student. I know the first year of university is energizing yet it can be unpleasant too. If you choose to vote for me as your first-year representative, I will endeavour to make more CCSS events where you can relax, enjoy, and discuss your questions regarding anything in which you are facing problems together virtually. Virtual is especially hard as we all span the globe and many time zones and I will try my best to have events that cater to multiple time zones. I also want to hold a first-year social to meet as many of you as possible so that I can accurately represent your needs at CCSS meetings. I’ve previously assumed a leadership role in school so I know the responsibilities that such a position demand. Thank you for your consideration, I hope you will choose me as your first-year representative!</p>
 
