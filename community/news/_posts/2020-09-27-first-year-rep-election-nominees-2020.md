@@ -255,8 +255,9 @@ make your online year the best year ever!</p>
 <img src='/images/fyr/2020/14.JPG' width="400px"/>
 
 <p>I’m Zara! You may have seen me around the CCSS Discord server, or just in one of the many first year classes we all share. Here’s what I’m planning as your first-year representative:</p>
-<p>Create coding competitions and hackathons for first years (for complete beginners as well as intermediate ones). Take this as an opportunity to meet new people!</p>
+
 <ul>
+<li>Create coding competitions and hackathons for first years (for complete beginners as well as intermediate ones). Take this as an opportunity to meet new people!</li>
 <li>First-year exclusive workshops led by CCSS upper year volunteers. All first years can vote on what topics/languages they want to learn about.</li>
 <li>We’re missing out on our university experience. I want to do game nights and speed friending for all of us. It’s difficult to join in on activities when everyone seems to already know each other, so I want to help you all connect!</li>
 <li>Create an active space for tips about specific classes, advice about beginner side projects, and a place to ask questions about things like first year or computer science.</li>
