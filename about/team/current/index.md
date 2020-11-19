@@ -99,7 +99,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Tiffany Lau</h5>
-          <span>Director of Inclusion<span><a href="mailto:tiffany.lau@ccss.carleton.ca" target ="_top">tiffany.lau@ccss.carleton.ca</a></span> </span>
+          <span>Director of Community<span><a href="mailto:tiffany.lau@ccss.carleton.ca" target ="_top">tiffany.lau@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
@@ -117,7 +117,7 @@ published: true
         </div>
         <div class="team-title">
           <h5>Matthew M-B</h5>
-          <span>Treasurer<span><a href ="mailto:matthew.macraebovell@ccss.carleton.ca" target="_top">matthew.macraebovell@ccss.carleton.ca</a></span> </span>
+          <span>Director of Finance<span><a href ="mailto:matthew.macraebovell@ccss.carleton.ca" target="_top">matthew.macraebovell@ccss.carleton.ca</a></span> </span>
         </div>
       </div>
     </li>
