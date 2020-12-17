@@ -12,7 +12,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-	<div class="btn-social facebook fb-share-button" data-href="{{ page.url | replace:'index.html','' | prepend: site.url }}" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fccss.carleton.ca%2Fcommunity%2Fnews%2Fblog%2Fspace-apps-challenge%2F&amp;src=sdkpreparse">Share on Facebook</a></div>
-
+	<!--<div class="btn-social facebook fb-share-button" data-href="{{ page.url | replace:'index.html','' | prepend: site.url }}" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fccss.carleton.ca%2Fcommunity%2Fnews%2Fblog%2Fspace-apps-challenge%2F&amp;src=sdkpreparse">Share on Facebook</a></div>-->
+  {% include comments.html %}
 	<!--a class="btn-social google-plus"  href="https://plus.google.com/share?url={{ page.url | replace:'index.html','' | prepend: site.baseurl }}" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> {{ site.data.messages.locales[site.locale].share }} Google+</a-->
 </div><!-- /.share-this -->
