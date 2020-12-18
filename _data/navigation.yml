@@ -74,6 +74,14 @@
   excerpt:
   image:
   sublinks:
+    - title: Mental Health & Wellness
+      url: /resources/health/
+    - title: Careers & Co-op
+      url: /resources/careers/
+    - title: Scholarships
+      url: /resources/scholarships/
+    - title: Academics
+      url: /resources/academics/
     - title: Free Stuff
       url: /resources/textbooks/
       image: /images/study_3.jpg
