@@ -6,7 +6,9 @@ published: true
 <div id="main" role="main">
 	<article class="content-wrap" itemscope itemtype="http://schema.org/Article">
 		<div class="page-title">
-			<h1>{{ page.title }}</h1>
+			<h1 style="margin-bottom:0.5rem">{{ page.title }}</h1>
+			<h5 style="margin-top:2rem" class="author-name"><i>Written By:  {{ page.by }}</i></h5>
+			<br>
 		</div>
 		{% if page.image.feature %}
 		<div class="page-feature">
