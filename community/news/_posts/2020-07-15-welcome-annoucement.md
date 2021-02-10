@@ -39,9 +39,9 @@ And perhaps the biggest news of all...
 
 <h4>We have an official Discord server!</h4>
 
-Given the current requirement for everything to be online for the time being, we thought it was about time that we created a <a href="https://discord.com/invite/VdxStVE">Discord server</a> dedicated to giving you a space to <b>interact with your peers</b> in the absence of in-person classes! This will be your hub for all things CCSS: <b>be informed</b> of the latest Carleton CS news and announcements, <b>meet and befriend</b> your classmates, <b>get advice</b> from upper-year students, and participate in a variety of <b>CCSS events and initiatives</b> on our Discord server!
+Given the current requirement for everything to be online for the time being, we thought it was about time that we created a <a href="https://discord.gg/fvdmVyZbJx">Discord server</a> dedicated to giving you a space to <b>interact with your peers</b> in the absence of in-person classes! This will be your hub for all things CCSS: <b>be informed</b> of the latest Carleton CS news and announcements, <b>meet and befriend</b> your classmates, <b>get advice</b> from upper-year students, and participate in a variety of <b>CCSS events and initiatives</b> on our Discord server!
 
-<a href="https://discord.com/invite/VdxStVE">Join the server using this link!</a>
+<a href="https://discord.gg/fvdmVyZbJx">Join the server using this link!</a>
 
 <h4>Stay connected!</h4>
 
@@ -51,7 +51,7 @@ We use a variety of online platforms to keep society members informed about the 
     <li><a href="https://www.facebook.com/CarletonComputerScienceSociety/">Like our Facebook page</a></li>
     <li><a href="https://www.instagram.com/carletoncss/">Follow our Instagram page</a></li>
     <li><a href="https://app.slack.com/client/T031C65PT/G6U984M6J">Join our Slack workspace</a></li>
-    <li><a href="https://discord.com/invite/VdxStVE">Join our Discord server</a></li>
+    <li><a href="https://discord.gg/fvdmVyZbJx">Join our Discord server</a></li>
 </ul>
 <br>
 If you have any questions, suggestions, or concerns about the CCSS or anything CS-related, you can always reach us by email via <a href="mailto:info@ccss.carleton.ca">info@ccss.carleton.ca</a>. <b>We are here to support you and we're happy to hear your input!</b>

@@ -13,7 +13,7 @@ published: true
         <div style="margin:2em"><a href="https://www.instagram.com/carletoncss/"><img style="width:10em" src="/images/logos/instagram.png"></a><div style="text-align:center; margin-top:0.5em;">Instagram</div></div>
         <div style="margin:2em"><a href="https://twitter.com/carletoncss"><img style="width:10em" src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png"></a><div style="text-align:center; margin-top:0.5em;">Twitter</div></div>
         <div style="margin:2em"><a href="https://carletoncss.slack.com/signup"><img style="width:10em" src="/images/logos/slack.png"></a><div style="text-align:center; margin-top:0.5em;">Slack</div></div>
-        <div style="margin:2em"><a href="https://discord.gg/UNUHeXW"><img style="width:10em" src="/images/logos/discord.png"></a><div style="text-align:center; margin-top:0.5em;">Discord</div></div>
+        <div style="margin:2em"><a href="https://discord.gg/fvdmVyZbJx"><img style="width:10em" src="/images/logos/discord.png"></a><div style="text-align:center; margin-top:0.5em;">Discord</div></div>
     </div>
     <hr>
     <div>
@@ -50,7 +50,7 @@ published: true
             <li>Open Discord and log into your account, if needed.</li>
             <li>Click the plus icon in the left sidebar.</li>
             <li>Select "Join a server”</li>
-            <li>Paste in the invite link <a href="https://discord.com/invite/UNUHeXW">here</a> and click on "Join”.</li>
+            <li>Paste in the invite link <a href="https://discord.gg/fvdmVyZbJx">here</a> and click on "Join”.</li>
             <li>You’ve joined the CCSS Discord Server! WELCOME to the Carleton CS Community, we’re so happy to see you here! 🎉 Please head over to the Welcome channel (in #welcome), and then read and understand the rules of this server (in #rules).</li>
         </ol>
     </div>
