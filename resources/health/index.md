@@ -6,6 +6,7 @@ published: true
 ---
 
 <div class='content-wrap'>
+    <h1>INTERNAL RESOURCES</h1>
 	<h2>Counselling</h2>
     <hr>
     <h3>Counselling Services</h3>
@@ -34,6 +35,8 @@ published: true
     <p>This is a great place for some light reading on research-based information on a variety of topics that contribute to your well-being. You can find the online library <a href="https://carleton.ca/wellness/living-well/info-library/">here</a>.</p>
     <h3>Virtual Fitness Classes</h3>
     <p>Physical exercise plays a great role in our mental well-being, and Carleton Athletics is still offering its classes virtually during this time. Make sure to check them out <a href="https://athletics.carleton.ca/fitness/group-classes/">here</a>.</p>
+    <h3>Virtual Fitness Classes</h3>
+    <p>If you have ever found yourself in a situation where you want to help a friend and don’t know how to, you can refer to this guide put together by the student support services <a href="https://carleton.ca/studentsupport/wp-content/uploads/Supporting-Students-in-Distress-09-19.pdf">here</a>.</p>.</p>
     <hr>
     <h2>Stay Updated</h2>
     <p>The best way to stay updated on events offered by Carleton is through social media. Here are some account suggestions:</p>
@@ -44,16 +47,28 @@ published: true
     <li>@wellness_cusa on Instagram </li>
     </ul>
     <p>You can also find an updated list of events hosted by a variety of clubs <a href="https://carleton.ca/wellness/events/#anchor-4">here</a></p>
-
-
-    
-
-
-
-
-
-
-    
-    
-
+    <hr>
+    <h1>EXTERNAL RESOURCES</h1>
+    <h2>Counselling</h2>
+    <h3>Coalition of Community Health and Resources Ottawa</h3>
+    <p> You can find counselling services and a variety of programs and services on the CHRC’s website, ranging from life skills training courses, HIV testing and counselling, GLBTTQ youth programs, anger management programs, and more. Explore all the programs offered <a href="http://www.coalitionottawa.ca/en/programs-and-services.aspx">here</a>, and find the closest CHRC to you through <a href="http://www.coalitionottawa.ca/en/find-your-chrc.aspx">here</a>.</p>
+    <h3>The Walk-in Counselling Clinic</h3>
+    <p> You can have free walk-in counselling sessions with professional counsellors at several locations in Ottawa. You can get assistance for a wide variety of issues, including but not limited to depression, anxiety, relationship issues, separation and loss, adjusting to life in Canada, self-esteem, and other life challenges. Learn more <a href="https://walkincounselling.com/">here</a>.</p>
+    <h3>Ottawa Public Health Resource List </h3>
+    <p> <a href="https://www.ottawapublichealth.ca/en/public-health-topics/mental-health-and-addiction-services.aspx#Community-Agencies-">Here</a>, you can find an amazing comprehensive list of support services for mental health and substance use.</p>
+    <hr>
+    <h2>Community Support</h2>
+    <h3>Mental Health Crisis Line</h3>
+    <div>Ottawa (24/7): 613-722-6914</div>
+    <div>Outside Ottawa (24/7): 1-866-996-0991</div>
+    <h3>Distress Centre of Ottawa</h3>
+    <div>Non-crisis support (24/7): 613-238-3311</div>
+    <div>You can find more information on the DC’s website <a href="https://www.google.com/url?q=https://www.dcottawa.on.ca/&sa=D&source=editors&ust=1613088984021000&usg=AOvVaw2HJ3aok-yEZhnw9sSB0Ju9">here</a>.</div>
+    <h3>Sexual Assault Support Centre</h3>
+    <div>Phone support (24/7): 613-234-2266</div>
+    <div>You can find more information on the SASC’S website <a href="https://sascottawa.com/">here</a>.</div>
+    <h3>Youth Services Bureau – Crisis Hotline</h3>
+    <div>This centre provides a range of ways to help you, including finding housing, managing conflict with the law, and finding a job. You can call them at 613-260-2360, or find their website <a href="https://www.ysb.ca/">here</a>.</div>
+    <h3>Mental Health & Addiction Services of Ottawa</h3>
+    <div><a href="https://www.google.com/url?q=https://www.mhaso.ca&sa=D&source=editors&ust=1613089086902000&usg=AOvVaw24mtJCNpJBQPwtbKWi0j7X">Here</a>, you can find more information about the centre and find more about counselling sessions and addiction recovery programs.</div>
 </div>
