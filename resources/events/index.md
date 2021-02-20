@@ -28,7 +28,7 @@ published: true
             <hr>    
             <div class="resource_page_section">
                 <h3>`+(data[page_index].resource_page_sections[i].url && data[page_index].resource_page_sections[i].url.length > 1 ? h1 : data[page_index].resource_page_sections[i].title) +`</h3>
-                <p>`+data[page_index].resource_page_sections[i].description+`</p>
+                <p style="margin-left: 1.4em">`+data[page_index].resource_page_sections[i].description+`</p>
             </div>
             `
             resource_content.innerHTML += resource_page_section
