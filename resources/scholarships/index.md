@@ -5,34 +5,56 @@ title: Scholarships
 published: true
 ---
 
+<script>
+    async function getData(){
+        let response = await fetch(`https://cors.discretemath.ca/https://resources.discretemath.ca/api/resources/resources_pages/`)
+        let data = await response.json()
+        let resource_content = document.querySelector(".resource-content")
+        let page_index = 0
+
+        let header = `
+            <div class="resource_page_header">
+                <h1>`+data[page_index].title+`</h1>
+                <p>`+data[page_index].description+`</p>
+            </div>
+            `
+        resource_content.innerHTML += header
+        
+        for (let i = 0; i < data[page_index].resource_page_sections.length; i++) {
+            
+            let h1 = `<a href="`+data[page_index].resource_page_sections[i].url+`">`+data[page_index].resource_page_sections[i].title+`</a>`
+
+            let resource_page_section = `
+            <hr>    
+            <div class="resource_page_section">
+                <h3>`+(data[page_index].resource_page_sections[i].url && data[page_index].resource_page_sections[i].url.length > 1 ? h1 : data[page_index].resource_page_sections[i].title) +`</h3>
+                <p>`+data[page_index].resource_page_sections[i].description+`</p>
+            </div>
+            `
+            resource_content.innerHTML += resource_page_section
+
+             for (let j = 0; j < data[page_index].resource_page_sections[i].resources.length; j++) {
+                 
+                let this_resource = data[page_index].resource_page_sections[i].resources[j]
+
+                let h5 = `<a href="`+this_resource.url+`">`+this_resource.title+`</a>`
+                let description = `<p>`+this_resource.description+`</p>`
+
+                let resource = `
+                <li class="resource">
+                    <span>`+(this_resource.url !== null ? h5 : this_resource) +`</span>
+                    `+ (this_resource.description.length > 1 ? description : '')+`
+                </li>
+                `
+
+                 resource_content.innerHTML += resource
+             }
+        }
+        
+    }
+
+    getData()
+</script>
 <div class='content-wrap'>
-    <h2>Internal Scholarships</h2>
-    <hr>
-    <h3>General Awards</h3>
-    <ul>
-    <li>Information on entrance scholarships, bursaries, prestige scholarships, provincial student assistance programs, and how you can work on campus: <a href="https://admissions.carleton.ca/scholarships/">here</a></li>
-    <li>Information on applying to scholarships offered by Carleton University: <a href="https://carleton.ca/awards/2019/apply-apply-apply-to-all-the-scholarships/">here</a></li>
-    </ul>
-    <hr>
-    <h3>Entrance Scholarship</h3>
-    <p>Below is a link for more information on the entrance scholarship that you are able to receive upon being accepted to Carleton University. The entrance scholarship amount ranges depending on what mark you obtained to be accepted to Carleton. This scholarship should be automatically applied to your account by the beginning of your first semester. After every year if you will be required to maintain a certain grade average for your scholarship to be renewed. More information can be found <a href="https://carleton.ca/awards/scholarships/entrance-scholarships-for-new-students/">here.</a></p>
-    <p>Prestige scholarship for students entering Carleton from high school with a 90+ grade: <a href="https://carleton.ca/awards/scholarships/entrance-scholarships-for-new-students/prestige/">here.</a></p>
-    <p>If you are a student who has not been awarded a renewable entrance scholarship at the time of admission, you will be considered for an in-course scholarship for the following year. In-course scholarships are awarded to students who meet the academic and course load requirements for awarding a scholarship and who are proceeding from one year to the next. Click <a href="https://carleton.ca/awards/scholarships/entrance-scholarships-for-returning-students/in-course-scholarships/">here</a> for more information.</p>
-    <hr>
-    <h3>Clubs and Societies Scholarships</h3>
-    <ul>
-    <li><a href="https://www.cusaonline.ca/about/awards/
-">Scholarships offered by CUSA</a></li>
-    <li><a href="https://www.sciencesociety.ca/scholarships-awards"
->Scholarships offered by SciSoc</a></li>
-    <li>Scholarships & Resources offered by ISSO:
-    <ul>
-        <li><a href="https://carleton.ca/isso/services-for-current-students/money-matters/">‘Scholarships and money matters’ offered by the ISSO</a></li>
-        <li><a href="https://carleton.ca/isso/2020/richard-van-loon-scholarship-2/">Richard J. Van Loon scholarship</a></li>
-    </ul>
-    </li>
-    </ul>
-
-
-   
+    <div class='resource-content'></div>
 </div>

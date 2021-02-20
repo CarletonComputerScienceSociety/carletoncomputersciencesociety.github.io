@@ -1,16 +1,19 @@
 ---
 layout: default
-permalink: /resources/community/
-title: Community Resources
+permalink: /community/resources/demo
+title: Demo
 published: true
 ---
+<!--div class='search-box'>Search</div-->
 
 <script>
     async function getData(){
         let response = await fetch(`https://cors.discretemath.ca/https://resources.discretemath.ca/api/resources/resources_pages/`)
         let data = await response.json()
         let resource_content = document.querySelector(".resource-content")
-        let page_index = 2
+        let page_index = 4
+
+        console.log(data)
 
         let header = `
             <div class="resource_page_header">

@@ -5,70 +5,56 @@ title: Mental Health & Wellness
 published: true
 ---
 
+<script>
+    async function getData(){
+        let response = await fetch(`https://cors.discretemath.ca/https://resources.discretemath.ca/api/resources/resources_pages/`)
+        let data = await response.json()
+        let resource_content = document.querySelector(".resource-content")
+        let page_index = 4
+
+        let header = `
+            <div class="resource_page_header">
+                <h1>`+data[page_index].title+`</h1>
+                <p>`+data[page_index].description+`</p>
+            </div>
+            `
+        resource_content.innerHTML += header
+        
+        for (let i = 0; i < data[page_index].resource_page_sections.length; i++) {
+            
+            let h1 = `<a href="`+data[page_index].resource_page_sections[i].url+`">`+data[page_index].resource_page_sections[i].title+`</a>`
+
+            let resource_page_section = `
+            <hr>    
+            <div class="resource_page_section">
+                <h3>`+(data[page_index].resource_page_sections[i].url && data[page_index].resource_page_sections[i].url.length > 1 ? h1 : data[page_index].resource_page_sections[i].title) +`</h3>
+                <p>`+data[page_index].resource_page_sections[i].description+`</p>
+            </div>
+            `
+            resource_content.innerHTML += resource_page_section
+
+             for (let j = 0; j < data[page_index].resource_page_sections[i].resources.length; j++) {
+                 
+                let this_resource = data[page_index].resource_page_sections[i].resources[j]
+
+                let h5 = `<a href="`+this_resource.url+`">`+this_resource.title+`</a>`
+                let description = `<p>`+this_resource.description+`</p>`
+
+                let resource = `
+                <li class="resource">
+                    <span>`+(this_resource.url !== null ? h5 : this_resource) +`</span>
+                    `+ (this_resource.description.length > 1 ? description : '')+`
+                </li>
+                `
+
+                 resource_content.innerHTML += resource
+             }
+        }
+        
+    }
+
+    getData()
+</script>
 <div class='content-wrap'>
-    <h1>INTERNAL RESOURCES</h1>
-	<h2>Counselling</h2>
-    <hr>
-    <h3>Counselling Services</h3>
-    <p> Carleton University offers free short-term individual counselling services for students struggling with different problems such as anxiety, depression, relationship problems, sexual violence, or personal and academic stress. Both residence and main clinic counselling remain open virtually. For more information click <a href="https://carleton.ca/health/counselling-services/">here</a>.</p>
-    <h3>Empower Me</h3>
-    <p> You can connect with professionals for counselling services through Empower Me, either in person, by telephone, video-counselling or e-counselling. For more information click <a href="https://studentcare.ca/RTEContent/Document/EN/FAQ/Empower_Me_Optima_FAQ.pdf">here</a> for FAQs and a list of countries from where you can access Empower Me. </p>
-    <h3>Spirituality Centre – Chaplaincy Services </h3>
-    <p>The spirituality centre at Carleton provides chaplaincy services with chaplains from different spiritual backgrounds. You can learn more about the team <a href="https://carleton.ca/wellness/spirituality/">here.</a></p>
-    <hr>
-    <h2>Comunity</h2>
-    <h3>Safer Substance Use</h3>
-    <p><a href="https://carleton.ca/studentaffairs/safe-substance-use/">Here</a>, you can find a resource page if you are questioning or struggling with your relationship with alcohol and other substances, as well as the group All People All Pathways. All People All Pathways is a peer support group facilitated by individuals with lived or living experience with substance use and addiction. It is an open drop in group with no weekly commitment or expectations of abstinence and is open to family and friends of those struggling with substance use as well. </p>
-    <h3>Mental Health Champions </h3>
-    <p>The MHC is a diverse group of Carleton students who challenge themselves and those around them to learn and spread principles of positive psychology and wellness. To join, volunteer and participate in events hosted by the MHC, click <a href="https://carleton.ca/health/mentalhealthchampions/">here</a>, and make sure to email the coordinator to be added to the mailing list if you want to be a part of the MHC!</p>
-    <h3>Wellness CUSA</h3>
-    <p>CUSA’s Wellness Centre is a peer-to-peer mentorship centre, focusing on helping students care for their physical, mental and emotional health. Click <a href="https://www.cusaonline.ca/services/servicecentres/wellness/">here</a> to learn more, and make sure to follow them @wellness_cusa on Instagram to stay updated on their workshops, events, talks and partnerships with other Carleton clubs!</p>
-    <h3>Therapy Dogs</h3>
-    <p>Though we cannot currently meet the adorable dogs at Therapy Dogs in person, you can meet them virtually through Instagram lives on @cutherapydog!</p>
-    <hr>
-    <h2>Self-Help</h2>
-    <h3>BounceBack Ontario</h3>
-    <p>BounceBack Ontario is a free guided self-help program managed by the Canadian Mental Health Association (CMHA) for those experiencing mild-to-moderate anxiety or depression. You can learn more and sign up <a href="https://bouncebackontario.ca">here</a>.</p>
-    <h3>TAO Online Therapy </h3>
-    <p>You can watch short videos weekly, do skill-building exercises, and briefly meet with a counsellor through video conference <a href="https://carleton.ca/wellness/tao/">here</a>.</p>
-    <h3>Carleton Information Library </h3>
-    <p>This is a great place for some light reading on research-based information on a variety of topics that contribute to your well-being. You can find the online library <a href="https://carleton.ca/wellness/living-well/info-library/">here</a>.</p>
-    <h3>Virtual Fitness Classes</h3>
-    <p>Physical exercise plays a great role in our mental well-being, and Carleton Athletics is still offering its classes virtually during this time. Make sure to check them out <a href="https://athletics.carleton.ca/fitness/group-classes/">here</a>.</p>
-    <h3>Virtual Fitness Classes</h3>
-    <p>If you have ever found yourself in a situation where you want to help a friend and don’t know how to, you can refer to this guide put together by the student support services <a href="https://carleton.ca/studentsupport/wp-content/uploads/Supporting-Students-in-Distress-09-19.pdf">here</a>.</p>.</p>
-    <hr>
-    <h2>Stay Updated</h2>
-    <p>The best way to stay updated on events offered by Carleton is through social media. Here are some account suggestions:</p>
-    <ul>
-    <li>@CarletonWellness on Instagram, or Carleton Wellness on Facebook</li>
-    <li>@CarletonMHC on Instagram </li>
-    <li>@CarletonISSO on Instagram for international students </li>
-    <li>@wellness_cusa on Instagram </li>
-    </ul>
-    <p>You can also find an updated list of events hosted by a variety of clubs <a href="https://carleton.ca/wellness/events/#anchor-4">here</a></p>
-    <hr>
-    <h1>EXTERNAL RESOURCES</h1>
-    <h2>Counselling</h2>
-    <h3>Coalition of Community Health and Resources Ottawa</h3>
-    <p> You can find counselling services and a variety of programs and services on the CHRC’s website, ranging from life skills training courses, HIV testing and counselling, GLBTTQ youth programs, anger management programs, and more. Explore all the programs offered <a href="http://www.coalitionottawa.ca/en/programs-and-services.aspx">here</a>, and find the closest CHRC to you through <a href="http://www.coalitionottawa.ca/en/find-your-chrc.aspx">here</a>.</p>
-    <h3>The Walk-in Counselling Clinic</h3>
-    <p> You can have free walk-in counselling sessions with professional counsellors at several locations in Ottawa. You can get assistance for a wide variety of issues, including but not limited to depression, anxiety, relationship issues, separation and loss, adjusting to life in Canada, self-esteem, and other life challenges. Learn more <a href="https://walkincounselling.com/">here</a>.</p>
-    <h3>Ottawa Public Health Resource List </h3>
-    <p> <a href="https://www.ottawapublichealth.ca/en/public-health-topics/mental-health-and-addiction-services.aspx#Community-Agencies-">Here</a>, you can find an amazing comprehensive list of support services for mental health and substance use.</p>
-    <hr>
-    <h2>Community Support</h2>
-    <h3>Mental Health Crisis Line</h3>
-    <div>Ottawa (24/7): 613-722-6914</div>
-    <div>Outside Ottawa (24/7): 1-866-996-0991</div>
-    <h3>Distress Centre of Ottawa</h3>
-    <div>Non-crisis support (24/7): 613-238-3311</div>
-    <div>You can find more information on the DC’s website <a href="https://www.google.com/url?q=https://www.dcottawa.on.ca/&sa=D&source=editors&ust=1613088984021000&usg=AOvVaw2HJ3aok-yEZhnw9sSB0Ju9">here</a>.</div>
-    <h3>Sexual Assault Support Centre</h3>
-    <div>Phone support (24/7): 613-234-2266</div>
-    <div>You can find more information on the SASC’S website <a href="https://sascottawa.com/">here</a>.</div>
-    <h3>Youth Services Bureau – Crisis Hotline</h3>
-    <div>This centre provides a range of ways to help you, including finding housing, managing conflict with the law, and finding a job. You can call them at 613-260-2360, or find their website <a href="https://www.ysb.ca/">here</a>.</div>
-    <h3>Mental Health & Addiction Services of Ottawa</h3>
-    <div><a href="https://www.google.com/url?q=https://www.mhaso.ca&sa=D&source=editors&ust=1613089086902000&usg=AOvVaw24mtJCNpJBQPwtbKWi0j7X">Here</a>, you can find more information about the centre and find more about counselling sessions and addiction recovery programs.</div>
+    <div class='resource-content'></div>
 </div>
