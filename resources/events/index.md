@@ -1,7 +1,7 @@
 ---
 layout: default
-permalink: /resources/community/
-title: Community Resources
+permalink: /resources/events/
+title: External Events
 published: true
 ---
 
@@ -10,7 +10,7 @@ published: true
         let response = await fetch(`https://cors.discretemath.ca/https://resources.discretemath.ca/api/resources/resources_pages/`)
         let data = await response.json()
         let resource_content = document.querySelector(".resource-content")
-        let page_index = 2
+        let page_index = 3
 
         let header = `
             <div class="resource_page_header">
