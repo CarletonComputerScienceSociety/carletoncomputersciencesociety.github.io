@@ -1,11 +1,11 @@
 ---
 layout: article
-title: Feedback and Suggestions Survey
+title: CCSS X SCS Feedback and Suggestions Survey Report
 category: blog
 by: Tiffany Lau
 
 ---
-<p>As elected student representatives of the Carleton Computer Science Society (CCSS), it is important that undergraduate computer science students under the SCS, studying at Carleton University, have their voices heard through channels that they can trust. </p>
+<p>As elected student representatives of the Carleton Computer Science Society (CCSS), it is important that undergraduate computer science students under the School of Computer Science (SCS), studying at Carleton University, have their voices heard through channels that they can trust. </p>
 
 <p>Due to COVID-19 in 2020, many students have expressed concerns regarding challenges in an online learning environment. Therefore, Tiffany Lau (the 2020-2021 Director of Community) and William So (the 2020-2021 President) have created an SCS Undergraduate Feedback & Suggestions Survey for computer science students to share their experiences and opinions regarding online courses this term with the School of Computer Science (SCS) administration, staff, and faculty members. </p>
 
