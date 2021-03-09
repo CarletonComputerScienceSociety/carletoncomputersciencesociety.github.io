@@ -6,7 +6,6 @@ by: William So
 
 ---
 
-<h1>Announcements from the CCSS - March 2021</h1>
 <p>Hello everyone! As midterm season comes to a close, the CCSS hopes to continue delivering on its mission to share events, opportunities, and resources for students. Here are some updates for the month of March!</p>
 <hr>
 <h1>CCSS Elections</h1>
