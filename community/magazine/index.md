@@ -9,11 +9,14 @@ published: true
 <style>
 .book-wrap{
     display:flex;
+    flex-direction: column;
     justify-content:center;
+    align-items: center;
 }
 </style>
 <div class='content-wrap'>
     <div class="book-wrap">
+    <h3>To view the magazine as a pdf, click <a href="/slides/CCSS_Magazine_Issue_1.pdf">here!</a></h3>
     <div class="book" id="flipbook">
         <div class="page"><img src="/images/magazine/1/CCSS_Magazine_Issue_1-01.jpg" alt="" /></div>
         <div class="page"><img src="/images/magazine/1/CCSS_Magazine_Issue_1-02.jpg" alt="" /></div>
@@ -33,7 +36,8 @@ published: true
 
 $("#flipbook").turn({
     width: 1000,
-    height: 690,
+    height: 650,
+    autoCenter: true
 });
 
 </script>
