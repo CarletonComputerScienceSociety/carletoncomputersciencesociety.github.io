@@ -38,6 +38,9 @@
     - title: Social Media
       url: /community/socialmedia
       image: /images/travel.jpg
+    - title: Magazine
+      url: /community/magazine
+      image: /images/travel.jpg
 
     #- title: Discord
     #  url: https://carletoncss.slack.com/signup
