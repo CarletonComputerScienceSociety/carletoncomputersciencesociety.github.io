@@ -1,11 +1,8 @@
 ---
-layout: default
-permalink: /about/elections/
-title: Election
-published: true
-pimage: /images/code_5.jpg
-subjecttext: 2021 GENERAL ELECTIONS
-subjectstyle: 'border-bottom: 5px solid white; border-top: 5px solid white;'
+layout: article
+title: CCSS Election for 2021-2022
+category: blog
+by: Adam Payzant
 ---
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -106,8 +103,38 @@ $(document).ready(function(){
     }
 });
 </script>
-<div class='content-wrap'>
-  The CCSS Elections for 2021-2022 have begun! We're excited to announce that we have 15 candidates running for positions on the board of directors.
+The CCSS Elections for 2021-2022 have begun! We're excited to announce that we have 15 candidates running for positions on the board of directors.
+
+## The Candidates are:
+
+#### President:
+- Sarah Ali
+- William So
+
+#### Vice President:
+- Ayodeji Akinbile 
+- Erica Li
+- Malcolm Smith
+
+#### Director of Finance:
+- Benjamin Karstad
+- Victor Li
+
+#### Director of Academics:
+- Aaditya (Adi) Chopra
+- Matthew MacRae-Bovell
+- Robert Babaev
+
+#### Director of Social:
+- Jerry Liu
+- Milo Goodfellow
+- Veronica Yung
+
+#### Director of Community:
+- Patrick Ene
+- Zara Ali
+
+### The Campaign Platforms:
 
 
 <div class="people">
@@ -336,5 +363,4 @@ $(document).ready(function(){
             </ul>
         </div>
     </div>
-</div>
 </div>
