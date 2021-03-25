@@ -5,7 +5,8 @@ category: blog
 comments: true
 by: Matthew MacRae-Bovell
 ---
-Hey Everyone! This past week the CCSS held it's annual Fall General Meeting. The presentation slides can be viewed <a href="/slides/fall_general_meeting_2020.pdf" target="_blank">here!</a>
 
+Hey everyone! This past week, the CCSS held its annual Fall General Meeting on Microsoft Teams. 
 
-
+* To view the presentation slides, click <a href="/slides/fall_general_meeting_2020.pdf" target="_blank">here!</a>
+* To view the meeting minutes, please email info@ccss.carleton.ca.
