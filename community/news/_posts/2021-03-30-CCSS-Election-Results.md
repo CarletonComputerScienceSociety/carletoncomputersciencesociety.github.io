@@ -6,26 +6,24 @@ by: Adam Payzant
 
 ---
 
-Congratulations to our upcoming Board of Director members, and thank you to all candidates for getting involved with the CCSS!
+Congratulations to our upcoming Board of Director members, and thank you to all candidates for getting involved with the CCSS! A complete breakdown of the election results can be seen in the PDF <a href="/slides/CCSS_2021_Election_Results_.pdf" target="_blank">here</a>!
 
-A complete breakdown of the election results can be seen in the PDF <a href="/slides/CCSS_2021_Election_Results_.pdf" target="_blank">here</a>!
+**The 2021-2022 CCSS board will be as follows:**
 
-### The 2021-2022 CCSS board will be as follows:
-
-#### President:
+**President:**
 - Sarah Ali
 
-#### Vice President:
+**Vice President:**
 - Erica Li
 
-#### Director of Finance:
+**Director of Finance:**
 - Victor Li
 
-#### Director of Academics:
+**Director of Academics:**
 - Matthew MacRae-Bovell
 
-#### Director of Social:
+**Director of Social:**
 - Veronica Yung
 
-#### Director of Community:
+**Director of Community:**
 - Zara Ali
