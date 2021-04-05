@@ -13,6 +13,6 @@ by: Tiffany Lau
 
 <p>Please note that <b>all questions are optional</b>, and you are free to share or omit as much as you’d like. All answers will remain <b>anonymous</b>. We are continuously collecting and compiling data to share with the SCS, so you can still submit responses after May 1.</p>
 
-<p><b>Link to the survey: <a href=https://forms.gle/89JEvRF2QEQAnFGKA" target="_blank">https://forms.gle/89JEvRF2QEQAnFGKA</a>.</b></p>
+<p><b>Link to the survey: <a href="https://forms.gle/89JEvRF2QEQAnFGKA" target="_blank">https://forms.gle/89JEvRF2QEQAnFGKA</a>.</b></p>
 
 <p>If you have any questions or concerns, please do not hesitate to reach out to us via email at info@ccss.carleton.ca.<p>
