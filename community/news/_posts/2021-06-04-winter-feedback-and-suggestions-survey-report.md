@@ -15,4 +15,4 @@ by: Tiffany Lau
 
 <p>If you have any questions or concerns, please do not hesitate to reach out to us via email at info@ccss.carleton.ca.<p>
 
-<h5>View the attached survey <a href="/slides/winter2021_feedback_survey.pdf">here</a>.</h5>
+<h5>View the attached survey report <a href="/slides/winter2021_feedback_survey.pdf">here</a>.</h5>
