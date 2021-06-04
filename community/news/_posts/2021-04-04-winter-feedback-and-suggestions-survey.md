@@ -1,6 +1,6 @@
 ---
 layout: article
-title: CCSS X SCS Feedback and Suggestions Survey - Winter 2021
+title: Winter 2021 - CCSS X SCS Feedback and Suggestions Survey
 category: blog
 by: Tiffany Lau
 
