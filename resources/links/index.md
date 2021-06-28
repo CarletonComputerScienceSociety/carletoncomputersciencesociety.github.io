@@ -32,6 +32,12 @@ published: true
                 <li><a href="http://people.scs.carleton.ca/~wise/" target="_blank">Carleton University Women in Science and Engineering (CU-WISE)</a></li>
             </ul>
         </li>
+        <li>
+            <h4>Other</h4>
+            <ul class="dash-list">
+                <li><a href="https://bootcamp.cvn.columbia.edu/blog/coding-resources-for-women/">Columbia - Coding Resources for Women</a></li>
+            </ul>
+        </li>
     </ul>
     <h4>Want us to add a new site? Send your suggestions to <a href="mailto:info@ccss.carleton.ca?Subject=Useful%20Links" target="_top" target="_blank">info@ccss.carleton.ca</a> with the subject line: “Useful Links”</h4>
 </div>
