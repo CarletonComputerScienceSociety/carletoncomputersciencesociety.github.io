@@ -6,7 +6,7 @@ published: true
 ---
 
 <!--<script src="http://www.turnjs.com/lib/turn.min.js"></script>-->
-<script src="https://ccss.carleton.ca/js/turn.min.js"></script>
+<script src="/js/turn.min.js"></script>
 <!--<script src="https://cdn.tutorialjinni.com/turn.js/3/turn.min.js"></script>-->
 <style>
 .book-wrap{
